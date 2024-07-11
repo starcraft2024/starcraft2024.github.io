@@ -1,0 +1,14 @@
+/* starry-background.css */
+html, body {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    background: #000;
+}
+
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
