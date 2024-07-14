@@ -13,7 +13,7 @@ const cxt = canvas.getContext('2d');
 const leaves = []; // 用于存储树叶对象
 
 const leafImage = new Image();
-leafImage.src = 'leaf.png'; // 修改为你本地的树叶图片路径
+leafImage.src = './leaf.png'; // 修改为你本地的树叶图片路径
 
 class Leaf {
     constructor(x, y, s, r, fn) {
