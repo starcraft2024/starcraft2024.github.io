@@ -188,4 +188,171 @@
     });
   });
 </script>
-<script id="canvas_nest" defer="defer" color="255,255,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/canvas-nest.min.js"></script><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/click-show-text.min.js" data-mobile="false" data-text="I,LOVE,YOU" data-fontsize="15px" data-random="false" async="async"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script src="/js/snowfall.js"></script></body></html>
+<script id="canvas_nest" defer="defer" color="255,255,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/canvas-nest.min.js"></script><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/click-show-text.min.js" data-mobile="false" data-text="I,LOVE,YOU" data-fontsize="15px" data-random="false" async="async"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Falling Leaves</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* 防止滚动条 */
+        }
+    </style>
+</head>
+
+<body>
+</body>
+
+<script>
+    var stop, staticx;
+    var img = new Image();
+    img.src = "./leaf.png"; // 本地树叶图片路径
+
+    class Leaf {
+        constructor(x, y, s, r, fn) {
+            this.x = x;
+            this.y = y;
+            this.s = s;
+            this.r = r;
+            this.fn = fn;
+        }
+
+        draw(cxt) {
+            cxt.save();
+            const size = 50 * this.s;
+            cxt.translate(this.x, this.y);
+            cxt.rotate(this.r);
+            cxt.drawImage(img, -size / 2, -size / 2, size, size);
+            cxt.restore();
+        }
+
+        update() {
+            this.x = this.fn.x(this.x, this.y);
+            this.y = this.fn.y(this.y, this.y);
+            this.r = this.fn.r(this.r);
+            if (this.x > window.innerWidth ||
+                this.x < 0 ||
+                this.y > window.innerHeight ||
+                this.y < 0
+            ) {
+                this.reset();
+            }
+        }
+
+        reset() {
+            this.x = getRandom('x');
+            this.y = 0;
+            this.s = getRandom('s');
+            this.r = getRandom('r');
+        }
+    }
+
+    class LeafList {
+        constructor() {
+            this.list = [];
+        }
+
+        push(leaf) {
+            this.list.push(leaf);
+        }
+
+        update() {
+            for (const leaf of this.list) {
+                leaf.update();
+            }
+        }
+
+        draw(cxt) {
+            for (const leaf of this.list) {
+                leaf.draw(cxt);
+            }
+        }
+    }
+
+    function getRandom(option) {
+        let ret;
+        const random = Math.random();
+        switch (option) {
+            case 'x':
+                ret = Math.random() * window.innerWidth;
+                break;
+            case 'y':
+                ret = Math.random() * window.innerHeight;
+                break;
+            case 's':
+                ret = Math.random();
+                break;
+            case 'r':
+                ret = Math.random() * 6;
+                break;
+            case 'fnx':
+                ret = function(x, y) {
+                    return x + 0.5 * random - 1.7;
+                };
+                break;
+            case 'fny':
+                ret = function(x, y) {
+                    return y + 1.5 + Math.random() * 0.7;
+                };
+                break;
+            case 'fnr':
+                ret = function(r) {
+                    return r + Math.random() * 0.03;
+                };
+                break;
+        }
+        return ret;
+    }
+
+    function startLeaves() {
+        requestAnimationFrame = window.requestAnimationFrame ||
+            window.mozRequestAnimationFrame ||
+            window.webkitRequestAnimationFrame ||
+            window.msRequestAnimationFrame ||
+            window.oRequestAnimationFrame;
+
+        var canvas = document.createElement('canvas');
+        var cxt = canvas.getContext('2d');
+        canvas.height = window.innerHeight;
+        canvas.width = window.innerWidth;
+        canvas.setAttribute('style', 'position: fixed;left: 0;top: 0;pointer-events: none;');
+        canvas.setAttribute('id', 'canvas_leaves');
+        document.getElementsByTagName('body')[0].appendChild(canvas);
+
+        var leafList = new LeafList();
+        for (var i = 0; i < 50; i++) {
+            var randomX = getRandom('x');
+            var randomY = getRandom('y');
+            var randomS = getRandom('s');
+            var randomR = getRandom('r');
+            var randomFnx = getRandom('fnx');
+            var randomFny = getRandom('fny');
+            var randomFnR = getRandom('fnr');
+            var leaf = new Leaf(randomX, randomY, randomS, randomR, {
+                x: randomFnx,
+                y: randomFny,
+                r: randomFnR
+            });
+            leafList.push(leaf);
+        }
+
+        stop = requestAnimationFrame(function() {
+            cxt.clearRect(0, 0, canvas.width, canvas.height);
+            leafList.update();
+            leafList.draw(cxt);
+            stop = requestAnimationFrame(arguments.callee);
+        });
+    }
+
+    window.onload = startLeaves;
+
+    window.onresize = function() {
+        var canvasLeaves = document.getElementById('canvas_leaves');
+        canvasLeaves.width = window.innerWidth;
+        canvasLeaves.height = window.innerHeight;
+    };
+</script>
+</html>
+<script src="/js/snowfall.js"></script></body></html>
