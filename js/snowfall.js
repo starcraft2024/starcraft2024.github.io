@@ -1,9 +1,4 @@
 function Leaf() {
-    // 初始化树叶属性
-    this.init();
-}
-
-Leaf.prototype.init = function() {
     // 宽度50-100之间
     this.width = parseInt(Math.random() * 50) + 50;
     // 树叶初始位置从右上方开始
