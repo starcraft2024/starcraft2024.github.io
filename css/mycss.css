@@ -3,5 +3,8 @@
 } */
 
 #recent-posts > .recent-post-item{
-    opacity: 0.7 !important;
+    opacity: 0.66 !important;
+}
+.cardHover, .layout > div:first-child:not(.recent-posts), #recent-posts > .recent-post-item, #aside-content .card-widget, .layout > .recent-posts .pagination > *:not(.space) {
+    background: #fff9e7;
 }
