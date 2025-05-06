@@ -5,8 +5,8 @@
   <meta name="Volantis" content="6.0.0-alpha.1">
   <meta charset="utf-8">
   <!-- SEO相关 -->
-  <meta name="robots" content="noindex,follow">
-  <link rel="canonical" href="http://example.com/archives/"/>
+  
+  <link rel="canonical" href="http://example.com/2024/02/06/swift基础入门/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -33,18 +33,21 @@
 
   <!-- feed -->
   <!-- 页面元数据 -->
-  <title>归档 - Starcraft</title>
-  <meta name="keywords" content="null">
+  <title>Swift基础入门 - Starcraft</title>
+  <meta name="keywords" content="Swift,null">
   <meta desc name="description" content="always learning - Starcraft - Starcraft">
   
-<meta property="og:type" content="website">
-<meta property="og:title" content="Starcraft">
-<meta property="og:url" content="http://example.com/archives/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Swift基础入门">
+<meta property="og:url" content="http://example.com/2024/02/06/Swift%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/index.html">
 <meta property="og:site_name" content="Starcraft">
-<meta property="og:description" content="always learning">
+<meta property="og:description" content="Swift笔记基础部分变量声明&#x2F;常量声明let用于声明常量，var则声明变量 12let maximum &#x3D; 10var attempt &#x3D; 0  综上，maximum即为常量，attempt则为变量。 同时，swift也可像c语言一样声明多个变量： 1var x &#x3D; 0.0, y &#x3D; 0.0, z&#x3D;0.0  类型注解这个例子给 welcomeMessage 变量添加了类型注解，表示这个">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+<meta property="article:published_time" content="2024-02-06T14:56:25.000Z">
+<meta property="article:modified_time" content="2025-05-06T14:58:32.104Z">
 <meta property="article:author" content="Starcraft">
+<meta property="article:tag" content="Swift">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
   <style>
@@ -2102,7 +2105,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 <script>
   window.pdata={}
-  pdata.ispage=false;
+  pdata.ispage=true;
   pdata.commentPath="";
   pdata.commentPlaceholder="";
   pdata.commentConfig={};
@@ -2167,7 +2170,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <!-- Custom Files bodyBegin begin-->
     
     <!-- Custom Files bodyBegin end-->
-    <header itemscope itemtype="https://schema.org.cn/WPHeader" id="l_header" class="l_header auto shadow floatable blur " style='opacity: 0' >
+    <header itemscope itemtype="https://schema.org.cn/WPHeader" id="l_header" class="l_header auto shadow floatable blur show" style='opacity: 0' >
   <div class='container'>
   <div id='wrapper'>
     <div class='nav-sub'>
@@ -2434,127 +2437,321 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div id="l_body">
       <div id="l_cover">
   
-    
-      <div class="cover-wrapper  dock" id='half'>
-        
-  <div class='cover-bg lazyload placeholder' data-bg="https://img-baofun.zhhainiao.com/fs/244a776c457ac246611c555dee454e5b.jpg"></div>
-
-<div class='cover-body'>
-  <div class='top'>
-    
-    
-      <p class="title">StarCraft Island</p>
-    
-    
-      <p class="subtitle">Always try anything</p>
-    
-  </div>
-  <div class='bottom'>
-    <div class='menu navigation'>
-      <div class='list-h'>
-        
-          
-            <a href="/v4/getting-started/"
-              
-              
-              active-action="action-v4getting-started">
-              <img src='https://unpkg.com/volantis-static@0.0.1660614606622/media/twemoji/assets/svg/1f5c3.svg'><p>文档</p>
-            </a>
-          
-            <a href="/faqs/"
-              
-              
-              active-action="action-faqs">
-              <img src='https://unpkg.com/volantis-static@0.0.1660614606622/media/twemoji/assets/svg/1f516.svg'><p>帮助</p>
-            </a>
-          
-            <a href="/examples/"
-              
-              
-              active-action="action-examples">
-              <img src='https://unpkg.com/volantis-static@0.0.1660614606622/media/twemoji/assets/svg/1f396.svg'><p>示例</p>
-            </a>
-          
-            <a href="/contributors/"
-              
-              
-              active-action="action-contributors">
-              <img src='https://unpkg.com/volantis-static@0.0.1660614606622/media/twemoji/assets/svg/1f389.svg'><p>社区</p>
-            </a>
-          
-            <a href="/archives/"
-              
-              
-              active-action="action-archives">
-              <img src='https://unpkg.com/volantis-static@0.0.1660614606622/media/twemoji/assets/svg/1f4f0.svg'><p>博客</p>
-            </a>
-          
-            <a target="_blank" rel="noopener" href="https://github.com/volantis-x/hexo-theme-volantis/"
-              
-              
-              active-action="action-https:githubcomvolantis-xhexo-theme-volantis">
-              <img src='https://unpkg.com/volantis-static@0.0.1660614606622/media/twemoji/assets/svg/1f9ec.svg'><p>源码</p>
-            </a>
-          
-        
-      </div>
-    </div>
-  </div>
-</div>
-
-      </div>
-    
-  
 </div>
 
       <div id="safearea">
         <div class="body-wrapper">
           
 <div id="l_main" class=''>
-	
-	  <article id="arc" class="post article white-box reveal shadow floatable blur">
-			
-			
-				
-				
-					
-						
-						<h2>2025</h2>
-					
-						<div class='timenode'>
-								<a class="meta" href="/2025/05/06/hello-world/">
-									<time>05-06</time>
-									
-										Hello World
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						
-						<h2>2024</h2>
-					
-						<div class='timenode'>
-								<a class="meta" href="/2024/02/06/Swift%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/">
-									<time>02-06</time>
-									
-										Swift基础入门
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-	  </article>
-	
+  <article itemscope itemtype="https://schema.org.cn/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2024/02/06/Swift基础入门/">
+  <span hidden itemprop="publisher" itemscope itemtype="https://schema.org.cn/Organization">
+    <meta itemprop="name" content="Starcraft">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="https://schema.org.cn/Post">
+    <meta itemprop="name" content="Starcraft">
+    <meta itemprop="description" content="always learning">
+  </span>
+  
+
+
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  <div class="article-meta" id="top">
+    
+    
+    
+      <h1 class="title" itemprop="name headline">
+        Swift基础入门
+      </h1>
+      <div class='new-meta-box'>
+        
+          
+            
+<div class='new-meta-item author' itemprop="author" itemscope itemtype="https://schema.org.cn/Person">
+  <a itemprop="url" class='author' href="/" rel="nofollow">
+    <img itemprop="image" src="https://th.bing.com/th/id/R.286d3b3cb1e72806331216d12639e0ec?rik=zF2GdZmepj4Gtw&riu=http%3a%2f%2f5b0988e595225.cdn.sohucs.com%2fimages%2f20200227%2f9a09728575844fadb8725729118443ef.jpeg&ehk=XC4yxMoCPYi2SVp5XoF5EfUUDPXBH%2b0%2f8b%2fqRoMI4%2b8%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1" class="lazyload" data-srcset="https://th.bing.com/th/id/R.286d3b3cb1e72806331216d12639e0ec?rik=zF2GdZmepj4Gtw&riu=http%3a%2f%2f5b0988e595225.cdn.sohucs.com%2fimages%2f20200227%2f9a09728575844fadb8725729118443ef.jpeg&ehk=XC4yxMoCPYi2SVp5XoF5EfUUDPXBH%2b0%2f8b%2fqRoMI4%2b8%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+    <p itemprop="name">请设置文章作者</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+
+
+          
+        
+          
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2024-02-06T22:56:25+08:00">
+  <a class='notlink'>
+    <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2024年2月6日</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+
+
+
+          
+        
+        <!-- Custom Files topMeta begin-->
+        
+        <!-- Custom Files topMeta end-->
+      </div>
+    
+  </div>
+
+
+  <div id="layoutHelper-page-plugins"></div>
+  <div id="post-body" itemprop="articleBody">
+    <h2 id="Swift笔记"><a href="#Swift笔记" class="headerlink" title="Swift笔记"></a>Swift笔记</h2><h3 id="基础部分"><a href="#基础部分" class="headerlink" title="基础部分"></a>基础部分</h3><h4 id="变量声明-常量声明"><a href="#变量声明-常量声明" class="headerlink" title="变量声明&#x2F;常量声明"></a>变量声明&#x2F;常量声明</h4><p>let用于声明常量，var则声明变量</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> maximum <span class="operator">=</span> <span class="number">10</span></span><br><span class="line"><span class="keyword">var</span> attempt <span class="operator">=</span> <span class="number">0</span></span><br></pre></td></tr></table></figure>
+
+<p>综上，maximum即为常量，attempt则为变量。</p>
+<p>同时，swift也可像c语言一样声明多个变量：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x <span class="operator">=</span> <span class="number">0.0</span>, y <span class="operator">=</span> <span class="number">0.0</span>, z<span class="operator">=</span><span class="number">0.0</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="类型注解"><a href="#类型注解" class="headerlink" title="类型注解"></a>类型注解</h4><p>这个例子给 <code>welcomeMessage</code> 变量添加了类型注解，表示这个变量可以存储 <code>String</code> 类型的值：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> welcomeMessage: <span class="type">String</span></span><br></pre></td></tr></table></figure>
+
+<p>声明中的冒号代表着*“是…类型”*</p>
+<p>“声明一个类型为 <code>String</code> ，名字为 <code>welcomeMessage</code> 的变量。”</p>
+<p>“类型为 <code>String</code> ”的意思是“可以存储任意 <code>String</code> 类型的值。”</p>
+<p><code>welcomeMessage</code> 变量现在可以被设置成任意字符串：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">welcomeMessage <span class="operator">=</span> <span class="string">&quot;Hello&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>你可以在一行中定义多个同样类型的变量，用逗号分割，并在最后一个变量名之后添加类型注解：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> red, green, blue: <span class="type">Double</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="常量和变量的命名"><a href="#常量和变量的命名" class="headerlink" title="常量和变量的命名"></a>常量和变量的命名</h4><p>命名可以用任何字符（包括unicode）</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> π <span class="operator">=</span> <span class="number">3.14159</span></span><br><span class="line"><span class="keyword">let</span> 你好 <span class="operator">=</span> <span class="string">&quot;你好世界&quot;</span></span><br><span class="line"><span class="keyword">let</span> 🐶🐮 <span class="operator">=</span> <span class="string">&quot;dogcow&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>常量与变量名不能包含数学符号，箭头，保留的（或者非法的）Unicode 码位，连线与制表符。也不能以数字开头，但是可以在常量与变量名的其他地方包含数字</p>
+<h4 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h4><p>请将你的代码中的非执行文本注释成提示或者笔记以方便你将来阅读。Swift 的编译器将会在编译代码时自动忽略掉注释部分。</p>
+<p>Swift 中的注释与 C 语言的注释非常相似。单行注释以双正斜杠（<code>//</code>）作为起始标记:</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 这是一个注释</span></span><br></pre></td></tr></table></figure>
+
+<p>你也可以进行多行注释，其起始标记为单个正斜杠后跟随一个星号（<code>/*</code>），终止标记为一个星号后跟随单个正斜杠（<code>*/</code>）:</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 这也是一个注释，</span></span><br><span class="line"><span class="comment">但是是多行的 */</span></span><br></pre></td></tr></table></figure>
+
+<p>与 C 语言多行注释不同，Swift 的多行注释可以嵌套在其它的多行注释之中。你可以先生成一个多行注释块，然后在这个注释块之中再嵌套成第二个多行注释。终止注释时先插入第二个注释块的终止标记，然后再插入第一个注释块的终止标记：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 这是第一个多行注释的开头</span></span><br><span class="line"><span class="comment"><span class="comment">/* 这是第二个被嵌套的多行注释 */</span></span></span><br><span class="line"><span class="comment">这是第一个多行注释的结尾 */</span></span><br></pre></td></tr></table></figure>
+
+<p>通过运用嵌套多行注释，可以快速方便的注释掉一大段代码</p>
+<h4 id="分号"><a href="#分号" class="headerlink" title="分号"></a>分号</h4><p>与其他大部分编程语言不同，Swift 并不强制要求你在每条语句的结尾处使用分号（<code>;</code>）但是在同一行内写多条独立的语句必须使用</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> cat <span class="operator">=</span> <span class="string">&quot;🐱&quot;</span>; <span class="built_in">print</span>(cat)</span><br><span class="line"><span class="comment">// 输出“🐱”</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="整数"><a href="#整数" class="headerlink" title="整数"></a>整数</h4><p>Swift 提供了8、16、32和64位的有符号和无符号整数类型。这些整数类型和 C 语言的命名方式很像，比如8位无符号整数类型是 <code>UInt8</code>，32位有符号整数类型是 <code>Int32</code> 。就像 Swift 的其他类型一样，整数类型采用大写命名法。</p>
+<p>UInt的最大值与Int相同，取决于其后面的数字：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> minnum <span class="operator">=</span> <span class="type">UInt8</span>.min <span class="comment">//值为0</span></span><br><span class="line"><span class="keyword">var</span> maxnum <span class="operator">=</span> <span class="type">UInt8</span>.max <span class="comment">//值为255</span></span><br><span class="line">minnum <span class="operator">=</span> <span class="type">Int8</span>.min <span class="comment">//其值变为-256</span></span><br><span class="line">maxnum <span class="operator">=</span> <span class="type">Int8</span>.max</span><br></pre></td></tr></table></figure>
+
+<hr>
+<ul>
+<li>注意</li>
+</ul>
+<p>尽量不要使用 <code>UInt</code>，除非你真的需要存储一个和当前平台原生字长相同的无符号整数。除了这种情况，最好使用 <code>Int</code>，即使你要存储的值已知是非负的。统一使用 <code>Int</code> 可以提高代码的可复用性，避免不同类型数字之间的转换，并且匹配数字的类型推断</p>
+<hr>
+<h4 id="浮点数"><a href="#浮点数" class="headerlink" title="浮点数"></a>浮点数</h4><ul>
+<li><code>Double</code> 表示64位浮点数。当你需要存储很大或者很高精度的浮点数时请使用此类型。</li>
+<li><code>Float</code> 表示32位浮点数。精度要求不高的话可以使用此类型。</li>
+</ul>
+<h4 id="类型安全和类型推断"><a href="#类型安全和类型推断" class="headerlink" title="类型安全和类型推断"></a>类型安全和类型推断</h4><p>Swift 是一个*类型安全（type safe）*的语言。类型安全的语言可以让你清楚地知道代码要处理的值的类型。如果你的代码需要一个 <code>String</code>，你绝对不可能不小心传进去一个 <code>Int</code>。</p>
+<p>由于 Swift 是类型安全的，所以它会在编译你的代码时进行<em>类型检查（type checks）</em>，并把不匹配的类型标记为错误。这可以让你在开发的时候尽早发现并修复错误。</p>
+<h4 id="数值型字面量"><a href="#数值型字面量" class="headerlink" title="数值型字面量"></a>数值型字面量</h4><p>整数字面量可以被写作：</p>
+<ul>
+<li>一个<em>十进制</em>数，没有前缀</li>
+<li>一个<em>二进制</em>数，前缀是 <code>0b</code></li>
+<li>一个<em>八进制</em>数，前缀是 <code>0o</code></li>
+<li>一个<em>十六进制</em>数，前缀是 <code>0x</code></li>
+</ul>
+<p>下面的所有整数字面量的十进制值都是 <code>17</code>:</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> decimalInteger <span class="operator">=</span> <span class="number">17</span></span><br><span class="line"><span class="keyword">let</span> binaryInteger <span class="operator">=</span> <span class="number">0b10001</span>       <span class="comment">// 二进制的17</span></span><br><span class="line"><span class="keyword">let</span> octalInteger <span class="operator">=</span> <span class="number">0o21</span>           <span class="comment">// 八进制的17</span></span><br><span class="line"><span class="keyword">let</span> hexadecimalInteger <span class="operator">=</span> <span class="number">0x11</span>     <span class="comment">// 十六进制的17</span></span><br></pre></td></tr></table></figure>
+
+<p>如果一个十进制数的指数为 <code>exp</code>，那这个数相当于基数和10^exp 的乘积：</p>
+<ul>
+<li><code>1.25e2</code> 表示 1.25 × 10^2，等于 <code>125.0</code>。</li>
+<li><code>1.25e-2</code> 表示 1.25 × 10^-2，等于 <code>0.0125</code>。</li>
+</ul>
+<p>如果一个十六进制数的指数为 <code>exp</code>，那这个数相当于基数和2^exp 的乘积：</p>
+<ul>
+<li><code>0xFp2</code> 表示 15 × 2^2，等于 <code>60.0</code>。</li>
+<li><code>0xFp-2</code> 表示 15 × 2^-2，等于 <code>3.75</code>。</li>
+</ul>
+<p>下面的这些浮点字面量都等于十进制的 <code>12.1875</code>：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> decimalDouble <span class="operator">=</span> <span class="number">12.1875</span></span><br><span class="line"><span class="keyword">let</span> exponentDouble <span class="operator">=</span> <span class="number">1.21875e1</span></span><br><span class="line"><span class="keyword">let</span> hexadecimalDouble <span class="operator">=</span> <span class="number">0xC.3p0</span> <span class="comment">//(12+(3/16))*2^0</span></span><br></pre></td></tr></table></figure>
+
+<p>数值类字面量可以包括额外的格式来增强可读性。整数和浮点数都可以添加额外的零并且包含下划线，并不会影响字面量：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> paddedDouble <span class="operator">=</span> <span class="number">000123.456</span></span><br><span class="line"><span class="keyword">let</span> oneMillion <span class="operator">=</span> <span class="number">1_000_000</span></span><br><span class="line"><span class="keyword">let</span> justOverOneMillion <span class="operator">=</span> <span class="number">1_000_000.000_000_1</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="整数和浮点数转换"><a href="#整数和浮点数转换" class="headerlink" title="整数和浮点数转换"></a>整数和浮点数转换</h4><p>整数和浮点数的转换必须显式指定类型：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> three <span class="operator">=</span> <span class="number">3</span></span><br><span class="line"><span class="keyword">let</span> pointOneFourOneFiveNine <span class="operator">=</span> <span class="number">0.14159</span></span><br><span class="line"><span class="keyword">let</span> pi <span class="operator">=</span> <span class="type">Double</span>(three) <span class="operator">+</span> pointOneFourOneFiveNine</span><br><span class="line"><span class="comment">// pi 等于 3.14159，所以被推测为 Double 类型</span></span><br></pre></td></tr></table></figure>
+
+<p>这个例子中，常量 <code>three</code> 的值被用来创建一个 <code>Double</code> 类型的值，所以加号两边的数类型须相同。如果不进行转换，两者无法相加。</p>
+<hr>
+<p>总结：当俩变量类型相同时才可进行相加</p>
+<h4 id="类型别名"><a href="#类型别名" class="headerlink" title="类型别名"></a>类型别名</h4><p>*类型别名（type aliases）*就是给现有类型定义另一个名字。你可以使用 <code>typealias</code> 关键字来定义类型别名。</p>
+<p>当你想要给现有类型起一个更有意义的名字时，类型别名非常有用。假设你正在处理特定长度的外部资源的数据：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typealias</span> <span class="type">AudioSample</span> <span class="operator">=</span> <span class="type">UInt16</span></span><br></pre></td></tr></table></figure>
+
+<p>定义了一个类型别名之后，你可以在任何使用原始名的地方使用别名：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> maxAmplitudeFound <span class="operator">=</span> <span class="type">AudioSample</span>.min</span><br><span class="line"><span class="comment">// maxAmplitudeFound 现在是 0</span></span><br></pre></td></tr></table></figure>
+
+<p>本例中，<code>AudioSample</code> 被定义为 <code>UInt16</code> 的一个别名。因为它是别名，<code>AudioSample.min</code> 实际上是 <code>UInt16.min</code>，所以会给 <code>maxAmplitudeFound</code> 赋一个初值 <code>0</code>。</p>
+
+  </div>
+  
+  
+    
+    <div class='footer'>
+       <!-- 参考资料、相关资料等 -->
+      
+       <!-- 相关文章 -->
+      
+      <!-- 版权声明组件 -->
+      
+      <!-- 打赏组件 -->
+      
+    </div>
+  
+  
+    
+
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2025-05-06T22:58:32+08:00">
+  <a class='notlink'>
+    <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2025年5月6日</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Swift/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>Swift</p></a></div>
+  <span hidden itemprop="keywords">Swift</span>
+  
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2024/02/06/Swift%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/&title=Swift基础入门 - Starcraft&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/logo/128/qq.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/logo/128/qq.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2024/02/06/Swift%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/&title=Swift基础入门 - Starcraft&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/logo/128/qzone.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/logo/128/qzone.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2024/02/06/Swift%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/&title=Swift基础入门 - Starcraft&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/logo/128/weibo.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/logo/128/weibo.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+    <!-- Custom Files bottomMeta begin -->
+    
+    <!-- Custom Files bottomMeta end -->
+  </div>
+
+
+  
+  
+
+  
+    <div class="prev-next">
+      
+        <a class='prev' href='/2025/05/06/hello-world/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>Hello World</p>
+          <p class='content'>Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any ...</p>
+        </a>
+      
+      
+    </div>
+  
+  <!-- 文章推荐 -->
+  
+  
+  <!-- Custom Files postEnd begin-->
+  
+  <!-- Custom Files postEnd end-->
+</article>
+
+
+  
+
+
+  <article class="post white-box shadow floatable blur" id="comments">
+    <span hidden>
+      <meta itemprop="discussionUrl" content="/2024/02/06/Swift%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/index.html#comments">
+    </span>
+    <p ct><i class='fa-solid fa-comments'></i> 评论</p>
+    
+
+    <div id="layoutHelper-comments"></div>
+
+  </article>
+
+
+
+
+
+
 </div>
 <aside id='l_side' itemscope itemtype="https://schema.org.cn/WPSideBar">
   
@@ -2563,107 +2760,31 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
       
-<section class="widget blogger desktop mobile ">
-  <div class='content'>
     
-      
-        <a class='avatar flat-box rectangle' href='/about/'>
-          <img no-lazy src='https://th.bing.com/th/id/R.286d3b3cb1e72806331216d12639e0ec?rik=zF2GdZmepj4Gtw&riu=http%3a%2f%2f5b0988e595225.cdn.sohucs.com%2fimages%2f20200227%2f9a09728575844fadb8725729118443ef.jpeg&ehk=XC4yxMoCPYi2SVp5XoF5EfUUDPXBH%2b0%2f8b%2fqRoMI4%2b8%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-        
-        
-          <p><span id="jinrishici-sentence">Starcraft</span></p>
-          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="/atom.xml"
-              class="social fa-solid fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="mailto:me@xxx.com"
-              class="social fa-solid fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://github.com/volantis-x/"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="/"
-              class="social fa-solid fa-headphones-alt flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
-
-    
-  
-
-  
-    
-    
-      
-
-    
-  
-
-  
-    
-    
-      
-  
-  <section class="widget tagcloud desktop mobile">
-    
-  <header>
-    
-      <a href='/blog/tags/'><i class="fa-solid fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <a href="/tags/Swift/" style="font-size: 14px; color: #999">Swift</a>
-    </div>
-  </section>
-
-
-    
-  
-
   
 
 
 <div class="widget-sticky">
+
+  
+  
+
+
+<section class="widget toc-wrapper desktop mobile" id="toc-div" >
+  
+  <header>
+    
+      <i class="fa-solid fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+  <div class='content'>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Swift%E7%AC%94%E8%AE%B0"><span class="toc-text">Swift笔记</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E9%83%A8%E5%88%86"><span class="toc-text">基础部分</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%98%E9%87%8F%E5%A3%B0%E6%98%8E-%E5%B8%B8%E9%87%8F%E5%A3%B0%E6%98%8E"><span class="toc-text">变量声明&#x2F;常量声明</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%B1%BB%E5%9E%8B%E6%B3%A8%E8%A7%A3"><span class="toc-text">类型注解</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B8%B8%E9%87%8F%E5%92%8C%E5%8F%98%E9%87%8F%E7%9A%84%E5%91%BD%E5%90%8D"><span class="toc-text">常量和变量的命名</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B3%A8%E9%87%8A"><span class="toc-text">注释</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%86%E5%8F%B7"><span class="toc-text">分号</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B4%E6%95%B0"><span class="toc-text">整数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B5%AE%E7%82%B9%E6%95%B0"><span class="toc-text">浮点数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%B1%BB%E5%9E%8B%E5%AE%89%E5%85%A8%E5%92%8C%E7%B1%BB%E5%9E%8B%E6%8E%A8%E6%96%AD"><span class="toc-text">类型安全和类型推断</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E5%80%BC%E5%9E%8B%E5%AD%97%E9%9D%A2%E9%87%8F"><span class="toc-text">数值型字面量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B4%E6%95%B0%E5%92%8C%E6%B5%AE%E7%82%B9%E6%95%B0%E8%BD%AC%E6%8D%A2"><span class="toc-text">整数和浮点数转换</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%B1%BB%E5%9E%8B%E5%88%AB%E5%90%8D"><span class="toc-text">类型别名</span></a></li></ol></li></ol></li></ol>
+  </div>
+</section>
+
+  
 
 </div>
 
@@ -2671,6 +2792,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
   <!-- Custom Files side end -->
 </aside>
+
 
 
         </div>
@@ -3152,7 +3274,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"https://schema.org.cn","@type":"Organization","name":"Starcraft","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"https://schema.org.cn","@type":"Person","name":"Starcraft","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"always learning"},{"@context":"https://schema.org.cn","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Starcraft"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/archives/","name":"Archive"}}]},{"@context":"https://schema.org.cn","@type":"WebSite","name":"Starcraft","url":"http://example.com/","keywords":null,"description":"always learning","author":{"@type":"Person","name":"Starcraft","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"always learning"},"publisher":{"@type":"Organization","name":"Starcraft","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"https://schema.org.cn","@type":"BlogPosting","description":"always learning","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage"},"author":{"@type":"Person","name":"Starcraft","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"Starcraft","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"wordCount":0,"image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"https://schema.org.cn","@type":"Organization","name":"Starcraft","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"https://schema.org.cn","@type":"Person","name":"Starcraft","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"always learning"},{"@context":"https://schema.org.cn","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Starcraft"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2024/02/06/Swift基础入门/","name":"Swift基础入门"}}]},{"@context":"https://schema.org.cn","@type":"WebSite","name":"Starcraft","url":"http://example.com/","keywords":null,"description":"always learning","author":{"@type":"Person","name":"Starcraft","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"always learning"},"publisher":{"@type":"Organization","name":"Starcraft","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"https://schema.org.cn","@type":"BlogPosting","headline":"Swift基础入门","description":"always learning","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2024/02/06/Swift%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/"},"author":{"@type":"Person","name":"Starcraft","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"Starcraft","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2024/02/06/Swift%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/","wordCount":0,"datePublished":"2024-02-06T14:56:25.000Z","dateModified":"2025-05-06T14:58:32.104Z","keywords":"Swift","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
