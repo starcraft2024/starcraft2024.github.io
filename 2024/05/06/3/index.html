@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <!-- SEO相关 -->
   
-  <link rel="canonical" href="http://example.com/tags/"/>
+  <link rel="canonical" href="http://example.com/2024/05/06/3/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -33,20 +33,21 @@
 
   <!-- feed -->
   <!-- 页面元数据 -->
-  <title>tags - Starcraft</title>
-  <meta name="keywords" content="null">
+  <title>RSA低指数攻击 - Starcraft</title>
+  <meta name="keywords" content="RSA,null">
   <meta desc name="description" content="always learning - Starcraft - Starcraft">
   
-<meta property="og:type" content="website">
-<meta property="og:title" content="tags">
-<meta property="og:url" content="http://example.com/tags/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="RSA低指数攻击">
+<meta property="og:url" content="http://example.com/2024/05/06/3/index.html">
 <meta property="og:site_name" content="Starcraft">
-<meta property="og:description" content="always learning">
+<meta property="og:description" content="为什么将RSA公共指数设置为1的提交会出现问题？ ​	今天在cryptohack上做了一道公钥为1的题目，当我计算出明文的时候发现其与密文一模一样，这不经让人深思，是不是当公钥为1时，根本没有对原来的明文成功加密？ 对此网上有这样一个回答： ​		简而言之，当e&#x3D;1时，d&#x3D;1，加密是恒等映射，即不加密。 RSA 是一种密码系统——一种执行密钥生成、加密和解密的方法——以便您可以">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-<meta property="article:published_time" content="2025-05-06T14:48:32.000Z">
-<meta property="article:modified_time" content="2025-05-06T14:48:32.224Z">
+<meta property="article:published_time" content="2024-05-06T15:01:32.000Z">
+<meta property="article:modified_time" content="2025-05-06T15:06:07.371Z">
 <meta property="article:author" content="Starcraft">
+<meta property="article:tag" content="RSA">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
   <style>
@@ -2104,7 +2105,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 <script>
   window.pdata={}
-  pdata.ispage=false;
+  pdata.ispage=true;
   pdata.commentPath="";
   pdata.commentPlaceholder="";
   pdata.commentConfig={};
@@ -2442,8 +2443,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         <div class="body-wrapper">
           
 <div id="l_main" class=''>
-  <article itemscope itemtype="https://schema.org.cn/Article" class="article post white-box reveal md shadow floatable blur article-type-page" id="page" itemscope itemprop="blogPost">
-  <link itemprop="mainEntityOfPage" href="http://example.com/tags/index.html">
+  <article itemscope itemtype="https://schema.org.cn/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2024/05/06/3/">
   <span hidden itemprop="publisher" itemscope itemtype="https://schema.org.cn/Organization">
     <meta itemprop="name" content="Starcraft">
   </span>
@@ -2464,7 +2465,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
       <h1 class="title" itemprop="name headline">
-        tags
+        RSA低指数攻击
       </h1>
       <div class='new-meta-box'>
         
@@ -2486,10 +2487,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
         
           
-            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2025-05-06T22:48:32+08:00">
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2024-05-06T23:01:32+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2025年5月6日</p>
+    <p>发布于：2024年5月6日</p>
   </a>
 </div>
 
@@ -2512,9 +2513,66 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    
+    <h2 id="为什么将RSA公共指数设置为1的提交会出现问题？"><a href="#为什么将RSA公共指数设置为1的提交会出现问题？" class="headerlink" title="为什么将RSA公共指数设置为1的提交会出现问题？"></a>为什么将RSA公共指数设置为1的提交会出现问题？</h2><hr>
+<p>​	今天在cryptohack上做了一道公钥为1的题目，当我计算出明文的时候发现其与密文一模一样，这不经让人深思，是不是当公钥为1时，根本没有对原来的明文成功加密？</p>
+<p>对此网上有这样一个回答：</p>
+<p>​		<strong>简而言之，当e&#x3D;1时，d&#x3D;1，加密是恒等映射，即不加密。</strong></p>
+<p>RSA 是一种<em>密码系统</em>——一种执行密钥生成、加密和解密的方法——以便您可以安全地向其他人发送消息。 RSA 是称为<em><strong>公钥密码系统</strong></em>的一类成员，因为用于加密消息的密钥是<em><strong>公开的</strong></em>并且每个人都可以自由地知道。您用来解密用公钥加密的消息的密钥是秘密的，只有您知道，因此我们将其称为<em><strong>私钥</strong></em>。</p>
+<p>如果您将挂锁和钥匙想象为公钥和私钥的模拟，您可以看到这如何处理现实世界的消息：</p>
+<ul>
+<li>鲍勃给了爱丽丝一把挂锁（他的公钥）并保留了锁的钥匙（他的私钥）。</li>
+<li>现在，如果爱丽丝想向鲍勃发送消息，她会将消息放入一个盒子中，将他的挂锁放在盒子上，然后将盒子发送给他。</li>
+<li>只有鲍勃有钥匙，因此只有鲍勃可以打开挂锁并进入盒子。</li>
+</ul>
+<p>为了实际生成密钥，RSA 需要三个重要的数字：</p>
+<ul>
+<li>“N”，两个非常大的素数 p 和 q 的乘积</li>
+<li>“e”，“公共指数”</li>
+<li>“d”，“私人指数”</li>
+</ul>
+<p>RSA 安全性的很大一部分来自于这样一个事实：给定 N 和 e ，要弄清楚<code>d</code>是什么应该是非常困难的。 </p>
+<p>换句话说，如果我不知道鲍勃的挂锁是什么样子，那么逆向工程一把钥匙来打开鲍勃的挂锁应该是<strong>非常困难的。</strong></p>
+<h3 id="为什么1不好？"><a href="#为什么1不好？" class="headerlink" title="为什么1不好？"></a>为什么<code>1</code>不好？</h3><p><code>1</code>是一个糟糕的选择，因为它<strong>很容易</strong>对打开鲍勃挂锁的钥匙进行逆向工程，这与我们想要的相反。</p>
+<p>有问题的部分完整如下所示：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">def gen_keys(keydir, keyname, keysize, user=None):</span><br><span class="line">    # Generate a keypair for use with salt</span><br><span class="line">    # ...</span><br><span class="line">    gen = RSA.gen_key(keysize, 1, callback=lambda x, y, z: None)</span><br></pre></td></tr></table></figure>
+
+<p>这是一个 Python 片段，可生成 RSA 密钥<code>e = 1</code>。</p>
+<p><code>N</code>、<code>e</code>、 和之间的关系<code>d</code>由下式给出：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">d*e = 1 mod (p-1)(q-1)</span><br></pre></td></tr></table></figure>
+
+<p>但是等等：如果你<code>e = 1</code>像 SaltStack 那样选择 ，那么你就会遇到问题：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">d = 1 mod (p-1)(q-1)</span><br></pre></td></tr></table></figure>
+
+<p>现在您拥有私钥了！安全性被破坏了，因为你可以弄清楚<code>d</code>是什么。所以你可以解密每个人的传输——你已经做到了，这样你就可以通过鲍勃的挂锁轻松获得他的钥匙。哎呀。</p>
+<p>事实上，情况比这更糟。在 RSA 中，加密意味着您要<code>m</code>传输一条要使用公钥加密的消息<code>&lt;N,e&gt;</code>。加密消息<code>c</code>计算如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">c = m^e (mod N)</span><br></pre></td></tr></table></figure>
+
+<p>所以，如果<code>e = 1</code>，那么<code>m^e = m</code>，你就有<code>c = m mod N</code>。</p>
+<p>**但如果<code>m &lt; N</code>，那么<code>m mod N</code>就是<code>m</code>。**所以你有了：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">c = m</span><br></pre></td></tr></table></figure>
+
+<p>加密文本与消息文本相同，**因此根本没有加密！**双哎呀。</p>
+<p>希望大家清楚为什么<code>1</code>这是一个错误的选择！</p>
+<h3 id="为什么65537更好？"><a href="#为什么65537更好？" class="headerlink" title="为什么65537更好？"></a>为什么<code>65537</code>更好？</h3><p>65537 似乎是一个不寻常的、任意的选择。例如，您可能想知道为什么我们不能直接选择<code>e = 3</code>.越低<code>e</code>，加密速度就越快，因为要加密我们必须执行的任何内容：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">c = m^e (mod N)</span><br></pre></td></tr></table></figure>
+
+<p>当很大时，可以<code>m^e</code>是一个非常大的数。</p>
+<p>综上可以看出来，当公钥为1时，我们可以很轻易的得到私钥的值，RSA的加密意义全无，因为d &#x3D; 1，所以密文根本没有得到加密。</p>
+
   </div>
   
+  
+    
+    <div class='footer'>
+       <!-- 参考资料、相关资料等 -->
+      
+       <!-- 相关文章 -->
+      
+      <!-- 版权声明组件 -->
+      
+      <!-- 打赏组件 -->
+      
+    </div>
   
   
     
@@ -2524,7 +2582,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2025-05-06T22:48:32+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2025-05-06T23:06:07+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：2025年5月6日</p>
@@ -2535,6 +2593,13 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         
           
+  
+  
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/RSA/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>RSA</p></a></div>
+  <span hidden itemprop="keywords">RSA</span>
+  
+
 
         
       
@@ -2546,7 +2611,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/tags/index.html&title=tags - Starcraft&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2024/05/06/3/&title=RSA低指数攻击 - Starcraft&summary="
           
           >
           
@@ -2558,7 +2623,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/tags/index.html&title=tags - Starcraft&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2024/05/06/3/&title=RSA低指数攻击 - Starcraft&summary="
           
           >
           
@@ -2570,7 +2635,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/tags/index.html&title=tags - Starcraft&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2024/05/06/3/&title=RSA低指数攻击 - Starcraft&summary="
           
           >
           
@@ -2601,6 +2666,26 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
 
   
+    <div class="prev-next">
+      
+        <a class='prev' href='/2024/07/06/1/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>CBC模式攻击</p>
+          <p class='content'>CBC Mode
+AES具有的五种加密模式中，有一种类似于ECB的加密算法，即为CBC
+CBC（Cipher Block Chaining (CBC)）将明文分成若干个小段，然后对每一段进行加密...</p>
+        </a>
+      
+      
+        <a class='next' href='/2024/02/06/Swift%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/'>
+          <p class='title'>Swift基础入门<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>Swift笔记基础部分变量声明&#x2F;常量声明let用于声明常量，var则声明变量
+12let maximum = 10var attempt = 0
+
+综上，maximum即为常量，att...</p>
+        </a>
+      
+    </div>
+  
   <!-- 文章推荐 -->
   
   
@@ -2615,7 +2700,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <article class="post white-box shadow floatable blur" id="comments">
     <span hidden>
-      <meta itemprop="discussionUrl" content="/tags/index.html#comments">
+      <meta itemprop="discussionUrl" content="/2024/05/06/3/index.html#comments">
     </span>
     <p ct><i class='fa-solid fa-comments'></i> 评论</p>
     
@@ -2646,6 +2731,20 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
   
 
+
+<section class="widget toc-wrapper desktop mobile" id="toc-div" >
+  
+  <header>
+    
+      <i class="fa-solid fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+  <div class='content'>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E5%B0%86RSA%E5%85%AC%E5%85%B1%E6%8C%87%E6%95%B0%E8%AE%BE%E7%BD%AE%E4%B8%BA1%E7%9A%84%E6%8F%90%E4%BA%A4%E4%BC%9A%E5%87%BA%E7%8E%B0%E9%97%AE%E9%A2%98%EF%BC%9F"><span class="toc-text">为什么将RSA公共指数设置为1的提交会出现问题？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%881%E4%B8%8D%E5%A5%BD%EF%BC%9F"><span class="toc-text">为什么1不好？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%8865537%E6%9B%B4%E5%A5%BD%EF%BC%9F"><span class="toc-text">为什么65537更好？</span></a></li></ol></li></ol>
+  </div>
+</section>
 
   
 
@@ -3137,7 +3236,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"https://schema.org.cn","@type":"Organization","name":"Starcraft","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"https://schema.org.cn","@type":"Person","name":"Starcraft","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"always learning"},{"@context":"https://schema.org.cn","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Starcraft"}}]},{"@context":"https://schema.org.cn","@type":"WebSite","name":"Starcraft","url":"http://example.com/","keywords":null,"description":"always learning","author":{"@type":"Person","name":"Starcraft","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"always learning"},"publisher":{"@type":"Organization","name":"Starcraft","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"https://schema.org.cn","@type":"BlogPosting","headline":"tags","description":"always learning","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/tags/index.html"},"author":{"@type":"Person","name":"Starcraft","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"Starcraft","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/tags/index.html","wordCount":0,"datePublished":"2025-05-06T14:48:32.000Z","dateModified":"2025-05-06T14:48:32.224Z","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"https://schema.org.cn","@type":"Organization","name":"Starcraft","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"https://schema.org.cn","@type":"Person","name":"Starcraft","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"always learning"},{"@context":"https://schema.org.cn","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Starcraft"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2024/05/06/3/","name":"RSA低指数攻击"}}]},{"@context":"https://schema.org.cn","@type":"WebSite","name":"Starcraft","url":"http://example.com/","keywords":null,"description":"always learning","author":{"@type":"Person","name":"Starcraft","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"always learning"},"publisher":{"@type":"Organization","name":"Starcraft","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"https://schema.org.cn","@type":"BlogPosting","headline":"RSA低指数攻击","description":"always learning","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2024/05/06/3/"},"author":{"@type":"Person","name":"Starcraft","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"Starcraft","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2024/05/06/3/","wordCount":0,"datePublished":"2024-05-06T15:01:32.000Z","dateModified":"2025-05-06T15:06:07.371Z","keywords":"RSA","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 

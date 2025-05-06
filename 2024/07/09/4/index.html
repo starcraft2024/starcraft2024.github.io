@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <!-- SEO相关 -->
   
-  <link rel="canonical" href="http://example.com/tags/"/>
+  <link rel="canonical" href="http://example.com/2024/07/09/4/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -33,20 +33,21 @@
 
   <!-- feed -->
   <!-- 页面元数据 -->
-  <title>tags - Starcraft</title>
-  <meta name="keywords" content="null">
+  <title>ECB Mode - Starcraft</title>
+  <meta name="keywords" content="ECB,null">
   <meta desc name="description" content="always learning - Starcraft - Starcraft">
   
-<meta property="og:type" content="website">
-<meta property="og:title" content="tags">
-<meta property="og:url" content="http://example.com/tags/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ECB Mode">
+<meta property="og:url" content="http://example.com/2024/07/09/4/index.html">
 <meta property="og:site_name" content="Starcraft">
-<meta property="og:description" content="always learning">
+<meta property="og:description" content="ECB Mode 简介​	ECB 通过将明文分成n个大小的块，将每个块单独加密，从而得到一个密文。如果明文不能被块大小整除，那 么ECB模式则会通过附加一些字节从而使其能够被整除 ​	在ECB中，每个块是单独加密的，所以其相互独立  获取块的大小和明文的大小​	获取块大小应为解决ECB问题的第一步，可以通过纯手动来求解块的字节和明文的字节，假如加密输出的长度为八个字节，我在明文中添加一个字节，加密">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-<meta property="article:published_time" content="2025-05-06T14:48:32.000Z">
-<meta property="article:modified_time" content="2025-05-06T14:48:32.224Z">
+<meta property="article:published_time" content="2024-07-09T15:01:39.000Z">
+<meta property="article:modified_time" content="2025-05-06T15:07:31.173Z">
 <meta property="article:author" content="Starcraft">
+<meta property="article:tag" content="ECB">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
   <style>
@@ -2104,7 +2105,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 <script>
   window.pdata={}
-  pdata.ispage=false;
+  pdata.ispage=true;
   pdata.commentPath="";
   pdata.commentPlaceholder="";
   pdata.commentConfig={};
@@ -2442,8 +2443,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         <div class="body-wrapper">
           
 <div id="l_main" class=''>
-  <article itemscope itemtype="https://schema.org.cn/Article" class="article post white-box reveal md shadow floatable blur article-type-page" id="page" itemscope itemprop="blogPost">
-  <link itemprop="mainEntityOfPage" href="http://example.com/tags/index.html">
+  <article itemscope itemtype="https://schema.org.cn/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2024/07/09/4/">
   <span hidden itemprop="publisher" itemscope itemtype="https://schema.org.cn/Organization">
     <meta itemprop="name" content="Starcraft">
   </span>
@@ -2464,7 +2465,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
       <h1 class="title" itemprop="name headline">
-        tags
+        ECB Mode
       </h1>
       <div class='new-meta-box'>
         
@@ -2486,10 +2487,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
         
           
-            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2025-05-06T22:48:32+08:00">
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2024-07-09T23:01:39+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2025年5月6日</p>
+    <p>发布于：2024年7月9日</p>
   </a>
 </div>
 
@@ -2512,9 +2513,39 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    
+    <h2 id="ECB-Mode"><a href="#ECB-Mode" class="headerlink" title="ECB Mode"></a>ECB Mode</h2><hr>
+<h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>​	ECB 通过将明文分成n个大小的块，将每个块单独加密，从而得到一个密文。如果明文不能被块大小整除，那</p>
+<p>么ECB模式则会通过附加一些字节从而使其能够被整除</p>
+<p>​	在ECB中，每个块是单独加密的，所以其相互独立</p>
+<hr>
+<h3 id="获取块的大小和明文的大小"><a href="#获取块的大小和明文的大小" class="headerlink" title="获取块的大小和明文的大小"></a>获取块的大小和明文的大小</h3><p>​	获取块大小应为解决ECB问题的第一步，可以通过纯手动来求解块的字节和明文的字节，假如加密输出的长度为八个字节，我在明文中添加一个字节，加密输出的长度没改变，但是在添加三个字节的时候，密文的长度就发生了改变，那么块的字节数就是密文突变字节的长度，从而让我们得到了块的字节大小</p>
+<p>以<a target="_blank" rel="noopener" href="https://aes.cryptohack.org/ecb_oracle/%E9%A2%98%E7%9B%AE%E4%BD%9C%E4%B8%BA%E7%A4%BA%E4%BE%8B">https://aes.cryptohack.org/ecb_oracle/题目作为示例</a></p>
+<p><img src="C:\Users\林星烨\AppData\Roaming\Typora\typora-user-images\image-20240711114040731.png" class="lazyload" data-srcset="C:\Users\林星烨\AppData\Roaming\Typora\typora-user-images\image-20240711114040731.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20240711114040731"></p>
+<p>以十六进制形式输入12个a时，则认为输入了6个字节，此时返回的密文十六进制长度为64，即32个字节</p>
+<p>继续尝试输入第7个字节：</p>
+<p><img src="C:\Users\林星烨\AppData\Roaming\Typora\typora-user-images\image-20240711114300089.png" class="lazyload" data-srcset="C:\Users\林星烨\AppData\Roaming\Typora\typora-user-images\image-20240711114300089.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20240711114300089"></p>
+<p>​	很容易可以发现，此时的密文长度发生了突变，并且是从32字节突变为48字节，由此可以定义块的长度为16字节。而因为在输入第七个字节时才发生的突变，由此可见，明文的字节数应为26（26+6&#x3D;32）</p>
+<p>由上述过程我们得到了块的大小 16字节 明文大小 26字节</p>
+<p><img src="C:\Users\林星烨\AppData\Roaming\Typora\typora-user-images\image-20240711122602870.png" class="lazyload" data-srcset="C:\Users\林星烨\AppData\Roaming\Typora\typora-user-images\image-20240711122602870.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20240711122602870"></p>
+<p>可以通过强行补充字节来暴力破解出明文，即一个个字符求解。即输入15个字节时查看一次明文，然后遍历所有字符去得到明文的单个字节，从而依次求解得到明文</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 字符串转16进制</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">t_to_hex</span>(<span class="params">t</span>):</span><br><span class="line">    h = <span class="string">&#x27;&#x27;</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> t:</span><br><span class="line">        h += <span class="built_in">str</span>(<span class="built_in">hex</span>(<span class="built_in">ord</span>(i))[<span class="number">2</span>:])</span><br><span class="line">    <span class="keyword">return</span> h</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取返回的16进制数据</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">getCipher</span>(<span class="params">s</span>):</span><br><span class="line">    url1 = <span class="string">&quot;http://aes.cryptohack.org/ecb_oracle/encrypt/&quot;</span></span><br><span class="line">    url = url1 + t_to_hex(s) + <span class="string">&quot;/&quot;</span></span><br><span class="line">    re = requests.get(url)</span><br><span class="line">    <span class="keyword">return</span> re.text[<span class="number">15</span>:-<span class="number">3</span>]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 求第一部分前15字节</span></span><br><span class="line">c1 = <span class="string">&#x27;&#x27;</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, <span class="number">15</span>):</span><br><span class="line">    p = <span class="string">&#x27;a&#x27;</span> * (<span class="number">15</span> - i)</span><br><span class="line">    text0 = getCipher(p)[:<span class="number">32</span>]</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">32</span>, <span class="number">127</span>):</span><br><span class="line">        p_j = p + c1 + <span class="built_in">chr</span>(j)</span><br><span class="line">        <span class="keyword">if</span> text0 == getCipher(p_j)[:<span class="number">32</span>]:</span><br><span class="line">            c1 += <span class="built_in">chr</span>(j)</span><br><span class="line">            <span class="built_in">print</span>(c1)</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># c1 = &#x27;crypto&#123;p3n6u1n5&#x27;</span></span><br><span class="line"><span class="comment"># 求第二部分剩余的字节</span></span><br><span class="line">c2 = c1</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">9</span>, <span class="number">15</span>):</span><br><span class="line">    p = <span class="string">&#x27;a&#x27;</span> * (<span class="number">16</span> - i)</span><br><span class="line">    text0 = getCipher(p)[<span class="number">32</span>:<span class="number">64</span>]</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">32</span>, <span class="number">127</span>):</span><br><span class="line">        p_j = p + c2 + <span class="built_in">chr</span>(j)</span><br><span class="line">        <span class="keyword">if</span> text0 == getCipher(p_j)[<span class="number">32</span>:<span class="number">64</span>]:</span><br><span class="line">            c2 += <span class="built_in">chr</span>(j)</span><br><span class="line">            <span class="built_in">print</span>(c2)</span><br><span class="line">            <span class="keyword">if</span> <span class="built_in">chr</span>(j) == <span class="string">&quot;&#125;&quot;</span>:</span><br><span class="line">                exit()</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Y3J5cHRve3AzbjZ1MW41X2g0NzNfM2NifQ==</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>代码运行时间较长，待优化</p>
+
   </div>
   
+  
+    
+    <div class='footer'>
+       <!-- 参考资料、相关资料等 -->
+      
+       <!-- 相关文章 -->
+      
+      <!-- 版权声明组件 -->
+      
+      <!-- 打赏组件 -->
+      
+    </div>
   
   
     
@@ -2524,7 +2555,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2025-05-06T22:48:32+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2025-05-06T23:07:31+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：2025年5月6日</p>
@@ -2535,6 +2566,13 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         
           
+  
+  
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/ECB/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>ECB</p></a></div>
+  <span hidden itemprop="keywords">ECB</span>
+  
+
 
         
       
@@ -2546,7 +2584,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/tags/index.html&title=tags - Starcraft&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2024/07/09/4/&title=ECB Mode - Starcraft&summary="
           
           >
           
@@ -2558,7 +2596,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/tags/index.html&title=tags - Starcraft&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2024/07/09/4/&title=ECB Mode - Starcraft&summary="
           
           >
           
@@ -2570,7 +2608,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/tags/index.html&title=tags - Starcraft&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2024/07/09/4/&title=ECB Mode - Starcraft&summary="
           
           >
           
@@ -2601,6 +2639,27 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
 
   
+    <div class="prev-next">
+      
+        <a class='prev' href='/2024/08/06/5/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>OFB Mode</p>
+          <p class='content'>OFB Mode
+
+
+OFB模式的全称是output-Feedback模式（输出反馈模式）。在OFB模式中，密码算法的输出会反馈到密码算法的输入中。
+OFB模式不是通过密码算法对明文直接加密的，...</p>
+        </a>
+      
+      
+        <a class='next' href='/2024/07/06/1/'>
+          <p class='title'>CBC模式攻击<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>CBC Mode
+AES具有的五种加密模式中，有一种类似于ECB的加密算法，即为CBC
+CBC（Cipher Block Chaining (CBC)）将明文分成若干个小段，然后对每一段进行加密...</p>
+        </a>
+      
+    </div>
+  
   <!-- 文章推荐 -->
   
   
@@ -2615,7 +2674,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <article class="post white-box shadow floatable blur" id="comments">
     <span hidden>
-      <meta itemprop="discussionUrl" content="/tags/index.html#comments">
+      <meta itemprop="discussionUrl" content="/2024/07/09/4/index.html#comments">
     </span>
     <p ct><i class='fa-solid fa-comments'></i> 评论</p>
     
@@ -2646,6 +2705,20 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
   
 
+
+<section class="widget toc-wrapper desktop mobile" id="toc-div" >
+  
+  <header>
+    
+      <i class="fa-solid fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+  <div class='content'>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#ECB-Mode"><span class="toc-text">ECB Mode</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%80%E4%BB%8B"><span class="toc-text">简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96%E5%9D%97%E7%9A%84%E5%A4%A7%E5%B0%8F%E5%92%8C%E6%98%8E%E6%96%87%E7%9A%84%E5%A4%A7%E5%B0%8F"><span class="toc-text">获取块的大小和明文的大小</span></a></li></ol></li></ol>
+  </div>
+</section>
 
   
 
@@ -3137,7 +3210,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"https://schema.org.cn","@type":"Organization","name":"Starcraft","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"https://schema.org.cn","@type":"Person","name":"Starcraft","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"always learning"},{"@context":"https://schema.org.cn","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Starcraft"}}]},{"@context":"https://schema.org.cn","@type":"WebSite","name":"Starcraft","url":"http://example.com/","keywords":null,"description":"always learning","author":{"@type":"Person","name":"Starcraft","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"always learning"},"publisher":{"@type":"Organization","name":"Starcraft","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"https://schema.org.cn","@type":"BlogPosting","headline":"tags","description":"always learning","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/tags/index.html"},"author":{"@type":"Person","name":"Starcraft","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"Starcraft","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/tags/index.html","wordCount":0,"datePublished":"2025-05-06T14:48:32.000Z","dateModified":"2025-05-06T14:48:32.224Z","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"https://schema.org.cn","@type":"Organization","name":"Starcraft","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"https://schema.org.cn","@type":"Person","name":"Starcraft","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"always learning"},{"@context":"https://schema.org.cn","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Starcraft"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2024/07/09/4/","name":"ECB Mode"}}]},{"@context":"https://schema.org.cn","@type":"WebSite","name":"Starcraft","url":"http://example.com/","keywords":null,"description":"always learning","author":{"@type":"Person","name":"Starcraft","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"always learning"},"publisher":{"@type":"Organization","name":"Starcraft","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"https://schema.org.cn","@type":"BlogPosting","headline":"ECB Mode","description":"always learning","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2024/07/09/4/"},"author":{"@type":"Person","name":"Starcraft","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"Starcraft","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2024/07/09/4/","wordCount":0,"datePublished":"2024-07-09T15:01:39.000Z","dateModified":"2025-05-06T15:07:31.173Z","keywords":"ECB","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
