@@ -1,0 +1,317 @@
+<hr>
+<h2 id="layout-docsgroup-docs-v6order-601title-进阶设定short-title-6-进阶设定sidebar-docs-v6-toc-disqus-path"><a href="#layout-docsgroup-docs-v6order-601title-进阶设定short-title-6-进阶设定sidebar-docs-v6-toc-disqus-path" class="headerlink" title="layout: docsgroup: docs-v6order: 601title: 进阶设定short_title: 6. 进阶设定sidebar: [docs-v6, toc]disqus:  path: &#x2F;"></a>layout: docs<br>group: docs-v6<br>order: 601<br>title: 进阶设定<br>short_title: 6. 进阶设定<br>sidebar: [docs-v6, toc]<br>disqus:<br>  path: &#x2F;</h2><h2 id="设置子模块"><a href="#设置子模块" class="headerlink" title="设置子模块"></a>设置子模块</h2><p>{% folding yellow open, 将主题添加为子模块 %}</p>
+<p>{% note warning:: 开始前需要确认不存在 themes&#x2F;volantis 文件夹, 如果有, 请自行删除. %}</p>
+<p>{% tabs 子模块 %}</p>
+<!-- tab ssh -->
+
+<pre><code class="language-sh">git submodule add git@github.com:volantis-x/hexo-theme-volantis.git themes/volantis
+</code></pre>
+<!-- endtab -->
+<!-- tab https -->
+
+<pre><code class="language-sh">git submodule add https://github.com/volantis-x/hexo-theme-volantis.git themes/volantis
+</code></pre>
+<!-- endtab -->
+<p>{% endtabs %}</p>
+<p>{% endfolding %}</p>
+<h2 id="多人协同"><a href="#多人协同" class="headerlink" title="多人协同"></a>多人协同</h2><p>默认的作者信息在主题配置文件中设置：</p>
+<pre><code class="language-yaml"># 文章布局
+article:
+  ...
+  body:
+    ...
+    meta_library:
+      author:
+        avatar:
+        name: 请设置文章作者
+        url: /
+</code></pre>
+<p>Volantis 支持多个作者在一个站点发布文章，其他作者信息需要写在数据文件中，例如：</p>
+<pre><code class="language-yaml">Jon:
+  name: Jon Snow
+  avatar: https://cn.bing.com/th?id=AMMS_fc8f99fd41ebd737a71c4e13806db9a0&amp;w=110&amp;h=110&amp;c=7&amp;rs=1&amp;qlt=80&amp;pcl=f9f9f9&amp;cdv=1&amp;dpr=2&amp;pid=16.1
+  url: https://gameofthrones.fandom.com/wiki/Jon_Snow
+Dany:
+  name: Daenerys Targaryen
+  avatar: https://tse1-mm.cn.bing.net/th?id=OIP.Yax4wLzIFbcBVUa_RsKywQHaLH&amp;w=80&amp;h=80&amp;c=8&amp;rs=1&amp;qlt=90&amp;dpr=2&amp;pid=3.1&amp;rm=2
+  url: https://gameofthrones.fandom.com/wiki/Daenerys_Targaryen
+</code></pre>
+<p>在文章的 front-matter 中新增 <code>author</code> 即可：</p>
+<pre><code class="language-md">---
+title: Jon Snow | Game of Thrones Wiki | Fandom
+author: Jon
+---
+</code></pre>
+<h2 id="内容安全策略-CSP"><a href="#内容安全策略-CSP" class="headerlink" title="内容安全策略(CSP)"></a>内容安全策略(CSP)</h2><pre><code class="language-yaml"># 内容安全策略( CSP ) meta 标签 http-equiv=&quot;Content-Security-Policy&quot;
+# https://developer.mozilla.org/zh-CN/docs/Web/HTTP/CSP
+# https://content-security-policy.com/
+# 也可以设为 false 在 HTTP 标头中设置 https://volantis.js.org/v6/advanced-settings/#设置-HTTP-响应标头
+csp:
+  enable: true
+  content: &quot;
+    default-src &#39;self&#39; https:;
+    block-all-mixed-content;
+    base-uri &#39;self&#39; https:;
+    form-action &#39;self&#39; https:;
+    worker-src &#39;self&#39; https:;
+    connect-src &#39;self&#39; https: *;
+    img-src &#39;self&#39; data: https: *;
+    media-src &#39;self&#39; https: *;
+    font-src &#39;self&#39; data: https: *;
+    frame-src &#39;self&#39; https: *;
+    manifest-src &#39;self&#39; https: *;
+    child-src https:;
+    script-src &#39;self&#39; https: &#39;unsafe-inline&#39; *;
+    style-src &#39;self&#39; https: &#39;unsafe-inline&#39; *;
+  &quot;
+  # 可以使用自动程序替换默认的 &#39;unsafe-inline&#39; 和 * 生成更严格的内容安全策略.
+  # 另可以参考官网之前的 gulp 方案.（CSP Level 3 ：Safari 15.4+ Chrome 59+ Firefox 58+ Edge 79+）
+  # gulpfile.js https://gist.github.com/MHuiG/e50ce64fd94f641f679a0736fef925e4
+</code></pre>
+<h2 id="设置-HTTP-响应标头"><a href="#设置-HTTP-响应标头" class="headerlink" title="设置 HTTP 响应标头"></a>设置 HTTP 响应标头</h2><p>以 <a href="https://developers.cloudflare.com/rules/transform/response-header-modification/create-dashboard/">Cloudflare</a> 为例， 在 规则 &gt; 转换规则 &gt; HTTP 响应头修改 中，可以添加以下设置：</p>
+<ul>
+<li>内容安全策略( CSP )</li>
+</ul>
+<pre><code>Content-Security-Policy: default-src &#39;self&#39; https:; block-all-mixed-content; base-uri &#39;self&#39; https:; form-action &#39;self&#39; https:; worker-src &#39;self&#39; https:; connect-src &#39;self&#39; https: *; img-src &#39;self&#39; data: https: *; media-src &#39;self&#39; https: *; font-src &#39;self&#39; data: https: *; frame-src &#39;self&#39; https: *; manifest-src &#39;self&#39; https: *; child-src https:; script-src &#39;self&#39; https: &#39;unsafe-inline&#39; *; style-src &#39;self&#39; https: &#39;unsafe-inline&#39; *;
+</code></pre>
+<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/CSP">Doc for Content-Security-Policy</a></p>
+<ul>
+<li>不允许在 frame 中展示</li>
+</ul>
+<pre><code>x-frame-options: DENY
+</code></pre>
+<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/X-Frame-Options">Doc for X-Frame-Options</a></p>
+<h2 id="为网站提速"><a href="#为网站提速" class="headerlink" title="为网站提速"></a>为网站提速</h2><h3 id="加载速度"><a href="#加载速度" class="headerlink" title="加载速度"></a>加载速度</h3><ul>
+<li><p>减少不必要的 js 插件，例如字数统计、动态背景。</p>
+</li>
+<li><p>查找并解决拖慢速度的资源，以 Chrome 浏览器为例：</p>
+<ol>
+<li>页面中点击右键，选择「检查」。</li>
+<li>在右边的窗口中「Network」选项卡，并勾选「Disable cache」。</li>
+<li>刷新网页，查看加载速度慢的资源。<br>  3.1. 加载缓慢的图片，建议使用 CDN。<br>  3.2. 加载缓慢的可以不用的 js 插件，建议舍弃。<br>  3.3. 加载缓慢却必须使用的 js 插件，建议下载并自己上传至 CDN。</li>
+</ol>
+</li>
+</ul>
+<h3 id="运行速度"><a href="#运行速度" class="headerlink" title="运行速度"></a>运行速度</h3><ul>
+<li>访问具有动态特效背景（如雪花、粒子等）的网站时，手机很快会发烫变卡，笔记本很快会风扇狂转并且浏览器提示建议关闭此页面。如果你希望网站有好的使用体验请尽量不要安装这类插件。</li>
+</ul>
+<h2 id="优化-SEO"><a href="#优化-SEO" class="headerlink" title="优化 SEO"></a>优化 SEO</h2><h3 id="Robots"><a href="#Robots" class="headerlink" title="Robots"></a>Robots</h3><pre><code class="language-yaml">seo:
+  # When there are no keywords in the article&#39;s front-matter, use tags as keywords.
+  use_tags_as_keywords: true
+  # When there is no description in the article&#39;s front-matter, use excerpt as the description.
+  use_excerpt_as_description: true
+  robots:
+    home_first_page: index,follow
+    home_other_pages: noindex,follow
+    archive: noindex,follow
+    category: noindex,follow
+    tag: noindex,follow
+    # robots can be written in front-matter
+</code></pre>
+<p>在 front-matter 中，可以设置 <code>keywords</code>、<code>description</code>、<code>robots</code> 和 <code>seo_title</code>。其中 <code>seo_title</code> 仅仅用作网页标题，优先级高于 <code>title</code>。</p>
+<ul>
+<li><p>文章内部不要使用 H1 标题。</p>
+</li>
+<li><p>通过死链检测工具检查并删除无法访问的链接。</p>
+</li>
+<li><p>安装 SEO 优化插件：<br>{% link hexo-autonofollow, <a href="https://github.com/liuzc/hexo-autonofollow">https://github.com/liuzc/hexo-autonofollow</a> %}<br>{% link hexo-generator-seo-friendly-sitemap, <a href="https://github.com/ludoviclefevre/hexo-generator-seo-friendly-sitemap">https://github.com/ludoviclefevre/hexo-generator-seo-friendly-sitemap</a> %}</p>
+</li>
+<li><p>页面不要堆砌关键词，不要频繁更改路径。</p>
+</li>
+</ul>
+<h3 id="Open-Graph"><a href="#Open-Graph" class="headerlink" title="Open Graph"></a>Open Graph</h3><pre><code class="language-yaml"># https://ogp.me/
+# https://hexo.io/zh-cn/docs/helpers#open-graph
+open_graph:
+  image: https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png
+  twitter_card: summary # summary_large_image , summary
+  #twitter_id:
+  #twitter_site:
+</code></pre>
+<h3 id="Structured-Data"><a href="#Structured-Data" class="headerlink" title="Structured Data"></a>Structured Data</h3><pre><code class="language-yaml"># SEO 入门文档: https://developers.google.com/search/docs
+# https://schema.org.cn/
+# 结构化数据用于更改搜索结果的显示效果
+# 目前内置的结构化数据: blogposting, breadcrumblist, organization, person, website
+# 目前内置的富媒体搜索结果: 路径(面包屑导航), 徽标(Logo), 站点链接搜索框(SearchAction)
+# https://developers.google.com/search/docs/advanced/structured-data/intro-structured-data
+# 富媒体搜索结果测试: https://search.google.com/test/rich-results
+structured_data:
+  enable: true
+  # 以下是覆盖配置, 默认配置见 scripts/helpers/structured-data/lib/config.js
+  data:
+    person:
+      sns:
+        - https://github.com/volantis-x
+    logo:
+      path: https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png
+      width: 192
+      height: 192
+</code></pre>
+<h2 id="使用-CDN"><a href="#使用-CDN" class="headerlink" title="使用 CDN"></a>使用 CDN</h2><p>对于大部分将博客 deploy 到 GitHub 的用户来说，直接加载本地资源速度比较慢，可以使用 jsdelivr 为开源项目提供的 CDN 服务。</p>
+<h3 id="开启方法"><a href="#开启方法" class="headerlink" title="开启方法"></a>开启方法</h3><pre><code class="language-yaml">cdn_system:
+  # CDN 优先级 从高到低排序 写入 priority 列表即表示启用(enable)
+  priority: [custom, local, cdnjs, npm, static]
+  # ========================================================================
+  # cdn数据配置文件见 &quot;theme/_cdn.yml&quot;, 可以在 source/_data/cdn.yml 覆盖 theme/_cdn.yml
+  # 变量说明：
+  # 以下变量只能在 `prefix` 中使用。
+  # ${site_root}                站点根目录 一般是 &quot;/&quot;
+  # 以下变量只能在 `format` 中使用。
+  # ${prefix}                   CDN 链接前缀
+  # ${name}                     package 名称 见 &quot;theme/_cdn.yml&quot;
+  # ${version}                  package 版本 见 &quot;theme/_cdn.yml&quot;
+  # ${file}                     文件路径 见 &quot;theme/_cdn.yml&quot;
+  # ${min_file}                 文件路径 ${file} 后添加 .min. (jsdelivr、cdnjs 官方自带压缩)
+  # ${timestamp}                Hexo运行时的时间戳(eg：1661246702300), 可用于静态资源版本控制 format: ${prefix}${file}?v=${timestamp}
+  system_config:
+    # 自定义配置 使用 &quot;theme/_cdn.yml&quot; 中的名称作为配置项的键
+    custom:
+      #volantis_style: /css/style.css
+      #volantis_app: /js/app.js
+
+    # 主题 /js与/css目录 （一般放在本地，可以在此处配置站点CDN）,&quot;theme/_cdn.yml&quot; 中以 &quot;volantis_&quot; 开头的名称
+    # Tip: 在本配置文件中 匹配以 &quot;volantis-local&quot; 开头的链接路径替换为该格式的前缀开头 prefix
+    local:
+      # CDN 链接前缀
+      prefix: ${site_root}
+      # local CDN 格式
+      format: ${prefix}${file}
+    # npm
+    # https://www.npmjs.com/
+    # Tip: 在本配置文件中 匹配以 &quot;volantis-npm&quot; 开头的链接路径替换为该格式的前缀开头 prefix
+    npm:
+      # CDN 链接前缀
+      prefix: https://unpkg.com
+      # npm CDN 格式
+      format: ${prefix}/${name}@${version}/${file}
+    # volantis static 静态资源文件 npm 包 CDN 地址
+    # https://github.com/volantis-x/volantis-static
+    # Tip: 在本配置文件中 匹配以 &quot;volantis-static&quot; 开头的链接路径替换为该格式的前缀开头 prefix
+    static:
+      # CDN 链接前缀
+      prefix: https://unpkg.com/volantis-static@0.0.1660614606622
+      # volantis-static CDN 格式
+      format: ${prefix}/libs/${name}/${file}
+    # cdnjs
+    # https://cdnjs.com/
+    # Tip: 在本配置文件中 匹配以 &quot;volantis-cdnjs&quot; 开头的链接路径替换为该格式的前缀开头 prefix
+    cdnjs:
+      # CDN 链接前缀
+      prefix: https://cdnjs.cloudflare.com/ajax/libs
+      # cdnjs CDN 格式
+      format: ${prefix}/${name}/${version}/${min_file}
+  # ========================================================================
+</code></pre>
+<p>{% note info, 如果你需要对样式进行 DIY，可以只关闭 style 文件的 CDN。 %}</p>
+<p>从V5版本开始，首屏样式采用硬编码的方式写在HTML中。首屏样式内含 cover navbar search 的样式，其他样式放入&#x2F;css&#x2F;style.css异步加载。</p>
+<p>{% note warning up, 如果你需要对样式进行 DIY，请注意首屏渲染和异步延迟加载的差异。 %}</p>
+<h3 id="自定义-CDN"><a href="#自定义-CDN" class="headerlink" title="自定义 CDN"></a>自定义 CDN</h3><p>如果你把对应的文件上传到自己的 CDN 服务器，可以把对应的链接改为自己的 CDN 链接。</p>
+<h2 id="尝试使用-gulp-压缩静态文件"><a href="#尝试使用-gulp-压缩静态文件" class="headerlink" title="尝试使用 gulp 压缩静态文件"></a>尝试使用 gulp 压缩静态文件</h2><h3 id="安装压缩工具"><a href="#安装压缩工具" class="headerlink" title="安装压缩工具"></a>安装压缩工具</h3><pre><code class="language-shell">npm install -g gulp
+npm install --save-dev gulp gulp-html-minifier-terser gulp-htmlclean gulp-htmlmin gulp-clean-css gulp-terser gulp-sourcemaps
+</code></pre>
+<h3 id="gulp-配置文件"><a href="#gulp-配置文件" class="headerlink" title="gulp 配置文件"></a>gulp 配置文件</h3><p>参考文档： <a href="https://github.com/gulpjs/gulp">gulp</a> <a href="https://github.com/pioug/gulp-html-minifier-terser">gulp-html-minifier-terser</a> <a href="https://github.com/anseki/gulp-htmlclean">gulp-htmlclean</a> <a href="https://github.com/jonschlinkert/gulp-htmlmin">gulp-htmlmin</a> <a href="https://github.com/scniro/gulp-clean-css">gulp-clean-css</a> <a href="https://github.com/duan602728596/gulp-terser">gulp-terser</a> <a href="https://github.com/gulp-sourcemaps/gulp-sourcemaps">gulp-sourcemaps</a></p>
+<p>{% folding green, gulp 配置文件 %}</p>
+<p><a href="https://github.com/volantis-x/community/blob/main/gulpfile.js">https://github.com/volantis-x/community/blob/main/gulpfile.js</a></p>
+<script src="https://gist.github.com/MHuiG/4d443d3bfb10eac961a13e46023581f7.js"></script>
+
+<p>{% endfolding %}</p>
+<h3 id="运行-gulp"><a href="#运行-gulp" class="headerlink" title="运行 gulp"></a>运行 gulp</h3><pre><code class="language-shell">gulp
+</code></pre>
+<h2 id="尝试使用-babel-转换兼容-ES6"><a href="#尝试使用-babel-转换兼容-ES6" class="headerlink" title="尝试使用 babel 转换兼容 ES6"></a>尝试使用 babel 转换兼容 ES6</h2><p>如果想要兼容旧版浏览器，可以尝试使用 <a href="https://github.com/babel/gulp-babel">gulp-babel</a> 将 ES6 转换为 ES5。</p>
+<h3 id="安装-gulp-babel-工具"><a href="#安装-gulp-babel-工具" class="headerlink" title="安装 gulp-babel 工具"></a>安装 gulp-babel 工具</h3><pre><code class="language-bash">npm install -g gulp
+npm install --save-dev gulp-babel @babel/core @babel/preset-env
+</code></pre>
+<h3 id="gulp-配置文件-1"><a href="#gulp-配置文件-1" class="headerlink" title="gulp 配置文件"></a>gulp 配置文件</h3><p>参考文档： <a href="https://github.com/gulpjs/gulp">gulp</a> <a href="https://github.com/babel/gulp-babel">gulp-babel</a></p>
+<p>{% folding green, gulp 配置文件 %}</p>
+<p><a href="https://github.com/volantis-x/community/blob/main/gulpfile.js">https://github.com/volantis-x/community/blob/main/gulpfile.js</a></p>
+<pre><code class="language-js">gulp.src([&#39;./public/**/*.js&#39;, &#39;!./public/**/*.min.js&#39;, &#39;!./public/{lib,lib/**}&#39;, &#39;!./public/{libs,libs/**}&#39;, &#39;!./public/{media,media/**}&#39;])
+  .pipe(babel({
+    presets: [&#39;@babel/preset-env&#39;]
+  }))
+  .pipe(gulp.dest(&#39;./public&#39;))
+</code></pre>
+<p>{% endfolding %}</p>
+<h3 id="运行-gulp-1"><a href="#运行-gulp-1" class="headerlink" title="运行 gulp"></a>运行 gulp</h3><pre><code class="language-shell">gulp
+</code></pre>
+<h2 id="安装-Service-Worker-服务"><a href="#安装-Service-Worker-服务" class="headerlink" title="安装 Service Worker 服务"></a>安装 Service Worker 服务</h2><h3 id="方案一-安装插件"><a href="#方案一-安装插件" class="headerlink" title="方案一 安装插件"></a>方案一 安装插件</h3><p>安装 <a href="https://github.com/Colsrch/hexo-offline-popup">hexo-offline-popup</a>  或者 <a href="https://github.com/JLHwung/hexo-offline">hexo-offline</a> 插件，初次加载速度不变，后期切换页面和刷新网页速度越来越快。</p>
+<h3 id="方案二-使用-workbox-自定义配置"><a href="#方案二-使用-workbox-自定义配置" class="headerlink" title="方案二 使用 workbox 自定义配置"></a>方案二 使用 workbox 自定义配置</h3><p>{% folding green, step 1. 修改 blog&#x2F;_config.yml 文件。 %}</p>
+<pre><code class="language-yaml"># 全局导入
+import:
+  body_end:
+    - &lt;script&gt;&quot;serviceWorker&quot;in navigator&amp;&amp;navigator.serviceWorker.register(&quot;/sw.js&quot;).then(function(n){n.onupdatefound=function(){var e=n.installing;e.onstatechange=function(){switch(e.state){case&quot;installed&quot;:navigator.serviceWorker.controller?console.log(&quot;Updated serviceWorker.&quot;):console.log(&quot;serviceWorker Sucess!&quot;);break;case&quot;redundant&quot;:console.log(&quot;The installing service worker became redundant.&quot;)}}}}).catch(function(e){console.log(&quot;Error during service worker registration:&quot;,e)}); &lt;/script&gt;
+</code></pre>
+<p>{% endfolding %}</p>
+<p>{% folding green, step 2. 在 blog&#x2F;source 中创建 sw.js 文件。 %}</p>
+<p><a href="https://gist.github.com/MHuiG/a423c0a953ed5645840a651c33dcd60c">https://gist.github.com/MHuiG/a423c0a953ed5645840a651c33dcd60c</a></p>
+<script src="https://gist.github.com/MHuiG/a423c0a953ed5645840a651c33dcd60c.js"></script>
+
+<p>{% endfolding %}</p>
+<p>{% note warning up, 如果你使用了此方案，修改静态文件后发布网页一定要修改缓存版本号。 %}</p>
+<h3 id="方案三-参考官网-volantis-sw-js"><a href="#方案三-参考官网-volantis-sw-js" class="headerlink" title="方案三 参考官网 volantis-sw.js"></a>方案三 参考官网 volantis-sw.js</h3><p><a href="https://github.com/volantis-x/community/blob/main/source/volantis-sw.js">volantis-sw.js</a></p>
+<p><a href="https://github.com/volantis-x/hexo-theme-volantis/discussions/791">discussions&#x2F;791</a></p>
+<h2 id="安装「相关文章」插件"><a href="#安装「相关文章」插件" class="headerlink" title="安装「相关文章」插件"></a>安装「相关文章」插件</h2><ol>
+<li>安装插件</li>
+</ol>
+<pre><code class="language-sh">npm i -S hexo-related-popular-posts
+</code></pre>
+<ol start="2">
+<li>插件的自定义配置方法：<br>{% link hexo-related-popular-posts, <a href="https://github.com/tea3/hexo-related-popular-posts">https://github.com/tea3/hexo-related-popular-posts</a> %}</li>
+</ol>
+<p>如果您使用了头图，可以在站点配置文件中添加以下设置来让相关文章显示正确的文章头图：</p>
+<pre><code class="language-yaml">popularPosts:
+  eyeCatchImageAttributeName: headimg
+</code></pre>
+<p>{% noteblock warning up, 注意 %}</p>
+<p>需要升级到 5.0.1 及以上版本才可以支持自定义头图，详见 <a href="https://github.com/tea3/hexo-related-popular-posts/issues/29">#29</a></p>
+<p>{% endnoteblock %}</p>
+<h2 id="分析与统计"><a href="#分析与统计" class="headerlink" title="分析与统计"></a>分析与统计</h2><h3 id="数据统计"><a href="#数据统计" class="headerlink" title="数据统计"></a>数据统计</h3><h4 id="PV-和-UV"><a href="#PV-和-UV" class="headerlink" title="PV 和 UV"></a>PV 和 UV</h4><p>支持 <a href="http://busuanzi.ibruce.info/">不蒜子</a> 的访问统计，在配置文件中设置。</p>
+<pre><code class="language-yaml">plugins:
+  busuanzi: 
+    enable: true
+</code></pre>
+<p>我们还支持以下评论系统提供的访问统计: <a href="https://waline.js.org/">waline</a>、<a href="https://twikoo.js.org/">twikoo</a>、<a href="https://discuss.js.org/">discuss</a>、<a href="https://artalk.js.org/">artalk</a></p>
+<p>如需使用它们，请开启对应评论系统的相关设置，此时将接管含评论页面的 PV 量统计。</p>
+<p>{% note info :: 推广：<a href="https://dusays.com/476/">杜老师自建国内不蒜子统计平台</a>：4H8G，60G，下行 500M，上行 50M，阿里 CDN。 %}</p>
+<h4 id="字数和阅读时长"><a href="#字数和阅读时长" class="headerlink" title="字数和阅读时长"></a>字数和阅读时长</h4><ol>
+<li>安装以下插件：</li>
+</ol>
+<pre><code>npm i --save hexo-wordcount
+</code></pre>
+<ol start="2">
+<li>修改配置文件，将 <code>wordcount</code> 插件打开</li>
+</ol>
+<pre><code class="language-yaml">plugins:
+  ...
+  # 文章字数统计、阅读时长，开启需要安装插件: npm i --save hexo-wordcount
+  wordcount:
+    enable: #true
+</code></pre>
+<ol start="3">
+<li>然后修改配置文件，将 <code>wordcount</code> 写入需要显示的 meta 位置：</li>
+</ol>
+<pre><code class="language-yaml"># 文章布局
+article:
+  ...
+  # 文章详情页面的文章卡片本体布局方案
+  body:
+    # 文章顶部信息
+    # 从 meta_library 中取
+    top_meta: [..., wordcount, ...]
+    ...
+    # 文章底部信息
+    # 从 meta_library 中取
+    bottom_meta: [..., wordcount, ...]
+</code></pre>
+<h3 id="数据分析"><a href="#数据分析" class="headerlink" title="数据分析"></a>数据分析</h3><h4 id="百度统计"><a href="#百度统计" class="headerlink" title="百度统计"></a>百度统计</h4><pre><code class="language-yaml">baidu_analytics_key: 百度统计的key
+</code></pre>
+<h4 id="Google-Analytics"><a href="#Google-Analytics" class="headerlink" title="Google Analytics"></a>Google Analytics</h4><pre><code class="language-yaml">google_analytics_key: Google Analytics Key
+</code></pre>
+<h4 id="腾讯前端性能监控"><a href="#腾讯前端性能监控" class="headerlink" title="腾讯前端性能监控"></a>腾讯前端性能监控</h4><pre><code class="language-yaml">tencent_aegis_id: 上报 id
+</code></pre>
+<h4 id="51LA统计"><a href="#51LA统计" class="headerlink" title="51LA统计"></a>51LA统计</h4><pre><code class="language-yaml">v6_51_la: 应用id
+</code></pre>
+<h4 id="灵雀监控"><a href="#灵雀监控" class="headerlink" title="灵雀监控"></a>灵雀监控</h4><pre><code class="language-yaml">perf_51_la: 应用id
+</code></pre>
+<h4 id="CNZZ-统计"><a href="#CNZZ-统计" class="headerlink" title="CNZZ 统计"></a>CNZZ 统计</h4><p>请参考 ZYMIN 的这篇教程：<br>{% link Hexo hexo+ejs+material x 添加CNZZ统计代码, <a href="https://zymin.cn/arcticle/hexo+ejs+material.html">https://zymin.cn/arcticle/hexo+ejs+material.html</a> %}</p>
+<h2 id="更多进阶玩法"><a href="#更多进阶玩法" class="headerlink" title="更多进阶玩法"></a>更多进阶玩法</h2><p>详见 <a href="https://www.itrhx.com/">@TRHX</a> 的这篇博客：<br>{% link Hexo 博客主题个性化, <a href="https://www.itbob.cn/article/003/">https://www.itbob.cn/article/003/</a> %}</p>
+<p>内含卡片半透明、增加卡通人物、自定义鼠标样式、鼠标特效、烟花特效、彩色滚动字体、网站运行时间、动态浏览器标题、雪花飘落特效等多种详细教程。</p>
+<p>{% link 主题官网 #进阶玩法, <a href="https://volantis.js.org/categories/%E8%BF%9B%E9%98%B6%E7%8E%A9%E6%B3%95/">https://volantis.js.org/categories/进阶玩法/</a> %}</p>

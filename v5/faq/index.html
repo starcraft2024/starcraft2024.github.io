@@ -1,0 +1,59 @@
+<hr>
+<h2 id="layout-docsgroup-docs-volantis-latestorder-801title-FAQshort-title-8-FAQsidebar-docs-volantis-latest-toc-disqus-path"><a href="#layout-docsgroup-docs-volantis-latestorder-801title-FAQshort-title-8-FAQsidebar-docs-volantis-latest-toc-disqus-path" class="headerlink" title="layout: docsgroup: docs-volantis-latestorder: 801title: FAQshort_title: 8. FAQsidebar: [docs-volantis-latest, toc]disqus:  path: &#x2F;"></a>layout: docs<br>group: docs-volantis-latest<br>order: 801<br>title: FAQ<br>short_title: 8. FAQ<br>sidebar: [docs-volantis-latest, toc]<br>disqus:<br>  path: &#x2F;</h2><p>
+{% span logo center large, <sup>&ensp;</sup>Volantis<sup>5</sup> %}
+{% span center small logo, FAQ List For Volantis 5 %}
+</p>
+<br>
+
+<h2 id="这是什么？我在哪里？"><a href="#这是什么？我在哪里？" class="headerlink" title="这是什么？我在哪里？"></a>这是什么？我在哪里？</h2><p>我也不知道</p>
+<h2 id="我这里出现了故障，需要先做什么？"><a href="#我这里出现了故障，需要先做什么？" class="headerlink" title="我这里出现了故障，需要先做什么？"></a>我这里出现了故障，需要先做什么？</h2><p>
+{% span logo center small, Troubleshooting any problem without the error log
+is like driving with your eyes closed. %}
+{% span logo center small, 在没有错误日志的情况下诊断任何问题无异于闭眼开车 %}
+</p>
+<br>
+
+
+<h2 id="控制台报错-SyntaxError-Unexpected-token-‘-’"><a href="#控制台报错-SyntaxError-Unexpected-token-‘-’" class="headerlink" title="控制台报错 SyntaxError: Unexpected token ‘.’"></a>控制台报错 SyntaxError: Unexpected token ‘.’</h2><pre><code class="language-bash">  SyntaxError: Unexpected token &#39;.&#39;
+      at new Script (vm.js:88:7)
+      at createScript (vm.js:263:10)
+      at runInThisContext (vm.js:311:10)
+</code></pre>
+<p>node.js 版本过低，请升级至 v16.x 及以上版本！</p>
+<p>{% note info :: 配置和使用 volantis 5.x 之前请确保 node.js 升级至 <emp>v16.x 及以上</emp>版本！ %}</p>
+<h2 id="我应该使用哪个版本？"><a href="#我应该使用哪个版本？" class="headerlink" title="我应该使用哪个版本？"></a>我应该使用哪个版本？</h2><p>使用最新的版本</p>
+<h2 id="如何在魔改主题的情况下还能兼顾更新？"><a href="#如何在魔改主题的情况下还能兼顾更新？" class="headerlink" title="如何在魔改主题的情况下还能兼顾更新？"></a>如何在魔改主题的情况下还能兼顾更新？</h2><p>使用 <a href="/v5/development-api/#Custom-Files-%E8%87%AA%E5%AE%9A%E4%B9%89%E6%96%87%E4%BB%B6">Custom Files 自定义文件</a> 和 <a href="/v5/development-api/">Development API for Volantis</a>.</p>
+<p>使用 <a href="https://github.com/jiangtj/hexo-extend-theme">Hexo Theme Plus</a> 替换掉在 <code>layout</code> 文件夹下的主题文件.</p>
+<p>使用 <a href="https://hexo.io/zh-cn/docs/plugins.html">Hexo 插件系统</a> 在 <code>blog</code> 目录根下创建 <code>scripts</code> 文件夹编写脚本.</p>
+<h2 id="如何更新主题？"><a href="#如何更新主题？" class="headerlink" title="如何更新主题？"></a>如何更新主题？</h2><p><a href="/how-to-update/">RTFM</a></p>
+<h2 id="如何修改-favicon？"><a href="#如何修改-favicon？" class="headerlink" title="如何修改 favicon？"></a>如何修改 favicon？</h2><p><a href="/v5/site-settings/#%E7%BD%91%E7%AB%99%E5%9B%BE%E6%A0%87">RTFM</a></p>
+<h2 id="文档为什么和配置文件不一样？"><a href="#文档为什么和配置文件不一样？" class="headerlink" title="文档为什么和配置文件不一样？"></a>文档为什么和配置文件不一样？</h2><p>以配置文件为准，文档更新的不是非常及时</p>
+<h2 id="如何设置主页的背景图？"><a href="#如何设置主页的背景图？" class="headerlink" title="如何设置主页的背景图？"></a>如何设置主页的背景图？</h2><p>主题有俩种背景图片设置方式</p>
+<ul>
+<li>background 仅能设置一张背景图，且背景图范围仅为 cover 区域</li>
+<li>parallax 可以设置一张或更多的背景图，当 position 取值为 cover 时，背景图仅为 cover 区域，具有视差滚动效果。position 取值为 fixed 时，背景图固定在整个页面，不具有视差滚动效果。</li>
+</ul>
+<blockquote>
+<p>原 parallax 和 backstretch 已合并为 parallax<br>注意：背景图配置只能生效一个</p>
+</blockquote>
+<p><a href="https://github.com/volantis-x/community/issues/115#issuecomment-907983622">volantis-x&#x2F;community&#x2F;issues&#x2F;115#issuecomment-907983622</a></p>
+<h2 id="到哪里查找-fontawesome-图标？"><a href="#到哪里查找-fontawesome-图标？" class="headerlink" title="到哪里查找 fontawesome 图标？"></a>到哪里查找 fontawesome 图标？</h2><p> <a href="https://fontawesome.com/icons">https://fontawesome.com/icons</a></p>
+<h2 id="为什么无法正常显示-aplayer？"><a href="#为什么无法正常显示-aplayer？" class="headerlink" title="为什么无法正常显示 aplayer？"></a>为什么无法正常显示 aplayer？</h2><p>可能是网易云 API 崩溃了</p>
+<h2 id="图片怎么添加灯箱放大效果？"><a href="#图片怎么添加灯箱放大效果？" class="headerlink" title="图片怎么添加灯箱放大效果？"></a>图片怎么添加灯箱放大效果？</h2><p><a href="/v5/tag-plugins/#gallery">使用 gallery 标签</a></p>
+<h2 id="控制台有一个奇怪的-Warning？"><a href="#控制台有一个奇怪的-Warning？" class="headerlink" title="控制台有一个奇怪的 Warning？"></a>控制台有一个奇怪的 Warning？</h2><pre><code>(node:7973) Warning: Accessing non-existent property &#39;lineno&#39; of module exports inside circular dependency
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:7973) Warning: Accessing non-existent property &#39;column&#39; of module exports inside circular dependency
+(node:7973) Warning: Accessing non-existent property &#39;filename&#39; of module exports inside circular dependency
+(node:7973) Warning: Accessing non-existent property &#39;lineno&#39; of module exports inside circular dependency
+(node:7973) Warning: Accessing non-existent property &#39;column&#39; of module exports inside circular dependency
+(node:7973) Warning: Accessing non-existent property &#39;filename&#39; of module exports inside circular dependency
+</code></pre>
+<p>我想把它命名为 <code>Warning-738</code>.</p>
+<p><a href="https://github.com/volantis-x/hexo-theme-volantis/discussions/738">volantis-x&#x2F;hexo-theme-volantis&#x2F;discussions&#x2F;738</a></p>
+<h2 id="5-0-的友情链接页有啥变化？"><a href="#5-0-的友情链接页有啥变化？" class="headerlink" title="5.0 的友情链接页有啥变化？"></a>5.0 的友情链接页有啥变化？</h2><p><a href="https://github.com/volantis-x/hexo-theme-volantis/discussions/734">volantis-x&#x2F;hexo-theme-volantis&#x2F;discussions&#x2F;734</a></p>
+<h2 id="如何正确渲染多行-MathJax-公式？"><a href="#如何正确渲染多行-MathJax-公式？" class="headerlink" title="如何正确渲染多行 MathJax 公式？"></a>如何正确渲染多行 MathJax 公式？</h2><p><a href="https://shiraha.cn/2021/use-pandoc-to-render-multiline-formulas-correctly/">使用 pandoc 正确渲染多行 MathJax 公式</a></p>
+<p>或者直接放图片…</p>
+<h2 id="为什么文章会被截断？"><a href="#为什么文章会被截断？" class="headerlink" title="为什么文章会被截断？"></a>为什么文章会被截断？</h2><p><img src="/./images/12.png"></p>
+<h2 id="What-is-the-answer-to-Life-the-Universe-and-Everything"><a href="#What-is-the-answer-to-Life-the-Universe-and-Everything" class="headerlink" title="What is the answer to Life, the Universe, and Everything?"></a>What is the answer to Life, the Universe, and Everything?</h2><p>42</p>
+<p><img src="/./images/42.png" alt="42"></p>
+<h2 id="上面没有我要找的答案？"><a href="#上面没有我要找的答案？" class="headerlink" title="上面没有我要找的答案？"></a>上面没有我要找的答案？</h2><p>尝试 打开搜索 或 {% btn, 常见问题与反馈渠道, &#x2F;faqs&#x2F; %}</p>

@@ -1,0 +1,19 @@
+<hr>
+<h2 id="robots-noindex-nofollowsitemap-falselayout-pagetitle-网站与文章封面group-docs-v3order-305short-title-3-5-网站与文章封面meta-header-centertitle-sidebar-docs-v3-toc-repos-plugins-snackbar-oldversion"><a href="#robots-noindex-nofollowsitemap-falselayout-pagetitle-网站与文章封面group-docs-v3order-305short-title-3-5-网站与文章封面meta-header-centertitle-sidebar-docs-v3-toc-repos-plugins-snackbar-oldversion" class="headerlink" title="robots: noindex,nofollowsitemap: falselayout: pagetitle: 网站与文章封面group: docs-v3order: 305short_title: 3-5 网站与文章封面meta:  header: [centertitle]sidebar: [docs-v3, toc, repos]plugins:  - snackbar: oldversion"></a>robots: noindex,nofollow<br>sitemap: false<br>layout: page<br>title: 网站与文章封面<br>group: docs-v3<br>order: 305<br>short_title: 3-5 网站与文章封面<br>meta:<br>  header: [centertitle]<br>sidebar: [docs-v3, toc, repos]<br>plugins:<br>  - snackbar: oldversion</h2><h2 id="封面方案"><a href="#封面方案" class="headerlink" title="封面方案"></a>封面方案</h2><pre><code class="language-yaml">cover:
+  scheme: docs # docs, blog
+  ...
+</code></pre>
+<p>目前主题提供两种封面方案，全屏封面适用于项目文档，半屏封面适用于个人博客。您可以修改参数决定在任何页面是否显示。</p>
+<h2 id="封面布局"><a href="#封面布局" class="headerlink" title="封面布局"></a>封面布局</h2><pre><code class="language-yaml">cover:
+  ...
+  layout: dock # search (搜索), dock (坞), featured (精选), focus (焦点)
+  ...
+</code></pre>
+<h2 id="默认显示设置"><a href="#默认显示设置" class="headerlink" title="默认显示设置"></a>默认显示设置</h2><pre><code class="language-yaml">cover:
+  ...
+  display:
+    home: true
+    archive: false
+    others: false # can be written in front-matter &#39;cover: true&#39;
+</code></pre>
+<p>由于主页、归档是hexo自动生成的，您需要在主题配置文件中设置是否显示封面，而其它页面则可以在 <code>front-matter</code> 中通过设置 <code>cover: true/false</code> 来决定显示封面或者不显示封面。</p>

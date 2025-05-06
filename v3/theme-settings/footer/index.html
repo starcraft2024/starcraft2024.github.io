@@ -1,0 +1,26 @@
+<hr>
+<h2 id="robots-noindex-nofollowsitemap-falselayout-pagetitle-设置网站页脚group-docs-v3order-304short-title-3-4-设置网站页脚meta-header-centertitle-sidebar-docs-v3-toc-repos-plugins-snackbar-oldversion"><a href="#robots-noindex-nofollowsitemap-falselayout-pagetitle-设置网站页脚group-docs-v3order-304short-title-3-4-设置网站页脚meta-header-centertitle-sidebar-docs-v3-toc-repos-plugins-snackbar-oldversion" class="headerlink" title="robots: noindex,nofollowsitemap: falselayout: pagetitle: 设置网站页脚group: docs-v3order: 304short_title: 3-4 设置网站页脚meta:  header: [centertitle]sidebar: [docs-v3, toc, repos]plugins:  - snackbar: oldversion"></a>robots: noindex,nofollow<br>sitemap: false<br>layout: page<br>title: 设置网站页脚<br>group: docs-v3<br>order: 304<br>short_title: 3-4 设置网站页脚<br>meta:<br>  header: [centertitle]<br>sidebar: [docs-v3, toc, repos]<br>plugins:<br>  - snackbar: oldversion</h2><p>您通过 <code>layout</code> 可以自由布局网站页脚内容 <code>aplayer</code>, <code>social</code>, <code>license</code>, <code>info</code>, <code>copyright</code>。</p>
+<pre><code class="language-yaml">footer:
+  # layout of footer: [aplayer, social, license, info, copyright]
+  layout: [aplayer, social, license, info, copyright]
+  social:
+    - icon: fas fa-rss
+      url: atom.xml
+    - icon: fas fa-envelope
+      url: mailto:me@xaoxuu.com
+    - icon: fab fa-github
+      url: https://github.com/xaoxuu
+    - icon: fas fa-headphones-alt
+      url: https://music.163.com/#/user/home?id=63035382
+  copyright: &#39;[Copyright © 2017-2021 XXX](/)&#39;
+  # You can add your own property here. (Support markdown, for example: br: &#39;&lt;br&gt;&#39;)
+  br: &#39;&lt;br&gt;&#39;
+</code></pre>
+<p>其中，<code>aplayer</code> 需要在插件部分设置中启用。您可以新增文字属性，用于展示其它文字信息，例如：</p>
+<pre><code class="language-yaml">footer:
+  layout: [..., br, hello, ...]
+  ...
+  # You can add your own property here. (Support markdown, for example: br: &#39;&lt;br&gt;&#39;)
+  br: &#39;&lt;br&gt;&#39;
+  hello: &#39;[Hello World](/)&#39;
+</code></pre>

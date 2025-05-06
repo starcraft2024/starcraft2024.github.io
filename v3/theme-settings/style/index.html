@@ -1,0 +1,145 @@
+<hr>
+<h2 id="robots-noindex-nofollowsitemap-falselayout-pagetitle-自定义主题外观group-docs-v3order-302short-title-3-2-自定义主题外观meta-header-centertitle-sidebar-docs-v3-toc-repos-plugins-snackbar-oldversion"><a href="#robots-noindex-nofollowsitemap-falselayout-pagetitle-自定义主题外观group-docs-v3order-302short-title-3-2-自定义主题外观meta-header-centertitle-sidebar-docs-v3-toc-repos-plugins-snackbar-oldversion" class="headerlink" title="robots: noindex,nofollowsitemap: falselayout: pagetitle: 自定义主题外观group: docs-v3order: 302short_title: 3-2 自定义主题外观meta:  header: [centertitle]sidebar: [docs-v3, toc, repos]plugins:  - snackbar: oldversion"></a>robots: noindex,nofollow<br>sitemap: false<br>layout: page<br>title: 自定义主题外观<br>group: docs-v3<br>order: 302<br>short_title: 3-2 自定义主题外观<br>meta:<br>  header: [centertitle]<br>sidebar: [docs-v3, toc, repos]<br>plugins:<br>  - snackbar: oldversion</h2><h2 id="最大布局宽度"><a href="#最大布局宽度" class="headerlink" title="最大布局宽度"></a>最大布局宽度</h2><pre><code class="language-yaml">style:
+  ...
+  max_width: 1080px # Sum of body width and sidebar width
+</code></pre>
+<p>网页所呈现的内容的最大宽度，即 body 和 sidebar 的宽度之和。</p>
+<h2 id="抗锯齿"><a href="#抗锯齿" class="headerlink" title="抗锯齿"></a>抗锯齿</h2><pre><code class="language-yaml">style:
+  ...
+  font_smoothing: true # font-smoothing for webkit
+</code></pre>
+<h2 id="自定义光标样式"><a href="#自定义光标样式" class="headerlink" title="自定义光标样式"></a>自定义光标样式</h2><pre><code class="language-yaml">style:
+  ...
+  cursor:
+    enable: true
+    text: https://cdn.jsdelivr.net/gh/inkss/common@master/cursor/text.png
+    pointer: https://cdn.jsdelivr.net/gh/inkss/common@master/cursor/pointer.png
+    default: https://cdn.jsdelivr.net/gh/inkss/common@master/cursor/left_ptr.png
+    not-allowed: https://cdn.jsdelivr.net/gh/inkss/common@master/cursor/circle.png
+    zoom-out: https://cdn.jsdelivr.net/gh/inkss/common@master/cursor/zoom-out.png
+    zoom-in: https://cdn.jsdelivr.net/gh/inkss/common@master/cursor/zoom-in.png
+    grab: https://cdn.jsdelivr.net/gh/inkss/common@master/cursor/openhand.png
+</code></pre>
+<h2 id="导航栏样式"><a href="#导航栏样式" class="headerlink" title="导航栏样式"></a>导航栏样式</h2><p>您可以设置导航栏的高度以及视觉特效，视觉特效目前可选的有：</p>
+<ul>
+<li><strong>shadow</strong>：卡片阴影。</li>
+<li><strong>floatable</strong>：当鼠标移动到容器内时，呈现出浮起来的效果。</li>
+<li><strong>blur</strong>：背景模糊效果（毛玻璃），当浏览器不支持时显示为不透明。</li>
+</ul>
+<pre><code class="language-yaml">style:
+  ...
+  navbar:
+    height: 64px
+    effect: [shadow, blur] # [shadow, floatable, blur]
+</code></pre>
+<h2 id="滚动条样式"><a href="#滚动条样式" class="headerlink" title="滚动条样式"></a>滚动条样式</h2><pre><code class="language-yaml">style:
+  ...
+  scrollbar:
+    size: 4px
+    border: 2px
+    color: &#39;#2196f3&#39;
+    hover: &#39;#ff5722&#39;
+</code></pre>
+<h2 id="侧边栏样式"><a href="#侧边栏样式" class="headerlink" title="侧边栏样式"></a>侧边栏样式</h2><p>视觉特效参数同上，值得注意的是：卡片的 <code>floatable</code> 效果和 <code>blur</code> 效果相冲突。</p>
+<pre><code class="language-yaml">style:
+  ...
+  sidebar:
+    effect: [shadow] # [shadow, floatable, blur]
+</code></pre>
+<h2 id="正文区域样式"><a href="#正文区域样式" class="headerlink" title="正文区域样式"></a>正文区域样式</h2><p>视觉特效参数同上，值得注意的是：卡片的 <code>floatable</code> 效果和 <code>blur</code> 效果相冲突。您可以在 <code>language: true</code> 这里设置代码块显示语言名称。<code>text_align</code> 可以设置 h1&#x2F;h2&#x2F;h3&#x2F;h4&#x2F;p 的文字对齐方向。</p>
+<pre><code class="language-yaml">style:
+  ...
+  body:
+    effect: [shadow] # [shadow, floatable, blur]
+    highlight:
+      language: true # show language of codeblock
+      copy_btn: true
+    text_align: # left, right, justify, center
+      h1: left
+      h2: left
+      h3: left
+      h4: left
+      p: justify
+    note: # style for default note: {% note text %}
+      icon: &#39;\f054&#39;
+      color: &#39;&#39;
+</code></pre>
+<h2 id="布局间距"><a href="#布局间距" class="headerlink" title="布局间距"></a>布局间距</h2><p>您可以设置几种标题的布局间距 h2&#x2F;h3&#x2F;h4、段落间距 line、区块内部的段落间距 inline。</p>
+<pre><code class="language-yaml">style:
+  ...
+  gap:
+    h2: 48px # Spacing above H2 (only px unit)
+    h3: 32px # Spacing above H3 (only px unit)
+    h4: 16px # Spacing above H4 (only px unit)
+    paragraph: 1rem # Paragraph spacing between paragraphs
+    row: .5rem # Paragraph spacing between other elements
+</code></pre>
+<h2 id="自定义字体"><a href="#自定义字体" class="headerlink" title="自定义字体"></a>自定义字体</h2><p>您可以自定义正文和代码字体。</p>
+<pre><code class="language-yaml">style:
+  ...
+  fontfamily:
+    logofont:
+      fontfamily: &#39;&quot;Varela Round&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, Helvetica, Arial&#39;
+      name: &#39;Varela Round&#39;
+      url: https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/VarelaRound/VarelaRound-Regular.ttf
+      weight: normal
+      style: normal
+    bodyfont:
+      fontfamily: &#39;UbuntuMono, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, Helvetica, Arial&#39;
+      name: &#39;UbuntuMono&#39;
+      url: https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/UbuntuMono/UbuntuMono-Regular.ttf
+      weight: normal
+      style: normal
+    codefont:
+      fontfamily: &#39;Menlo, Monaco&#39;
+      name: &#39;Monaco&#39;
+      url: https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/Monaco/Monaco.ttf
+      weight: normal
+      style: normal
+</code></pre>
+<h2 id="自定义颜色"><a href="#自定义颜色" class="headerlink" title="自定义颜色"></a>自定义颜色</h2><pre><code class="language-yaml">style:
+  ...
+  color:
+    site: &#39;#21232F&#39; # Website background color
+    card: &#39;#444&#39; # Card background color
+    text: &#39;#fff&#39; # The color of the text on the card.
+    theme: &#39;#ff9800&#39; # Main color
+    link: &#39;#1BCDFC&#39; # Link color
+    hover: &#39;#ff5722&#39; # Link highlight color
+    inner: &#39;#333&#39; # Text color inside the button
+    block: &#39;#555&#39; # Block color
+    inlinecode: yellow # Inline code color
+    codeblock: &#39;#555&#39; # Codeblock color
+    p: &#39;#ccc&#39; # Paragraph color
+</code></pre>
+<h2 id="自定义右键菜单"><a href="#自定义右键菜单" class="headerlink" title="自定义右键菜单"></a>自定义右键菜单</h2><pre><code class="language-yaml">rightmenu:
+  enable: true
+  # hr: 分割线, music: 音乐控制器
+  layout: [home, help, examples, contributors, hr, source_docs, source_theme, hr, print, hr, music]
+  # 可选功能项
+  print:
+    name: 打印页面
+    icon: fa fa-print
+    onclick: document.execCommand(&#39;print&#39;)
+  # 自定义菜单的格式如下
+  help:
+    name: 常见问题
+    icon: fa fa-question
+    url: https://volantis.js.org/faqs/
+  examples:
+    name: 示例博客
+    icon: fa fa-rss
+    url: https://volantis.js.org/examples/
+  contributors:
+    name: 加入社区
+    icon: fa fa-fan fa-spin
+    url: https://volantis.js.org/contributors/
+  source_docs:
+    name: 本站源码
+    icon: fa fa-code-branch
+    url: https://github.com/volantis-x/volantis-docs/
+  source_theme:
+    name: 主题源码
+    icon: fa fa-code-branch
+    url: https://github.com/volantis-x/hexo-theme-volantis/
+</code></pre>

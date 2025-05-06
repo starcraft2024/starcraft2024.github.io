@@ -1,0 +1,237 @@
+<hr>
+<h2 id="robots-noindex-nofollowsitemap-falselayout-pagegroup-docs-v3order-502title-链接、按钮和菜单标签short-title-5-2-链接、按钮和菜单标签meta-header-centertitle-sidebar-docs-v3-toc-repos-plugins-snackbar-oldversion-mathjax"><a href="#robots-noindex-nofollowsitemap-falselayout-pagegroup-docs-v3order-502title-链接、按钮和菜单标签short-title-5-2-链接、按钮和菜单标签meta-header-centertitle-sidebar-docs-v3-toc-repos-plugins-snackbar-oldversion-mathjax" class="headerlink" title="robots: noindex,nofollowsitemap: falselayout: pagegroup: docs-v3order: 502title: 链接、按钮和菜单标签short_title: 5-2 链接、按钮和菜单标签meta:  header: [centertitle]sidebar: [docs-v3, toc, repos]plugins:  - snackbar: oldversion  - mathjax"></a>robots: noindex,nofollow<br>sitemap: false<br>layout: page<br>group: docs-v3<br>order: 502<br>title: 链接、按钮和菜单标签<br>short_title: 5-2 链接、按钮和菜单标签<br>meta:<br>  header: [centertitle]<br>sidebar: [docs-v3, toc, repos]<br>plugins:<br>  - snackbar: oldversion<br>  - mathjax</h2><h2 id="外链卡片"><a href="#外链卡片" class="headerlink" title="外链卡片"></a>外链卡片</h2><p>请将您的 Volantis 升级至 <u>3.0</u> 版本以上使用。</p>
+<p>{% tabs link, 3 %}</p>
+<!-- tab 语法格式 -->
+
+<pre><code>{% link 标题, 链接, 图片 %}
+</code></pre>
+<!-- endtab -->
+
+<!-- tab 示例写法 -->
+
+<pre><code class="language-md">{% link 如何参与项目, http://localhost:4000/contributors/, https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets@master/logo/256/safari.png %}
+</code></pre>
+<!-- endtab -->
+
+<!-- tab 示例效果 -->
+
+<p>{% link 如何参与项目, <a href="http://localhost:4000/contributors/">http://localhost:4000/contributors/</a>, <a href="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets@master/logo/256/safari.png">https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets@master/logo/256/safari.png</a> %}</p>
+<!-- endtab -->
+
+<p>{% endtabs %}</p>
+<h2 id="基础按钮"><a href="#基础按钮" class="headerlink" title="基础按钮"></a>基础按钮</h2><p>请将您的 Volantis 升级至 <u>2.4</u> 版本以上使用。</p>
+<p>{% tabs btn, 4 %}</p>
+<!-- tab 语法格式 -->
+
+<pre><code>{% btn 样式参数（可选）, 标题, 链接, 图标（可选） %}
+</code></pre>
+<p>{% note warning, 可选的参数可以省略，但是前后顺序不能乱。 %}</p>
+<!-- endtab -->
+
+<!-- tab 参数列表 -->
+
+<p>{% p subtitle, 样式参数 %}</p>
+<pre><code>regular, large, center
+</code></pre>
+<p>{% p subtitle, 图标 %}</p>
+<p>第1个或者第2个参数包含 <code>fa-</code> 的那个被识别为图标。</p>
+<!-- endtab -->
+
+<!-- tab 示例写法 -->
+
+<pre><code class="language-md">不设置任何参数的 {% btn 按钮, / %} 适合融入段落中。
+
+regular 按钮适合独立于段落之外：
+
+{% btn regular, 示例博客, https://xaoxuu.com, fas fa-play-circle %}
+
+large 按钮更具有强调作用，建议搭配 center 使用：
+
+{% btn center large, 开始使用, https://volantis.js.org/v3/getting-started/, fas fa-download %}
+</code></pre>
+<!-- endtab -->
+
+<!-- tab 示例效果 -->
+
+<p>{% p subtitle, 行内按钮 %}</p>
+<p>不设置任何参数的 {% btn 按钮, &#x2F; %} 适合融入段落中。</p>
+<p>{% p subtitle, 空心按钮 %}</p>
+<p>{% btn regular, 示例博客, &#x2F;, fas fa-rss %} {% btn regular, 示例博客, , fas fa-rss %}</p>
+<p>{% btn regular large, 示例博客, &#x2F;, fas fa-rss %} {% btn regular large, 示例博客, , fas fa-rss %}</p>
+<p>居中：</p>
+<p>{% btn center large, 开始使用, <a href="https://volantis.js.org/v3/getting-started/">https://volantis.js.org/v3/getting-started/</a>, fas fa-download %}</p>
+<p>{% p subtitle, 实心按钮 %}</p>
+<p>{% btn solid, 示例博客, &#x2F;, fas fa-rss %} {% btn solid, 示例博客, , fas fa-rss %}</p>
+<p>{% btn solid large, 示例博客, &#x2F;, fas fa-rss %} {% btn solid large, 示例博客, , fas fa-rss %}</p>
+<p>居中：</p>
+<p>{% btn solid center large, 开始使用, <a href="https://volantis.js.org/v3/getting-started/">https://volantis.js.org/v3/getting-started/</a>, fas fa-download %}</p>
+<!-- endtab -->
+
+<p>{% endtabs %}</p>
+<h2 id="富文本按钮"><a href="#富文本按钮" class="headerlink" title="富文本按钮"></a>富文本按钮</h2><p>请将您的 Volantis 升级至 <u>2.3</u> 版本以上使用。</p>
+<p>{% tabs btns, 4 %}</p>
+<!-- tab 语法格式 -->
+
+<pre><code>{% btns 样式参数 %}
+{% cell 标题, 链接, 图片或者图标 %}
+{% cell 标题, 链接, 图片或者图标 %}
+{% endbtns %}
+</code></pre>
+<!-- endtab -->
+
+<!-- tab 参数列表 -->
+
+<p>样式参数位置可以写图片样式、布局方式，多个样式参数用空格隔开。</p>
+<p>{% p subtitle, 圆角样式 %}</p>
+<p>默认为方形</p>
+<pre><code>rounded, circle
+</code></pre>
+<p>{% p subtitle, 布局方式 %}</p>
+<p>默认为自动宽度，适合视野内只有一两个的情况。</p>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">wide</td>
+<td align="left">宽一点的按钮</td>
+</tr>
+<tr>
+<td align="left">fill</td>
+<td align="left">填充布局，自动铺满至少一行，多了会换行。</td>
+</tr>
+<tr>
+<td align="left">center</td>
+<td align="left">居中，按钮之间是固定间距。</td>
+</tr>
+<tr>
+<td align="left">around</td>
+<td align="left">居中分散</td>
+</tr>
+<tr>
+<td align="left">grid2</td>
+<td align="left">等宽最多2列，屏幕变窄会适当减少列数。</td>
+</tr>
+<tr>
+<td align="left">grid3</td>
+<td align="left">等宽最多3列，屏幕变窄会适当减少列数。</td>
+</tr>
+<tr>
+<td align="left">grid4</td>
+<td align="left">等宽最多4列，屏幕变窄会适当减少列数。</td>
+</tr>
+<tr>
+<td align="left">grid5</td>
+<td align="left">等宽最多5列，屏幕变窄会适当减少列数。</td>
+</tr>
+</tbody></table>
+<p>{% p subtitle, 增加文字样式 %}</p>
+<p>可以在容器内增加 <code>&lt;b&gt;标题&lt;/b&gt;</code> 和 <code>&lt;p&gt;描述文字&lt;/p&gt;</code></p>
+<!-- endtab -->
+
+<!-- tab 示例写法 -->
+
+<p>如果需要显示类似「团队成员」之类的一组含有头像的链接：</p>
+<pre><code class="language-md">{% btns circle grid5 %}
+{% cell xaoxuu, https://xaoxuu.com, https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/avatar/avatar.png %}
+{% cell xaoxuu, https://xaoxuu.com, https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/avatar/avatar.png %}
+{% cell xaoxuu, https://xaoxuu.com, https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/avatar/avatar.png %}
+{% cell xaoxuu, https://xaoxuu.com, https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/avatar/avatar.png %}
+{% cell xaoxuu, https://xaoxuu.com, https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/avatar/avatar.png %}
+{% endbtns %}
+</code></pre>
+<p>或者含有图标的按钮：</p>
+<pre><code class="language-md">{% btns rounded grid5 %}
+{% cell 下载源码, /, fas fa-download %}
+{% cell 查看文档, /, fas fa-book-open %}
+{% endbtns %}
+</code></pre>
+<p>圆形图标 + 标题 + 描述 + 图片 + 网格5列 + 居中</p>
+<pre><code class="language-md">{% btns circle center grid5 %}
+&lt;a href=&#39;https://apps.apple.com/cn/app/heart-mate-pro-hrm-utility/id1463348922?ls=1&#39;&gt;
+  &lt;i class=&#39;fab fa-apple&#39;&gt;&lt;/i&gt;
+  &lt;b&gt;心率管家&lt;/b&gt;
+  {% p red, 专业版 %}
+  &lt;img src=&#39;https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/qrcode/heartmate_pro.png&#39;&gt;
+&lt;/a&gt;
+&lt;a href=&#39;https://apps.apple.com/cn/app/heart-mate-lite-hrm-utility/id1475747930?ls=1&#39;&gt;
+  &lt;i class=&#39;fab fa-apple&#39;&gt;&lt;/i&gt;
+  &lt;b&gt;心率管家&lt;/b&gt;
+  {% p green, 免费版 %}
+  &lt;img src=&#39;https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/qrcode/heartmate_lite.png&#39;&gt;
+&lt;/a&gt;
+{% endbtns %}
+</code></pre>
+<!-- endtab -->
+
+<!-- tab 示例效果 -->
+
+<p>如果需要显示类似「团队成员」之类的一组含有头像的链接：<br>{% btns circle grid5 %}<br>{% cell xaoxuu, <a href="https://xaoxuu.com/">https://xaoxuu.com</a>, <a href="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/avatar/avatar.png">https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/avatar/avatar.png</a> %}<br>{% cell xaoxuu, <a href="https://xaoxuu.com/">https://xaoxuu.com</a>, <a href="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/avatar/avatar.png">https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/avatar/avatar.png</a> %}<br>{% cell xaoxuu, <a href="https://xaoxuu.com/">https://xaoxuu.com</a>, <a href="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/avatar/avatar.png">https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/avatar/avatar.png</a> %}<br>{% cell xaoxuu, <a href="https://xaoxuu.com/">https://xaoxuu.com</a>, <a href="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/avatar/avatar.png">https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/avatar/avatar.png</a> %}<br>{% cell xaoxuu, <a href="https://xaoxuu.com/">https://xaoxuu.com</a>, <a href="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/avatar/avatar.png">https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/avatar/avatar.png</a> %}<br>{% endbtns %}</p>
+<p>或者含有图标的按钮：<br>{% btns rounded grid5 %}<br>{% cell 下载源码, &#x2F;, fas fa-download %}<br>{% cell 查看文档, &#x2F;, fas fa-book-open %}<br>{% endbtns %}</p>
+<p>圆形图标 + 标题 + 描述 + 图片 + 网格5列 + 居中<br>{% btns circle center grid5 %}<br><a href='https://apps.apple.com/cn/app/heart-mate-pro-hrm-utility/id1463348922?ls=1'><br>  <i class='fab fa-apple'></i><br>  <b>心率管家</b><br>  {% p red, 专业版 %}<br>  <img src='https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/qrcode/heartmate_pro.png'><br></a><br><a href='https://apps.apple.com/cn/app/heart-mate-lite-hrm-utility/id1475747930?ls=1'><br>  <i class='fab fa-apple'></i><br>  <b>心率管家</b><br>  {% p green, 免费版 %}<br>  <img src='https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/qrcode/heartmate_lite.png'><br></a><br>{% endbtns %}</p>
+<!-- endtab -->
+
+<p>{% endtabs %}</p>
+<h2 id="下拉菜单"><a href="#下拉菜单" class="headerlink" title="下拉菜单"></a>下拉菜单</h2><p>请将您的 Volantis 升级至 <u>3.0</u> 版本以上使用。</p>
+<p>{% tabs menu, 3 %}</p>
+<!-- tab 语法格式 -->
+
+<p>{% p subtitle, 容器 %}</p>
+<pre><code class="language-md">{% menu 前缀（可省略）, 标题, 后缀（可省略） %}
+菜单内容
+{% endmenu %}
+</code></pre>
+<p>{% p subtitle, 菜单内容 %}</p>
+<p>菜单项</p>
+<pre><code class="language-md">{% menuitem 文本, 链接, 图标 %}
+</code></pre>
+<p>分割线</p>
+<pre><code class="language-md">{% menuitem hr %}
+</code></pre>
+<p>子菜单</p>
+<pre><code class="language-md">{% submenu 嵌套菜单, 图标 %}
+菜单内容
+{% endsubmenu %}
+</code></pre>
+<!-- endtab -->
+
+<!-- tab 示例写法 -->
+
+<p>{% p subtitle, 示例1 %}</p>
+<pre><code class="language-md">{% menu 下拉菜单 %}
+{% menuitem 主题源码, https://github.com/volantis-x/hexo-theme-volantis/, fas fa-file-code %}
+{% menuitem 更新日志, https://github.com/volantis-x/hexo-theme-volantis/releases/, fas fa-clipboard-list %}
+{% menuitem hr %}
+{% submenu 有疑问？, fas fa-question-circle %}
+{% menuitem 看 FAQ, /faqs/ %}
+{% menuitem 看 本站源码, https://github.com/volantis-x/volantis-docs/ %}
+{% menuitem 提 Issue, https://github.com/volantis-x/hexo-theme-volantis/issues/ %}
+{% endsubmenu %}
+{% endmenu %}
+</code></pre>
+<p>{% p subtitle, 示例2 %}</p>
+<pre><code class="language-md">{% menu 这个是, 下拉菜单 %}
+（同上）
+{% endmenu %}
+</code></pre>
+<p>{% p subtitle, 示例3 %}</p>
+<pre><code class="language-md">{% menu 这个是, 下拉菜单, 的示例效果。 %}
+（同上）
+{% endmenu %}
+</code></pre>
+<!-- endtab -->
+
+<!-- tab 示例效果 -->
+
+<p>{% p subtitle, 示例1 %}</p>
+<p>{% menu 下拉菜单 %}<br>{% menuitem 主题源码, <a href="https://github.com/volantis-x/hexo-theme-volantis/">https://github.com/volantis-x/hexo-theme-volantis/</a>, fas fa-file-code %}<br>{% menuitem 更新日志, <a href="https://github.com/volantis-x/hexo-theme-volantis/releases/">https://github.com/volantis-x/hexo-theme-volantis/releases/</a>, fas fa-clipboard-list %}<br>{% menuitem hr %}<br>{% submenu 有疑问？, fas fa-question-circle %}<br>{% menuitem 看 FAQ, &#x2F;faqs&#x2F; %}<br>{% menuitem 看 本站源码, <a href="https://github.com/volantis-x/volantis-docs/">https://github.com/volantis-x/volantis-docs/</a> %}<br>{% menuitem 提 Issue, <a href="https://github.com/volantis-x/hexo-theme-volantis/issues/">https://github.com/volantis-x/hexo-theme-volantis/issues/</a> %}<br>{% endsubmenu %}<br>{% endmenu %}</p>
+<p>{% p subtitle, 示例2 %}</p>
+<p>{% menu 这个是, 下拉菜单 %}<br>{% menuitem 主题源码, <a href="https://github.com/volantis-x/hexo-theme-volantis/">https://github.com/volantis-x/hexo-theme-volantis/</a>, fas fa-file-code %}<br>{% menuitem 更新日志, <a href="https://github.com/volantis-x/hexo-theme-volantis/releases/">https://github.com/volantis-x/hexo-theme-volantis/releases/</a>, fas fa-clipboard-list %}<br>{% menuitem hr %}<br>{% submenu 有疑问？, fas fa-question-circle %}<br>{% menuitem 看 FAQ, &#x2F;faqs&#x2F; %}<br>{% menuitem 看 本站源码, <a href="https://github.com/volantis-x/volantis-docs/">https://github.com/volantis-x/volantis-docs/</a> %}<br>{% menuitem 提 Issue, <a href="https://github.com/volantis-x/hexo-theme-volantis/issues/">https://github.com/volantis-x/hexo-theme-volantis/issues/</a> %}<br>{% endsubmenu %}<br>{% endmenu %}</p>
+<p>{% p subtitle, 示例3 %}</p>
+<p>{% menu 这个是, 下拉菜单, 的示例效果。 %}<br>{% menuitem 主题源码, <a href="https://github.com/volantis-x/hexo-theme-volantis/">https://github.com/volantis-x/hexo-theme-volantis/</a>, fas fa-file-code %}<br>{% menuitem 更新日志, <a href="https://github.com/volantis-x/hexo-theme-volantis/releases/">https://github.com/volantis-x/hexo-theme-volantis/releases/</a>, fas fa-clipboard-list %}<br>{% menuitem hr %}<br>{% submenu 有疑问？, fas fa-question-circle %}<br>{% menuitem 看 FAQ, &#x2F;faqs&#x2F; %}<br>{% menuitem 看 本站源码, <a href="https://github.com/volantis-x/volantis-docs/">https://github.com/volantis-x/volantis-docs/</a> %}<br>{% menuitem 提 Issue, <a href="https://github.com/volantis-x/hexo-theme-volantis/issues/">https://github.com/volantis-x/hexo-theme-volantis/issues/</a> %}<br>{% endsubmenu %}<br>{% endmenu %}</p>
+<!-- endtab -->
+
+<p>{% endtabs %}</p>

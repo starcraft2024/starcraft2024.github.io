@@ -1,0 +1,331 @@
+<hr>
+<h2 id="robots-noindex-nofollowsitemap-falselayout-pagegroup-docs-v3order-501title-文本和段落标签short-title-5-1-文本和段落标签meta-header-centertitle-sidebar-docs-v3-toc-repos-plugins-snackbar-oldversion"><a href="#robots-noindex-nofollowsitemap-falselayout-pagegroup-docs-v3order-501title-文本和段落标签short-title-5-1-文本和段落标签meta-header-centertitle-sidebar-docs-v3-toc-repos-plugins-snackbar-oldversion" class="headerlink" title="robots: noindex,nofollowsitemap: falselayout: pagegroup: docs-v3order: 501title: 文本和段落标签short_title: 5-1 文本和段落标签meta:  header: [centertitle]sidebar: [docs-v3, toc, repos]plugins:  - snackbar: oldversion"></a>robots: noindex,nofollow<br>sitemap: false<br>layout: page<br>group: docs-v3<br>order: 501<br>title: 文本和段落标签<br>short_title: 5-1 文本和段落标签<br>meta:<br>  header: [centertitle]<br>sidebar: [docs-v3, toc, repos]<br>plugins:<br>  - snackbar: oldversion</h2><h2 id="行内小标签"><a href="#行内小标签" class="headerlink" title="行内小标签"></a>行内小标签</h2><p>请将您的 Volantis 升级至 <u>3.0</u> 版本以上使用。</p>
+<p>{% tabs kbd-psw, 3 %}</p>
+<!-- tab 语法格式 -->
+
+<p>{% p subtitle, 带下划线的文本 %}</p>
+<pre><code class="language-md">{% u 带下划线的文本 %}
+</code></pre>
+<p>{% p subtitle, 带着重号的文本 %}</p>
+<pre><code class="language-md">{% emp 带着重号的文本 %}
+</code></pre>
+<p>{% p subtitle, 带波浪线的文本 %}</p>
+<pre><code class="language-md">{% wavy 波浪线 %}
+</code></pre>
+<p>{% p subtitle, 带删除线的文本 %}</p>
+<pre><code class="language-md">{% del 带删除线的文本 %}
+</code></pre>
+<p>{% p subtitle, 键盘样式的文本 %}</p>
+<pre><code class="language-md">{% kbd 键盘样式的文本 %}
+</code></pre>
+<p>{% p subtitle, 密码样式的文本 %}</p>
+<pre><code class="language-md">{% psw 密码样式的文本 %}
+</code></pre>
+<!-- endtab -->
+
+<!-- tab 示例写法 -->
+
+<p>{% p subtitle, 带下划线的文本 %}</p>
+<pre><code class="language-md">带 {% u 下划线 %} 的文本
+</code></pre>
+<p>{% p subtitle, 带着重号的文本 %}</p>
+<pre><code class="language-md">带 {% emp 着重号 %} 的文本
+</code></pre>
+<p>{% p subtitle, 带波浪线的文本 %}</p>
+<pre><code class="language-md">带 {% wavy 波浪线 %} 的文本
+</code></pre>
+<p>{% p subtitle, 带删除线的文本 %}</p>
+<pre><code class="language-md">带 {% del 删除线 %} 的文本
+</code></pre>
+<p>{% p subtitle, 键盘样式的文本 %}</p>
+<pre><code class="language-md">收藏页面：{% kbd command %} + {% kbd D %}
+</code></pre>
+<p>{% p subtitle, 密码样式的文本 %}</p>
+<pre><code class="language-md">验证码：{% psw 这里没有验证码 %}
+</code></pre>
+<!-- endtab -->
+
+<!-- tab 示例效果 -->
+
+<p>{% p subtitle, 带下划线的文本 %}</p>
+<p>带 {% u 下划线 %} 的文本</p>
+<p>{% p subtitle, 带着重号的文本 %}</p>
+<p>带 {% emp 着重号 %} 的文本</p>
+<p>{% p subtitle, 带波浪线的文本 %}</p>
+<p>带 {% wavy 波浪线 %} 的文本</p>
+<p>{% p subtitle, 带删除线的文本 %}</p>
+<p>带 {% del 删除线 %} 的文本</p>
+<p>{% p subtitle, 键盘样式的文本 %}</p>
+<p>收藏页面：{% kbd command %} + {% kbd D %}</p>
+<p>{% p subtitle, 密码样式的文本 %}</p>
+<p>验证码：{% psw 这里没有验证码 %}</p>
+<!-- endtab -->
+
+<p>{% endtabs %}</p>
+<h2 id="Span-P"><a href="#Span-P" class="headerlink" title="Span &amp; P"></a>Span &amp; P</h2><p>请将您的 Volantis 升级至 <u>2.5</u> 版本以上使用。</p>
+<p>{% tabs span-p, 4 %}</p>
+<!-- tab 语法格式 -->
+
+<p>{% p subtitle, 行内文本 %}</p>
+<pre><code class="language-md">{% span 样式参数, 文本内容 %}
+</code></pre>
+<p>{% p subtitle, 独立段落 %}</p>
+<pre><code class="language-md">{% p 样式参数, 文本内容 %}
+</code></pre>
+<!-- endtab -->
+
+<!-- tab 参数列表 -->
+
+<p>样式参数位置可以写颜色、大小和对齐方向，多个样式参数用空格隔开。</p>
+<p>{% p subtitle, 字体 %}</p>
+<pre><code>logo, code
+</code></pre>
+<p>{% p subtitle, 颜色 %}</p>
+<pre><code>red, yellow, green, cyan, blue, gray
+</code></pre>
+<p>{% p subtitle, 大小 %}</p>
+<pre><code>small, h4, h3, h2, h1, large, huge, ultra
+</code></pre>
+<p>{% p subtitle, 对齐方向 %}</p>
+<pre><code>left, center, right
+</code></pre>
+<!-- endtab -->
+
+<!-- tab 示例写法 -->
+
+<p>{% p subtitle, 彩色文字 %}</p>
+<pre><code class="language-md">在一段话中方便插入各种颜色的标签，包括：{% span red, 红色 %}、{% span yellow, 黄色 %}、{% span green, 绿色 %}、{% span cyan, 青色 %}、{% span blue, 蓝色 %}、{% span gray, 灰色 %}。
+</code></pre>
+<p>{% p subtitle, 超大文字 %}</p>
+<pre><code class="language-md">文档「开始」页面中的标题部分就是超大文字。
+
+{% p center logo large, Volantis %}
+{% p center small, A Wonderful Theme for Hexo %}
+</code></pre>
+<!-- endtab -->
+
+<!-- tab 示例效果 -->
+
+<p>{% p subtitle, 彩色文字 %}</p>
+<p>在一段话中方便插入各种颜色的标签，包括：{% span red, 红色 %}、{% span yellow, 黄色 %}、{% span green, 绿色 %}、{% span cyan, 青色 %}、{% span blue, 蓝色 %}、{% span gray, 灰色 %}。</p>
+<p>{% p subtitle, 超大文字 %}</p>
+<p>文档「开始」页面中的标题部分就是超大文字。</p>
+<p>{% p center logo large, Volantis %}<br>{% p center small, A Wonderful Theme for Hexo %}</p>
+<!-- endtab -->
+
+<p>{% endtabs %}</p>
+<h2 id="Note-NoteBlock"><a href="#Note-NoteBlock" class="headerlink" title="Note &amp; NoteBlock"></a>Note &amp; NoteBlock</h2><p>NoteBlock 是 Blockquote 的增强版，在左边显示图标，并且可以自定颜色。而 Note 是 NoteBlock 的简便写法。请将您的 Volantis 升级至 <u>2.3</u> 版本以上使用。</p>
+<p>{% tabs note, 4 %}</p>
+<!-- tab 语法格式 -->
+
+<p>{% p subtitle, Note %}</p>
+<pre><code class="language-md">{% note 样式参数, 文本内容 %}
+</code></pre>
+<p>{% p subtitle, NoteBlock %}</p>
+<pre><code class="language-md">{% noteblock 样式参数 %}
+
+文本段落
+
+{% endnoteblock %}
+</code></pre>
+<!-- endtab -->
+
+<!-- tab 参数列表 -->
+
+<p>样式参数位置可以写图标和颜色，多个样式参数用空格隔开。</p>
+<p>{% p subtitle, 图标 %}</p>
+<pre><code class="language-md">quote, info, warning, done/success, error/danger
+</code></pre>
+<pre><code class="language-md">radiation, bug, idea, link, paperclip, todo, msg, guide, download, up, undo
+</code></pre>
+<p>{% p subtitle, 颜色 %}</p>
+<pre><code class="language-md">clear, light, gray, red, yellow, green, cyan, blue
+</code></pre>
+<!-- endtab -->
+
+<!-- tab 示例写法 -->
+
+<p>{% p subtitle, Note %}</p>
+<pre><code class="language-md">{% note, 为简单的一句话提供的简便写法。 %}
+
+{% note success, 支持同样丰富的参数。 %}
+</code></pre>
+<p>{% p subtitle, NoteBlock %}</p>
+<pre><code class="language-md">可以在区块中放置一些复杂的结构，支持嵌套。
+
+{% noteblock quote %}
+
+{% p subtitle, 小标题 %}
+
+Windows 10不是為所有人設計,而是為每個人設計
+
+{% p subtitle, 嵌套测试 %}
+{% noteblock %}
+请坐和放宽，我正在帮你搞定一切...
+{% endnoteblock %}
+
+{% p subtitle, Folding 测试 %}
+{% folding 点击查看更多 %}
+
+{% note warning, 不要说我们没有警告过你 %}
+{% noteblock bug red %}
+我们都有不顺利的时候
+{% endnoteblock %}
+
+{% endfolding %}
+{% endnoteblock %}
+</code></pre>
+<!-- endtab -->
+
+<!-- tab 示例效果 -->
+
+<p>{% p subtitle, Note %}</p>
+<p>{% note, 为简单的一句话提供的简便写法。 %}</p>
+<p>{% note success, 支持同样丰富的参数。 %}</p>
+<p>{% p subtitle, NoteBlock %}</p>
+<p>可以在区块中放置一些复杂的结构，支持嵌套。</p>
+<p>{% noteblock quote %}</p>
+<p>{% p subtitle, 小标题 %}</p>
+<p>Windows 10不是為所有人設計,而是為每個人設計</p>
+<p>{% p subtitle, 嵌套测试 %}<br>{% noteblock %}<br>请坐和放宽，我正在帮你搞定一切…<br>{% endnoteblock %}</p>
+<p>{% p subtitle, Folding 测试 %}<br>{% folding 点击查看更多 %}</p>
+<p>{% note warning, 不要说我们没有警告过你 %}<br>{% noteblock bug red %}<br>我们都有不顺利的时候<br>{% endnoteblock %}</p>
+<p>{% endfolding %}<br>{% endnoteblock %}</p>
+<!-- endtab -->
+
+<p>{% endtabs %}</p>
+<h2 id="Checkbox-Radio"><a href="#Checkbox-Radio" class="headerlink" title="Checkbox &amp; Radio"></a>Checkbox &amp; Radio</h2><p>请将您的 Volantis 升级至 <u>2.6</u> 版本以上使用。</p>
+<p>{% tabs btn, 4 %}</p>
+<!-- tab 语法格式 -->
+
+<pre><code>{% checkbox 样式参数（可选）, 文本（支持简单md） %}
+</code></pre>
+<!-- endtab -->
+
+<!-- tab 参数列表 -->
+
+<p>{% p subtitle, 颜色 %}</p>
+<pre><code>red, yellow, green, cyan, blue
+</code></pre>
+<p>{% p subtitle, 样式 %}</p>
+<pre><code>plus, minus, times
+</code></pre>
+<p>{% p subtitle, 选中状态 %}</p>
+<pre><code>checked
+</code></pre>
+<!-- endtab -->
+
+<!-- tab 示例写法 -->
+
+<p>{% p subtitle, Checkbox %}</p>
+<pre><code class="language-md">{% checkbox 纯文本测试 %}
+{% checkbox checked, 支持简单的 [markdown](https://guides.github.com/features/mastering-markdown/) 语法 %}
+{% checkbox red, 支持自定义颜色 %}
+{% checkbox green checked, 绿色 + 默认选中 %}
+{% checkbox yellow checked, 黄色 + 默认选中 %}
+{% checkbox cyan checked, 青色 + 默认选中 %}
+{% checkbox blue checked, 蓝色 + 默认选中 %}
+{% checkbox plus green checked, 增加 %}
+{% checkbox minus yellow checked, 减少 %}
+{% checkbox times red checked, 叉 %}
+</code></pre>
+<p>{% p subtitle, Radio %}</p>
+<pre><code class="language-md">{% radio 纯文本测试 %}
+{% radio checked, 支持简单的 [markdown](https://guides.github.com/features/mastering-markdown/) 语法 %}
+{% radio red, 支持自定义颜色 %}
+{% radio green, 绿色 %}
+{% radio yellow, 黄色 %}
+{% radio cyan, 青色 %}
+{% radio blue, 蓝色 %}
+</code></pre>
+<!-- endtab -->
+
+<!-- tab 示例效果 -->
+
+<p>{% p subtitle, Checkbox %}</p>
+<p>{% checkbox 纯文本测试 %}<br>{% checkbox checked, 支持简单的 <a href="https://guides.github.com/features/mastering-markdown/">markdown</a> 语法 %}<br>{% checkbox red, 支持自定义颜色 %}<br>{% checkbox green checked, 绿色 + 默认选中 %}<br>{% checkbox yellow checked, 黄色 + 默认选中 %}<br>{% checkbox cyan checked, 青色 + 默认选中 %}<br>{% checkbox blue checked, 蓝色 + 默认选中 %}<br>{% checkbox plus green checked, 增加 %}<br>{% checkbox minus yellow checked, 减少 %}<br>{% checkbox times red checked, 叉 %}</p>
+<p>{% p subtitle, Radio %}</p>
+<p>{% radio 纯文本测试 %}<br>{% radio checked, 支持简单的 <a href="https://guides.github.com/features/mastering-markdown/">markdown</a> 语法 %}<br>{% radio red, 支持自定义颜色 %}<br>{% radio green, 绿色 %}<br>{% radio yellow, 黄色 %}<br>{% radio cyan, 青色 %}<br>{% radio blue, 蓝色 %}</p>
+<!-- endtab -->
+
+<p>{% endtabs %}</p>
+<h2 id="Timeline"><a href="#Timeline" class="headerlink" title="Timeline"></a>Timeline</h2><p>请将您的 Volantis 升级至 <u>3.0</u> 版本以上使用。</p>
+<p>{% tabs timeline, 3 %}</p>
+<!-- tab 语法格式 -->
+
+<pre><code>{% timeline 时间线标题 %}
+
+{% timenode 时间节点（标题） %}
+
+正文内容
+
+{% endtimenode %}
+
+{% timenode 时间节点（标题） %}
+
+正文内容
+
+{% endtimenode %}
+
+{% endtimeline %}
+</code></pre>
+<!-- endtab -->
+
+<!-- tab 示例写法 -->
+
+<pre><code class="language-md">{% timeline 升级小助手 %}
+
+{% timenode 2020-07-24 [2.6.6 -&gt; 3.0](https://github.com/volantis-x/hexo-theme-volantis/releases) %}
+
+1. 如果有 `hexo-lazyload-image` 插件，需要删除并重新安装最新版本，设置 `lazyload.isSPA: true`。
+2. 2.x 版本的 css 和 js 不适用于 3.x 版本，如果使用了 `use_cdn: true` 则需要删除。
+3. 2.x 版本的 fancybox 标签在 3.x 版本中被重命名为 gallery 。
+4. 2.x 版本的置顶 `top: true` 改为了 `pin: true`，并且同样适用于 `layout: page` 的页面。
+5. 如果使用了 `hexo-offline` 插件，建议卸载，3.0 版本默认开启了 pjax 服务。
+
+{% endtimenode %}
+
+{% timenode 2020-05-15 [2.6.3 -&gt; 2.6.6](https://github.com/volantis-x/hexo-theme-volantis/releases/tag/2.6.6) %}
+
+不需要额外处理。
+
+{% endtimenode %}
+
+{% timenode 2020-04-20 [2.6.2 -&gt; 2.6.3](https://github.com/volantis-x/hexo-theme-volantis/releases/tag/2.6.3) %}
+
+1. 全局搜索 `seotitle` 并替换为 `seo_title`。
+2. group 组件的索引规则有变，使用 group 组件的文章内，`group: group_name` 对应的组件名必须是 `group_name`。
+2. group 组件的列表名优先显示文章的 `short_title` 其次是 `title`。
+
+{% endtimenode %}
+
+{% endtimeline %}
+</code></pre>
+<!-- endtab -->
+
+<!-- tab 示例效果 -->
+
+<p>{% timeline 升级小助手 %}</p>
+<p>{% timenode 2020-07-24 <a href="https://github.com/volantis-x/hexo-theme-volantis/releases/tag/3.0.0">2.6.6 -&gt; 3.0.0</a> %}</p>
+<ol>
+<li>如果有 <code>hexo-lazyload-image</code> 插件，需要删除并重新安装最新版本，设置 <code>lazyload.isSPA: true</code>。</li>
+<li>2.x 版本的 css 和 js 不适用于 3.x 版本，如果使用了 <code>use_cdn: true</code> 则需要删除。</li>
+<li>2.x 版本的 fancybox 标签在 3.x 版本中被重命名为 gallery 。</li>
+<li>2.x 版本的置顶 <code>top: true</code> 改为了 <code>pin: true</code>，并且同样适用于 <code>layout: page</code> 的页面。</li>
+<li>如果使用了 <code>hexo-offline</code> 插件，建议卸载，3.0 版本默认开启了 pjax 服务。</li>
+</ol>
+<p>{% endtimenode %}</p>
+<p>{% timenode 2020-07-24 <a href="https://github.com/volantis-x/hexo-theme-volantis/releases/tag/2.6.6">2.6.3 -&gt; 2.6.6</a> %}</p>
+<p>不需要额外处理。</p>
+<p>{% endtimenode %}</p>
+<p>{% timenode 2020-07-24 <a href="https://github.com/volantis-x/hexo-theme-volantis/releases/tag/2.6.3">2.6.2 -&gt; 2.6.3</a> %}</p>
+<ol>
+<li>全局搜索 <code>seotitle</code> 并替换为 <code>seo_title</code>。</li>
+<li>group 组件的索引规则有变，使用 group 组件的文章内，<code>group: group_name</code> 对应的组件名必须是 <code>group_name</code>。</li>
+<li>group 组件的列表名优先显示文章的 <code>short_title</code> 其次是 <code>title</code>。</li>
+</ol>
+<p>{% endtimenode %}</p>
+<p>{% endtimeline %}</p>
+<!-- endtab -->
+
+<p>{% endtabs %}</p>

@@ -1,0 +1,339 @@
+<hr>
+<h2 id="layout-docsgroup-docs-v4order-601title-进阶设定short-title-6-进阶设定sidebar-docs-v4-toc-disqus-path-plugins-snackbar-oldversion"><a href="#layout-docsgroup-docs-v4order-601title-进阶设定short-title-6-进阶设定sidebar-docs-v4-toc-disqus-path-plugins-snackbar-oldversion" class="headerlink" title="layout: docsgroup: docs-v4order: 601title: 进阶设定short_title: 6. 进阶设定sidebar: [docs-v4, toc]disqus:  path: &#x2F;plugins:  - snackbar: oldversion"></a>layout: docs<br>group: docs-v4<br>order: 601<br>title: 进阶设定<br>short_title: 6. 进阶设定<br>sidebar: [docs-v4, toc]<br>disqus:<br>  path: &#x2F;<br>plugins:<br>  - snackbar: oldversion</h2><h2 id="设置子模块"><a href="#设置子模块" class="headerlink" title="设置子模块"></a>设置子模块</h2><p>{% folding yellow open, 将主题添加为子模块 %}</p>
+<pre><code class="language-sh">git submodule add https://github.com/volantis-x/hexo-theme-volantis.git themes/volantis
+</code></pre>
+<p>{% endfolding %}</p>
+<h2 id="多人协同"><a href="#多人协同" class="headerlink" title="多人协同"></a>多人协同</h2><p>默认的作者信息在主题配置文件中设置：</p>
+<pre><code class="language-yaml"># 文章布局
+article:
+  ...
+  body:
+    ...
+    meta_library:
+      author:
+        avatar:
+        name: 请设置文章作者
+        url: /
+</code></pre>
+<p>Volantis 支持多个作者在一个站点发布文章，其他作者信息需要写在数据文件中，例如：</p>
+<pre><code class="language-yaml">Jon:
+  name: Jon Snow
+  avatar: https://cn.bing.com/th?id=AMMS_fc8f99fd41ebd737a71c4e13806db9a0&amp;w=110&amp;h=110&amp;c=7&amp;rs=1&amp;qlt=80&amp;pcl=f9f9f9&amp;cdv=1&amp;dpr=2&amp;pid=16.1
+  url: https://gameofthrones.fandom.com/wiki/Jon_Snow
+Dany:
+  name: Daenerys Targaryen
+  avatar: https://tse1-mm.cn.bing.net/th?id=OIP.Yax4wLzIFbcBVUa_RsKywQHaLH&amp;w=80&amp;h=80&amp;c=8&amp;rs=1&amp;qlt=90&amp;dpr=2&amp;pid=3.1&amp;rm=2
+  url: https://gameofthrones.fandom.com/wiki/Daenerys_Targaryen
+</code></pre>
+<p>在文章的 front-matter 中新增 <code>author</code> 即可：</p>
+<pre><code class="language-md">---
+title: Jon Snow | Game of Thrones Wiki | Fandom
+author: Jon
+---
+</code></pre>
+<h2 id="为网站提速"><a href="#为网站提速" class="headerlink" title="为网站提速"></a>为网站提速</h2><h3 id="加载速度"><a href="#加载速度" class="headerlink" title="加载速度"></a>加载速度</h3><ul>
+<li><p>减少不必要的 js 插件，例如字数统计、动态背景。</p>
+</li>
+<li><p>查找并解决拖慢速度的资源，以 Chrome 浏览器为例：</p>
+<ol>
+<li>页面中点击右键，选择「检查」。</li>
+<li>在右边的窗口中「Network」选项卡，并勾选「Disable cache」。</li>
+<li>刷新网页，查看加载速度慢的资源。<br>  3.1. 加载缓慢的图片，建议使用 CDN。<br>  3.2. 加载缓慢的可以不用的 js 插件，建议舍弃。<br>  3.3. 加载缓慢却必须使用的 js 插件，建议下载并自己上传至 jsdelivr。</li>
+</ol>
+</li>
+</ul>
+<h3 id="运行速度"><a href="#运行速度" class="headerlink" title="运行速度"></a>运行速度</h3><ul>
+<li>访问具有动态特效背景（如雪花、粒子等）的网站时，手机很快会发烫变卡，笔记本很快会风扇狂转并且浏览器提示建议关闭此页面。如果你希望网站有好的使用体验请尽量不要安装这类插件。</li>
+</ul>
+<!--
+- 强烈推荐安装 [hexo-offline](https://github.com/JLHwung/hexo-offline) 插件，初次加载速度不变，后期切换页面和刷新网页速度越来越快。
+-->
+
+
+<h2 id="优化-SEO"><a href="#优化-SEO" class="headerlink" title="优化 SEO"></a>优化 SEO</h2><pre><code class="language-yaml">seo:
+  # When there are no keywords in the article&#39;s front-matter, use tags as keywords.
+  use_tags_as_keywords: true
+  # When there is no description in the article&#39;s front-matter, use excerpt as the description.
+  use_excerpt_as_description: true
+  robots:
+    home_first_page: index,follow
+    home_other_pages: noindex,follow
+    archive: noindex,follow
+    category: noindex,follow
+    tag: noindex,follow
+    # robots can be written in front-matter
+</code></pre>
+<p>在 front-matter 中，可以设置 <code>keywords</code>、<code>description</code>、<code>robots</code> 和 <code>seo_title</code>。其中 <code>seo_title</code> 仅仅用作网页标题，优先级高于 <code>title</code>。</p>
+<ul>
+<li><p>文章内部不要使用 H1 标题。</p>
+</li>
+<li><p>通过死链检测工具检查并删除无法访问的链接。</p>
+</li>
+<li><p>安装 SEO 优化插件：<br>{% link hexo-autonofollow, <a href="https://github.com/liuzc/hexo-autonofollow">https://github.com/liuzc/hexo-autonofollow</a> %}<br>{% link hexo-generator-seo-friendly-sitemap, <a href="https://github.com/ludoviclefevre/hexo-generator-seo-friendly-sitemap">https://github.com/ludoviclefevre/hexo-generator-seo-friendly-sitemap</a> %}</p>
+</li>
+<li><p>页面不要堆砌关键词，不要频繁更改路径。</p>
+</li>
+</ul>
+<h2 id="使用-CDN"><a href="#使用-CDN" class="headerlink" title="使用 CDN"></a>使用 CDN</h2><p>对于大部分将博客 deploy 到 GitHub 的用户来说，直接加载本地资源速度比较慢，可以使用 jsdelivr 为开源项目提供的 CDN 服务。</p>
+<h3 id="开启方法"><a href="#开启方法" class="headerlink" title="开启方法"></a>开启方法</h3><pre><code class="language-yaml"># use_cdn: /source/js/* 中的JS文件(JS Only)使用jsdelivr的min版本加速
+# 默认使用 https://cdn.jsdelivr.net/npm/hexo-theme-volantis@&lt;%- theme.info.theme_version %&gt;/source/js/*.min.js 的CDN压缩版本(min.js)，注意版本号对应关系！！可以通过修改以下配置项覆盖
+# 开发者注意 use_cdn 设置为 false
+use_cdn: true
+info:
+  theme_version: &#39;x.x.x&#39; # This is theme&#39;s version.
+  cdn:
+    js: # https://cdn.jsdelivr.net/npm/hexo-theme-volantis@&lt;%- theme.info.theme_version %&gt;/source/js/app.min.js # 注意版本!!!
+    css:
+      first: # /css/first.css (默认不提供CDN，first.css 中为首屏渲染的样式，内含 cover navbar search 的样式。)
+      style: # /css/style.css (默认不提供CDN，style.css 为异步延迟加载的样式。)
+</code></pre>
+<p>{% note info, 如果你需要对样式进行 DIY，可以只关闭 style 文件的 CDN。 %}</p>
+<p>{% note warning up, 如果你需要对样式进行 DIY，请注意首屏渲染和异步延迟加载的差异。 %}</p>
+<h3 id="自定义-CDN"><a href="#自定义-CDN" class="headerlink" title="自定义 CDN"></a>自定义 CDN</h3><p>如果你把对应的文件上传到自己的 CDN 服务器，可以把对应的链接改为自己的 CDN 链接。</p>
+<h2 id="尝试使用-Terser-压缩-ES6"><a href="#尝试使用-Terser-压缩-ES6" class="headerlink" title="尝试使用 Terser 压缩 ES6"></a>尝试使用 Terser 压缩 ES6</h2><h3 id="安装压缩工具"><a href="#安装压缩工具" class="headerlink" title="安装压缩工具"></a>安装压缩工具</h3><pre><code class="language-shell">npm install -g gulp
+npm install --save-dev gulp gulp-html-minifier-terser gulp-htmlclean gulp-htmlmin gulp-minify-css gulp-terser
+</code></pre>
+<h3 id="gulp-配置文件"><a href="#gulp-配置文件" class="headerlink" title="gulp 配置文件"></a>gulp 配置文件</h3><pre><code class="language-js">var gulp = require(&#39;gulp&#39;);
+var minifycss = require(&#39;gulp-minify-css&#39;);
+var htmlmin = require(&#39;gulp-html-minifier-terser&#39;);
+var htmlclean = require(&#39;gulp-htmlclean&#39;);
+var terser = require(&#39;gulp-terser&#39;);
+
+// 压缩css文件
+const minify_css = () =&gt; (
+    gulp.src([&#39;./public/**/*.css&#39;])
+        .pipe(minifycss())
+        .pipe(gulp.dest(&#39;./public&#39;))
+);
+
+// 压缩html文件
+const minify_html = () =&gt; (
+    gulp.src([&#39;./public/**/*.html&#39;,&#39;!./public/{lib,lib/**}&#39;])
+        .pipe(htmlclean())
+        .pipe(htmlmin({
+            removeComments: true,
+            minifyJS: true,
+            minifyCSS: true,
+            minifyURLs: true,
+        }))
+        .pipe(gulp.dest(&#39;./public&#39;))
+)
+
+// 压缩js文件
+const minify_js = () =&gt; (
+    gulp.src([&#39;./public/**/*.js&#39;, &#39;!./public/**/*.min.js&#39;,&#39;!./public/{lib,lib/**}&#39;])
+        .pipe(terser())
+        .pipe(gulp.dest(&#39;./public&#39;))
+)
+
+module.exports = {
+    minify_html: minify_html,
+    minify_css: minify_css,
+    minify_js: minify_js
+};
+gulp.task(&#39;one&#39;, gulp.parallel(
+    minify_html,
+    minify_css,
+    minify_js
+))
+
+gulp.task(&#39;default&#39;, gulp.series(&#39;one&#39;));
+</code></pre>
+<h3 id="运行压缩"><a href="#运行压缩" class="headerlink" title="运行压缩"></a>运行压缩</h3><pre><code class="language-shell">gulp
+</code></pre>
+<h2 id="安装-Service-Worker-服务"><a href="#安装-Service-Worker-服务" class="headerlink" title="安装 Service Worker 服务"></a>安装 Service Worker 服务</h2><pre><code class="language-yaml"># 全局导入
+import:
+  script:
+    - &lt;script&gt;&quot;serviceWorker&quot;in navigator&amp;&amp;navigator.serviceWorker.register(&quot;/sw.js&quot;).then(function(n){n.onupdatefound=function(){var e=n.installing;e.onstatechange=function(){switch(e.state){case&quot;installed&quot;:navigator.serviceWorker.controller?console.log(&quot;Updated serviceWorker.&quot;):console.log(&quot;serviceWorker Sucess!&quot;);break;case&quot;redundant&quot;:console.log(&quot;The installing service worker became redundant.&quot;)}}}}).catch(function(e){console.log(&quot;Error during service worker registration:&quot;,e)}); &lt;/script&gt;
+</code></pre>
+<p>在<code>blog/source</code>中创建<code>sw.js</code>文件。</p>
+<p>内容如下：</p>
+<pre><code class="language-js">importScripts(&#39;https://cdn.jsdelivr.net/npm/workbox-cdn@5.1.3/workbox/workbox-sw.js&#39;);
+
+workbox.setConfig({
+    modulePathPrefix: &#39;https://cdn.jsdelivr.net/npm/workbox-cdn@5.1.3/workbox/&#39;
+});
+
+const { core, precaching, routing, strategies, expiration, cacheableResponse, backgroundSync } = workbox;
+const { CacheFirst, NetworkFirst, NetworkOnly, StaleWhileRevalidate } = strategies;
+const { ExpirationPlugin } = expiration;
+const { CacheableResponsePlugin } = cacheableResponse;
+
+const cacheSuffixVersion = &#39;-000010&#39;, // 缓存版本号 极端重要，修改静态文件后发布网页一定要修改缓存版本号
+    maxEntries = 100;
+
+self.addEventListener(&#39;activate&#39;, (event) =&gt; {
+    event.waitUntil(
+        caches.keys().then((keys) =&gt; {
+            return Promise.all(keys.map((key) =&gt; {
+                if (!key.includes(cacheSuffixVersion)) return caches.delete(key);
+            }));
+        })
+    );
+});
+
+
+core.setCacheNameDetails({
+    prefix: &#39;volantis&#39;, // 极端重要 自己拟定一个名字
+    suffix: cacheSuffixVersion
+});
+
+core.skipWaiting();
+core.clientsClaim();
+precaching.cleanupOutdatedCaches();
+
+/*
+ * Precache
+ * - Static Assets
+ */
+precaching.precacheAndRoute( // 极端重要 定义首次缓存的静态文件 如果开启CDN需要修改为CDN链接
+    [
+        { url: &#39;/css/first.css&#39;, revision: null },
+        { url: &#39;/css/style.css&#39;, revision: null },
+        { url: &#39;/js/app.js&#39;, revision: null },
+    ],
+);
+
+/*
+ * Cache File From CDN
+ *
+ * Method: CacheFirst
+ * cacheName: static-immutable
+ * cacheTime: 30d
+ */
+
+// cdn.jsdelivr.net - cors enabled
+routing.registerRoute(
+    /.*cdn\.jsdelivr\.net/,
+    new CacheFirst({
+        cacheName: &#39;static-immutable&#39; + cacheSuffixVersion,
+        fetchOptions: {
+            mode: &#39;cors&#39;,
+            credentials: &#39;omit&#39;
+        },
+        plugins: [
+            new ExpirationPlugin({
+                maxAgeSeconds: 30 * 24 * 60 * 60,
+                purgeOnQuotaError: true
+            })
+        ]
+    })
+);
+
+// m7.music.126.net - cors enabled
+routing.registerRoute(
+    /.*m7\.music\.126\.net/,
+    new CacheFirst({
+        cacheName: &#39;static-immutable&#39; + cacheSuffixVersion,
+        fetchOptions: {
+            mode: &#39;cors&#39;,
+            credentials: &#39;omit&#39;
+        },
+        plugins: [
+            new ExpirationPlugin({
+                maxAgeSeconds: 30 * 24 * 60 * 60,
+                purgeOnQuotaError: true
+            })
+        ]
+    })
+);
+
+/*
+ *  No Cache
+ *
+ * Method: networkOnly
+ */
+routing.registerRoute(
+    /.*baidu\.com.*/,
+    new NetworkOnly()
+);
+/*
+ * Others img fonts
+ * Method: staleWhileRevalidate
+ */
+routing.registerRoute(
+    // Cache image fonts files
+    /.*\.(?:png|jpg|jpeg|svg|gif|webp|ico|eot|ttf|woff|woff2|mp3)/,
+    new StaleWhileRevalidate()
+);
+
+/*
+ * Static Assets
+ * Method: staleWhileRevalidate
+ */
+routing.registerRoute(
+    // Cache CSS files
+    /.*\.(css|js)/,
+    // Use cache but update in the background ASAP
+    new StaleWhileRevalidate()
+);
+
+/*
+ * sw.js - Revalidate every time
+ * staleWhileRevalidate
+ */
+routing.registerRoute(
+    &#39;/sw.js&#39;, // 本文件名
+    new StaleWhileRevalidate()
+);
+
+/*
+ * Default - Serve as it is
+ * networkFirst
+ */
+routing.setDefaultHandler(
+    new NetworkFirst({
+        networkTimeoutSeconds: 3
+    })
+);
+</code></pre>
+<h2 id="安装「相关文章」插件"><a href="#安装「相关文章」插件" class="headerlink" title="安装「相关文章」插件"></a>安装「相关文章」插件</h2><ol>
+<li>安装插件</li>
+</ol>
+<pre><code class="language-sh">npm i -S hexo-related-popular-posts
+</code></pre>
+<ol start="2">
+<li>插件的自定义配置方法：<br>{% link hexo-related-popular-posts, <a href="https://github.com/tea3/hexo-related-popular-posts">https://github.com/tea3/hexo-related-popular-posts</a> %}</li>
+</ol>
+<p>如果您使用了头图，可以在站点配置文件中添加以下设置来让相关文章显示正确的文章头图：</p>
+<pre><code class="language-yaml">popularPosts:
+  eyeCatchImageAttributeName: headimg
+</code></pre>
+<p>{% noteblock warning up, 注意 %}</p>
+<p>需要升级到 5.0.1 及以上版本才可以支持自定义头图，详见 <a href="https://github.com/tea3/hexo-related-popular-posts/issues/29">#29</a></p>
+<p>{% endnoteblock %}</p>
+<h2 id="分析与统计"><a href="#分析与统计" class="headerlink" title="分析与统计"></a>分析与统计</h2><p>默认支持 <a href="http://busuanzi.ibruce.info/">不蒜子</a> 的访问统计，可以自行添加百度统计和 Google Analytics。</p>
+<h3 id="字数和阅读时长"><a href="#字数和阅读时长" class="headerlink" title="字数和阅读时长"></a>字数和阅读时长</h3><ol>
+<li>安装以下插件：</li>
+</ol>
+<pre><code>npm i --save hexo-wordcount
+</code></pre>
+<ol start="2">
+<li>修改配置文件，将 <code>wordcount</code> 插件打开</li>
+</ol>
+<pre><code class="language-yaml">plugins:
+  ...
+  # 文章字数统计、阅读时长，开启需要安装插件: npm i --save hexo-wordcount
+  wordcount:
+    enable: #true
+</code></pre>
+<ol start="3">
+<li>然后修改配置文件，将 <code>wordcount</code> 写入需要显示的 meta 位置：</li>
+</ol>
+<pre><code class="language-yaml"># 文章布局
+article:
+  ...
+  # 文章详情页面的文章卡片本体布局方案
+  body:
+    # 文章顶部信息
+    # 从 meta_library 中取
+    top_meta: [..., wordcount, ...]
+    ...
+    # 文章底部信息
+    # 从 meta_library 中取
+    bottom_meta: [..., wordcount, ...]
+</code></pre>
+<h3 id="CNZZ-统计"><a href="#CNZZ-统计" class="headerlink" title="CNZZ 统计"></a>CNZZ 统计</h3><p>请参考 ZYMIN 的这篇教程：<br>{% link Hexo hexo+ejs+material x 添加CNZZ统计代码, <a href="https://zymin.cn/arcticle/hexo+ejs+material.html">https://zymin.cn/arcticle/hexo+ejs+material.html</a> %}</p>
+<h2 id="更多进阶玩法"><a href="#更多进阶玩法" class="headerlink" title="更多进阶玩法"></a>更多进阶玩法</h2><p>详见 <a href="https://www.itrhx.com/">@TRHX</a> 的这篇博客：<br>{% link Hexo 博客主题个性化, <a href="https://www.itrhx.com/2018/08/27/A04-Hexo-blog-topic-personalization/">https://www.itrhx.com/2018/08/27/A04-Hexo-blog-topic-personalization/</a> %}</p>
+<p>内含卡片半透明、增加卡通人物、自定义鼠标样式、鼠标特效、烟花特效、彩色滚动字体、网站运行时间、动态浏览器标题、雪花飘落特效等多种详细教程。</p>
+<p>{% link 主题官网 #进阶玩法, <a href="https://volantis.js.org/categories/%E8%BF%9B%E9%98%B6%E7%8E%A9%E6%B3%95/">https://volantis.js.org/categories/进阶玩法/</a> %}</p>

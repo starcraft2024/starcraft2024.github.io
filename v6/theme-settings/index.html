@@ -1,0 +1,1680 @@
+<hr>
+<h2 id="layout-docsgroup-docs-v6order-301title-主题配置short-title-3-主题配置sidebar-docs-v6-toc-disqus-path"><a href="#layout-docsgroup-docs-v6order-301title-主题配置short-title-3-主题配置sidebar-docs-v6-toc-disqus-path" class="headerlink" title="layout: docsgroup: docs-v6order: 301title: 主题配置short_title: 3. 主题配置sidebar: [docs-v6, toc]disqus:  path: &#x2F;"></a>layout: docs<br>group: docs-v6<br>order: 301<br>title: 主题配置<br>short_title: 3. 主题配置<br>sidebar: [docs-v6, toc]<br>disqus:<br>  path: &#x2F;</h2><h2 id="创建主题配置文件"><a href="#创建主题配置文件" class="headerlink" title="创建主题配置文件"></a>创建主题配置文件</h2><p>主题目录下的 <code>_config.yml</code> 文件通常负责主题相关配置，我们强烈建议您使用代替的主题配置文件以防止自己的配置丢失。那么如何使用代替主题配置文件呢？</p>
+<p>{% timeline %}</p>
+<p>{% timenode 第 1&#x2F;2 步：创建配置文件 %}</p>
+<p>在博客根目录的 <code>_config.yml</code> 文件旁边新建一个文件： <code>_config.volantis.yml</code> ，这个文件中的配置信息优先级高于主题文件夹中的配置文件。</p>
+<p>{% endtimenode %}</p>
+<p>{% timenode 第 2&#x2F;2 步：覆盖自定义配置 %}</p>
+<p>当您需要修改某项内容时，例如导航栏菜单，那么您需要在主题配置文件中找到相关内容，复制进自己创建的配置文件中：</p>
+<pre><code class="language-yaml">navbar:
+  visiable: auto # always, auto
+  logo: # choose [img] or [icon + title]
+    img: volantis-static/media/org.volantis/blog/Logo-NavBar@3x.png # https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-NavBar@3x.png
+    icon:
+    title:
+  menu:
+    - name: 博客
+      icon: fa-solid fa-rss
+      url: /
+</code></pre>
+<p>{% noteblock idea yellow %}<br><strong>小提示</strong><br>使用「<code>npm i hexo-theme-volantis</code>」方式安装的主题，主题配置文件在「<code>blog/node_modules/hexo-theme-volantis/_config.yml</code>」<br>使用传统方式安装的主题，主题配置文件在「<code>blog/themes/volantis/_config.yml</code>」<br>{% endnoteblock %}</p>
+<p>{% endtimenode %}</p>
+<p>{% endtimeline %}</p>
+<h2 id="自定义主题外观"><a href="#自定义主题外观" class="headerlink" title="自定义主题外观"></a>自定义主题外观</h2><h3 id="最大布局宽度"><a href="#最大布局宽度" class="headerlink" title="最大布局宽度"></a>最大布局宽度</h3><pre><code class="language-yaml">custom_css:
+  ...
+  max_width: 1080px # Sum of body width and sidebar width
+</code></pre>
+<p>网页所呈现的内容的最大宽度，即 body 和 sidebar 的宽度之和。</p>
+<h3 id="抗锯齿"><a href="#抗锯齿" class="headerlink" title="抗锯齿"></a>抗锯齿</h3><pre><code class="language-yaml">custom_css:
+  ...
+  font_smoothing: true # font-smoothing for webkit
+</code></pre>
+<h3 id="自定义光标样式"><a href="#自定义光标样式" class="headerlink" title="自定义光标样式"></a>自定义光标样式</h3><pre><code class="language-yaml">custom_css:
+  ...
+  cursor:
+    enable: true
+    text: volantis-static/media/cursor/text.png # https://cdn.jsdelivr.net/gh/inkss/common@1/cursor/text.png
+    pointer: volantis-static/media/cursor/pointer.png # https://cdn.jsdelivr.net/gh/inkss/common@1/cursor/pointer.png
+    default: volantis-static/media/cursor/left_ptr.png # https://cdn.jsdelivr.net/gh/inkss/common@1/cursor/left_ptr.png
+    not-allowed: volantis-static/media/cursor/circle.png # https://cdn.jsdelivr.net/gh/inkss/common@1/cursor/circle.png
+    zoom-out: volantis-static/media/cursor/zoom-out.png # https://cdn.jsdelivr.net/gh/inkss/common@1/cursor/zoom-out.png
+    zoom-in: volantis-static/media/cursor/zoom-in.png # https://cdn.jsdelivr.net/gh/inkss/common@1/cursor/zoom-in.png
+    grab: volantis-static/media/cursor/openhand.png # https://cdn.jsdelivr.net/gh/inkss/common@1/cursor/openhand.png
+</code></pre>
+<h3 id="导航栏样式"><a href="#导航栏样式" class="headerlink" title="导航栏样式"></a>导航栏样式</h3><p>您可以设置导航栏的高度以及视觉特效，视觉特效目前可选的有：</p>
+<ul>
+<li><strong>shadow</strong>：卡片阴影。</li>
+<li><strong>floatable</strong>：当鼠标移动到容器内时，呈现出浮起来的效果。</li>
+<li><strong>blur</strong>：背景模糊效果（毛玻璃），当浏览器不支持时显示为不透明。</li>
+</ul>
+<pre><code class="language-yaml">custom_css:
+  ...
+  navbar:
+    height: 64px
+    width: auto # auto, max
+    effect: [shadow, blur] # [shadow, floatable, blur]
+</code></pre>
+<h3 id="滚动条样式"><a href="#滚动条样式" class="headerlink" title="滚动条样式"></a>滚动条样式</h3><pre><code class="language-yaml">custom_css:
+  ...
+  scrollbar:
+    size: 4px
+    border: 2px
+    color: &#39;#2196f3&#39;
+    hover: &#39;#ff5722&#39;
+</code></pre>
+<h3 id="侧边栏样式"><a href="#侧边栏样式" class="headerlink" title="侧边栏样式"></a>侧边栏样式</h3><p>视觉特效参数同上，值得注意的是：卡片的 <code>floatable</code> 效果和 <code>blur</code> 效果相冲突。</p>
+<pre><code class="language-yaml">custom_css:
+  ...
+  sidebar:
+    effect: [shadow] # [shadow, floatable, blur]
+</code></pre>
+<h3 id="正文区域样式"><a href="#正文区域样式" class="headerlink" title="正文区域样式"></a>正文区域样式</h3><p>视觉特效参数同上，值得注意的是：卡片的 <code>floatable</code> 效果和 <code>blur</code> 效果相冲突。您可以在 <code>language: true</code> 这里设置代码块显示语言名称。<code>text_align</code> 可以设置 h1&#x2F;h2&#x2F;h3&#x2F;h4&#x2F;p 的文字对齐方向。</p>
+<pre><code class="language-yaml">custom_css:
+  ...
+  body:
+    effect: [shadow] # [shadow, floatable, blur]
+    highlight:
+      language: true # show language of codeblock
+      copy_btn: true
+    text_align: # left, right, justify, center
+      h1: left
+      h2: left
+      h3: left
+      h4: left
+      p: justify
+</code></pre>
+<h3 id="布局间距"><a href="#布局间距" class="headerlink" title="布局间距"></a>布局间距</h3><p>您可以设置几种标题的布局间距 h2&#x2F;h3&#x2F;h4、段落间距 line、区块内部的段落间距 inline。</p>
+<pre><code class="language-yaml">custom_css:
+  ...
+  gap:
+    h2: 48px # Spacing above H2 (only px unit)
+    h3: 24px # Spacing above H3 (only px unit)
+    h4: 16px # Spacing above H4 (only px unit)
+    p: 1em # Paragraph spacing between paragraphs
+    line_height: 1.6 # normal, 1.5, 1.75, 2 ...
+</code></pre>
+<h3 id="自定义字体"><a href="#自定义字体" class="headerlink" title="自定义字体"></a>自定义字体</h3><p>您可以自定义正文和代码字体。</p>
+<pre><code class="language-yaml">custom_css:
+  ...
+  fontfamily:
+    logofont:
+      fontfamily: &#39;&quot;Varela Round&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, Helvetica, Arial&#39;
+      name: &#39;Varela Round&#39;
+      url: volantis-static/media/fonts/VarelaRound/VarelaRound-Regular.ttf # https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/VarelaRound/VarelaRound-Regular.ttf
+      weight: normal
+      style: normal
+    bodyfont:
+      fontfamily: &#39;UbuntuMono, &quot;Varela Round&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, Helvetica, Arial&#39;
+      name: &#39;UbuntuMono&#39;
+      url: volantis-static/media/fonts/UbuntuMono/UbuntuMono-Regular.ttf # https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/UbuntuMono/UbuntuMono-Regular.ttf
+      weight: normal
+      style: normal
+    codefont:
+      fontfamily: &#39;Menlo, UbuntuMono, Monaco&#39;
+      # name: &#39;Monaco&#39;
+      # url: volantis-static/media/fonts/Monaco/Monaco.ttf # https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/Monaco/Monaco.ttf
+      # weight: normal
+      # style: normal
+</code></pre>
+<h3 id="自定义颜色"><a href="#自定义颜色" class="headerlink" title="自定义颜色"></a>自定义颜色</h3><p>{% btn solid large center, 多彩配色方案, <a href="https://mhg-lab.github.io/pages/color/">https://mhg-lab.github.io/pages/color/</a> , fad fa-paper-plane %}</p>
+<p>{% folding 查看所有相关配置 %}</p>
+<pre><code class="language-yaml">############################### Color Scheme ############################### &gt; start
+# Accessibility: 背景色和前景色要有足够的对比度 https://web.dev/color-contrast/
+# https://ant.design/docs/spec/colors-cn
+color_scheme:
+  # ------------
+  # 通用颜色
+  common:
+    # 主题色
+    theme: &#39;#3dd9b6&#39;
+    # 链接色
+    link: &#39;#2092ec&#39;
+    # 按钮色
+    button: &#39;#44D7B6&#39;
+    # 鼠标放到交互元素上时的色
+    hover: &#39;#ff5722&#39;
+    # 主题色块内部的文字颜色
+    inner: &#39;#fff&#39;
+    # 选中区域文字的背景颜色
+    selection: &#39;alpha(#2196f3, 0.2)&#39;
+  # ------------
+  # 亮色主题（默认）
+  light:
+    # 网站背景色
+    site_bg: &#39;#f4f4f4&#39;
+    # 网站背景上的文字
+    site_inner: &#39;#fff&#39;
+    # 网站页脚文字
+    site_footer: &#39;#666&#39;
+
+    # 卡片背景色
+    card: &#39;#fff&#39;
+    # 卡片上的普通文字
+    text: &#39;#444&#39;
+
+    # 区块和代码块背景色
+    block: &#39;#f6f6f6&#39;
+    # 代码块高亮时的背景色
+    codeblock: &#39;#FFF7EA&#39;
+    # 行内代码颜色
+    inlinecode: &#39;#c74f00&#39;
+
+    # 文章部分
+    h1: &#39;#3a3a3a&#39;
+    h2: &#39;#3a3a3a&#39;
+    h3: &#39;#333&#39;
+    h4: &#39;#444&#39;
+    h5: &#39;#555&#39;
+    h6: &#39;#666&#39;
+    p: &#39;#444&#39;
+
+    # 列表文字
+    list: &#39;#666&#39;
+    # 列表 hover 时的文字
+    list_hl: &#39;mix($color-theme, #000, 80)&#39;
+    # 辅助性文字
+    meta: &#39;#888&#39;
+    
+    # 版权卡片背景色
+    copyright_bkg: &#39;#f5f5f5&#39;
+  # ------------
+  # 暗色主题
+  # https://www.maijisheji.com/2094.html
+  dark:
+    # 网站最深底色            # Dark Grey 1
+    site_bd: &#39;#121212&#39;
+    # 网站背景色              # Dark Grey 2
+    site_bg: &#39;#1f1f1f&#39;
+    # 卡片背景色              # Dark Grey 3
+    card: &#39;#262626&#39;
+    # 网站背景上的文字
+    site_inner: &#39;#eeeeeede&#39;
+    # 网站页脚文字
+    site_footer: &#39;#aaaaaade&#39;
+    # 卡片上的普通文字
+    text: &#39;#eeeeeede&#39;
+
+    # 区块和代码块背景色       # Dark Grey 4
+    block: &#39;#434343&#39;
+    # 代码块高亮时的背景色     # Dark Grey 2
+    codeblock: &#39;#1f1f1f&#39;
+    # 行内代码颜色
+    inlinecode: &#39;#D56D28&#39;
+
+    # 文章部分 高强度文本的不透明度应为87％ 中等重点文字适用于60％
+    h1: &#39;#FFFFFFde&#39;            #  Dark Grey 8
+    h2: &#39;#FFFFFFde&#39;
+    h3: &#39;#FFFFFF99&#39;            #  Dark Grey 7
+    h4: &#39;#FFFFFF99&#39;
+    h5: &#39;#FFFFFF99&#39;
+    h6: &#39;#FFFFFF99&#39;
+    p: &#39;#d9d9d9de&#39;           #  Dark Grey 6
+
+    # 列表文字                #  Dark Grey 6
+    list: &#39;#d9d9d9de&#39;
+    # 列表 hover 时的文字
+    list_hl: &#39;mix($color-theme, #fff, 80)&#39;
+    # 辅助性文字              #  Dark Grey 5
+    meta: &#39;#bfbfbfde&#39;
+    # 版权卡片背景色
+    copyright_bkg: &#39;#21252b&#39;
+    # 夜间图片亮度
+    brightness: 70%
+############################### Color Scheme ############################### &gt; end
+</code></pre>
+<p>{% endfolding %}</p>
+<h3 id="自定义右键菜单"><a href="#自定义右键菜单" class="headerlink" title="自定义右键菜单"></a>自定义右键菜单</h3><h4 id="右键菜单"><a href="#右键菜单" class="headerlink" title="右键菜单"></a>右键菜单</h4><p>右键在菜单项上根据配置文件自行生成前端代码，所以统一了一个共用的菜单对象：</p>
+<pre><code class="language-js">{id: &#39;&#39;, name: &#39;&#39;, icon: &#39;&#39;, link: &#39;&#39;, event: &#39;&#39;, group: &#39;&#39;}
+</code></pre>
+<p>同时为了响应不同状态下的右键行为，提出了<strong>内置组</strong> （<code>defaultGroup</code>）的概念，相应的对于右键默认提供的功能实现则定义为<strong>内置实现</strong>（<code>defaultEvent</code>）。</p>
+<pre><code class="language-js">{
+  defaultEvent: [&#39;copyText&#39;, &#39;copyLink&#39;, &#39;copyPaste&#39;, &#39;copyAll&#39;, &#39;copyCut&#39;, &#39;copyImg&#39;, &#39;printMode&#39;, &#39;readMode&#39;],
+  defaultGroup: [&#39;navigation&#39;, &#39;inputBox&#39;, &#39;seletctText&#39;, &#39;elementCheck&#39;, &#39;elementImage&#39;, &#39;articlePage&#39;]
+}
+</code></pre>
+<p>具体来说，内置组对应右键行为，例如 <code>inputBox</code> 代表在输入框下右键行为；内置实现对应自定义右键默认提供的功能实现，例如 <code>readMode</code> 代表了阅读模式。</p>
+<h5 id="参数解释"><a href="#参数解释" class="headerlink" title="参数解释"></a>参数解释</h5><pre><code class="language-yml">rightmenus:
+  order:
+    menus.groupName
+  plugins:
+    defaultGroupItem
+  menus:
+    groupName:
+      - {menu}
+      - {menu}
+    groupName1: {menu}
+</code></pre>
+<h6 id="右键菜单加载"><a href="#右键菜单加载" class="headerlink" title="右键菜单加载"></a><strong>右键菜单加载</strong></h6><p>菜单的具体加载由 <code>order</code> 控制，可供使用的内容为：plugins.[组名], menus.[组名], hr, music 这四大类。</p>
+<h6 id="右键菜单排序"><a href="#右键菜单排序" class="headerlink" title="右键菜单排序"></a><strong>右键菜单排序</strong></h6><p>菜单的排序由 <code>order</code> 字段的先后顺序和组内菜单项的先后顺序决定。</p>
+<h6 id="右键菜单类"><a href="#右键菜单类" class="headerlink" title="右键菜单类"></a><strong>右键菜单类</strong></h6><p>菜单项共分为两大类：<code>plugins</code> 和 <code>menus</code>，前者放置内置组及内置菜单，允许添加&#x2F;修改组内菜单；后者为用户自建菜单类，允许添加&#x2F;修改组及组内菜单。一般意义上 plugins 类的组为动态组，根据实际的右键状态进行显示；menus 类中内容由用户添加，菜单项默认显示。</p>
+<h6 id="右键菜单项"><a href="#右键菜单项" class="headerlink" title="右键菜单项"></a><strong>右键菜单项</strong></h6><p>菜单项共六个字段：<code>id</code>, <code>name</code>, <code>icon</code>, <code>link</code>, <code>event</code>, <code>group</code>，具体作用如下：</p>
+<ul>
+<li>id: 唯一值</li>
+<li>name: 用于菜单名称显示</li>
+<li>icon: 用于菜单图标显示</li>
+<li>link: 跳转链接</li>
+<li>event: 事件，当输入内容不为内置事件时，作 JavaScript 代码执行</li>
+<li>group: 菜单项所处分组名称</li>
+</ul>
+<p>{% note info::note link&#x2F;event 二选一，同时出现时仅处理 link。 %}</p>
+<h5 id="内置功能"><a href="#内置功能" class="headerlink" title="内置功能"></a>内置功能</h5><h6 id="内置组"><a href="#内置组" class="headerlink" title="内置组"></a><strong>内置组</strong></h6><table>
+<thead>
+<tr>
+<th>组名</th>
+<th>描述</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><em>navigation</em></td>
+<td><em>导航组件，横向排列，共用一行，仅显示图标</em></td>
+<td><em>原则上支持的数量不限</em></td>
+</tr>
+<tr>
+<td><em>inputBox</em></td>
+<td><em>文本输入框相关组件</em></td>
+<td><em>生效于 input&#x2F;textarea</em></td>
+</tr>
+<tr>
+<td><em>seletctText</em></td>
+<td><em>文本选中类组件</em></td>
+<td><em>生效于右键选中文本，<strong>text</strong> 为选中的文本</em></td>
+</tr>
+<tr>
+<td><em>elementCheck</em></td>
+<td><em>链接判断组件</em></td>
+<td><em>生效于链接处的右键行为，<strong>link</strong> 为链接地址</em></td>
+</tr>
+<tr>
+<td><em>elementImage</em></td>
+<td><em>图片判断类组件</em></td>
+<td><em>生效于图片类的右键行为，<strong>link</strong> 为链接地址</em></td>
+</tr>
+<tr>
+<td><em>articlePage</em></td>
+<td><em>文章页面组件</em></td>
+<td><em>生效于 post.article 页面</em></td>
+</tr>
+</tbody></table>
+<p>{% note info::note 除 navigation 外的内置组，在显示时会隐藏含 link 属性的菜单项。 %}</p>
+<h6 id="内置实现"><a href="#内置实现" class="headerlink" title="内置实现"></a><strong>内置实现</strong></h6><table>
+<thead>
+<tr>
+<th>事件名</th>
+<th>描述</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><em>copyText</em></td>
+<td>复制文本</td>
+<td>复制选中文本</td>
+</tr>
+<tr>
+<td><em>copyLink</em></td>
+<td>复制链接地址</td>
+<td>复制 <code>a</code> 或 <code>image</code> 下的链接至剪切板</td>
+</tr>
+<tr>
+<td><em>copyPaste</em></td>
+<td>粘贴文本</td>
+<td>需要用户批准相应权限，仅支持粘贴文本至输入框（暂不支持粘贴图片）</td>
+</tr>
+<tr>
+<td><em>copyAll</em></td>
+<td>全选文本</td>
+<td>选中输入框内的文本内容</td>
+</tr>
+<tr>
+<td><em>copyCut</em></td>
+<td>剪切文本</td>
+<td>剪切输入框中选中的文本内容</td>
+</tr>
+<tr>
+<td><em>copyImg</em></td>
+<td>复制图片</td>
+<td>支持 Chrome 浏览器，复制图片资源至剪切板</td>
+</tr>
+<tr>
+<td><em>printMode</em></td>
+<td>打印页面</td>
+<td>一个调制过样式的打印功能</td>
+</tr>
+<tr>
+<td><em>readMode</em></td>
+<td>阅读模式</td>
+<td>一个简单的阅读模式功能</td>
+</tr>
+</tbody></table>
+<h5 id="默认设置"><a href="#默认设置" class="headerlink" title="默认设置"></a>默认设置</h5><p><strong>iconPrefix<String></strong></p>
+<p>Fontawesome 图标前缀，音乐类组件使用，参考内容：<em>fa-solid, fa-regular, fa-light, fa-thin, fa-duotone, fa-brands</em>。</p>
+<p><strong>articleShowLink<Boolean></strong></p>
+<p>在 articlePage 组显示时（文章页）时依旧显示含 link 属性的菜单项。</p>
+<p><strong>musicAlwaysShow<Boolean></strong></p>
+<p>当设定全局音乐播放器时，是否一直显示音乐控制菜单。false：仅当音乐播放时启用。</p>
+<h5 id="回调方法"><a href="#回调方法" class="headerlink" title="回调方法"></a>回调方法</h5><p><strong><code>volantis.rightmenu.handle</code></strong> 在右键菜单打开时执行。</p>
+<p>volantis.rightmenu.handle(callBack[,”callBackName”, “setRequestAnimationFrame &#x3D; true”])。</p>
+<p>此外，你还可以在 <code>volantis.mouseEvent</code> 处获得 MouseEvent 信息。</p>
+<h5 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h5><p>{% folding blog&#x2F;_config.volantis.yml %}</p>
+<pre><code class="language-yml">### 自定义右键 新
+rightmenus:
+  enable: true
+  # 右键菜单项及加载顺序
+  # 内容示例：plugins.[组名], menus.[组名], hr(分割线，推荐去线留白), music(音乐控制器)
+  order: 
+    - plugins.navigation
+    - hr
+    - plugins.inputBox
+    - plugins.seletctText
+    - plugins.elementCheck
+    - plugins.elementImage
+    - menus.link
+    - hr
+    - menus.darkMode
+    - plugins.articlePage
+    - music
+  ############################
+  # - {id: &#39;&#39;, name: &#39;&#39;, icon: &#39;&#39;, link: &#39;&#39;, event: &#39;&#39;, group: &#39;&#39;}
+  # id: 唯一值
+  # name: 用于菜单名称显示
+  # icon: 用于菜单图标显示
+  # link: 跳转链接
+  # event: 事件，当输入内容不为内置事件时，作 JavaScript 代码执行
+  # group: 菜单项所处分组名称
+  # 注： 
+  # 1. link/event 二选一，同时出现时仅处理 link
+  # 2. 内置事件列表： copyText, copyLink, copyPaste, copyAll, copyCut, copyImg, printMode, readMode
+  # 3. 内置组列表：navigation, inputBox, seletctText, elementCheck, elementImage, articlePage
+  # 4. plugins 列允许自定义组内项目
+  # 5. menus   列允许自定义组及其内容
+  # 6. 除 navigation 外的内置组，在显示时会隐藏含 link 属性的菜单项
+  ###########################
+  # 基础项设置
+  options:
+    # 图标前缀 fa-solid, fa-regular, fa-light, fa-thin, fa-duotone, fa-brands
+    iconPrefix: fa-solid
+    # 例外，在 articlePage 组显示时（文章页）时依旧显示含 link 属性的菜单项
+    articleShowLink: false
+    # 当设定全局音乐播放器时，是否一直显示音乐控制菜单。false：仅当音乐播放时启用
+    musicAlwaysShow: false
+  # 右键内置组，预置实现
+  plugins:
+    # 导航组件
+    # 横向排列，共用一行，仅显示图标 (原则上支持的数量不限)
+    navigation: 
+      - {id: &#39;left&#39;, name: &#39;转到上一页&#39;, icon: &#39;fa-solid fa-arrow-left&#39;, event: &#39;history.back()&#39;, group: &#39;navigation&#39;}
+      - {id: &#39;right&#39;, name: &#39;转到下一页&#39;, icon: &#39;fa-solid fa-arrow-right&#39;, event: &#39;history.forward()&#39;, group: &#39;navigation&#39;}
+      - {id: &#39;redo&#39;, name: &#39;刷新当前页面&#39;, icon: &#39;fa-solid fa-redo&#39;, event: &#39;window.location.reload()&#39;, group: &#39;navigation&#39;}
+      - {id: &#39;up&#39;, name: &#39;回到顶部&#39;, icon: &#39;fa-solid fa-arrow-up&#39;, event: &#39;VolantisApp.scrolltoElement(volantis.dom.bodyAnchor)&#39;, group: &#39;navigation&#39;}
+      #- {id: &#39;home&#39;, name: &#39;回到首页&#39;, icon: &#39;fa-solid fa-home&#39;, link: &#39;/&#39;, group: &#39;navigation&#39;}
+    # 文本输入框相关组件
+    # 生效于 input/textarea，粘贴、剪切、全选
+    inputBox:
+      - {id: &#39;copyPaste&#39;, name: &#39;粘贴文本&#39;, icon: &#39;fa-solid fa-paste&#39;, event: &#39;copyPaste&#39;, group: &#39;inputBox&#39;}
+      - {id: &#39;copyAll&#39;, name: &#39;全选文本&#39;, icon: &#39;fa-solid fa-object-ungroup&#39;, event: &#39;copyAll&#39;, group: &#39;inputBox&#39;}
+      - {id: &#39;copyCut&#39;, name: &#39;剪切文本&#39;, icon: &#39;fa-solid fa-cut&#39;, event: &#39;copyCut&#39;, group: &#39;inputBox&#39;}
+    # 文本选中类组件
+    # 生效于右键选中文本，__text__ 为选中的文本。     
+    seletctText:
+      - {id: &#39;copyText&#39;, name: &#39;复制文本&#39;, icon: &#39;fa-solid fa-copy&#39;, event: &#39;copyText&#39;, group: &#39;seletctText&#39;}
+      - {id: &#39;searchWord&#39;, name: &#39;站内搜索&#39;, icon: &#39;fa-solid fa-search&#39;, event: &#39;OpenSearch(__text__)&#39;, group: &#39;seletctText&#39;}
+      - {id: &#39;bingSearch&#39;, name: &#39;必应搜索&#39;, icon: &#39;fa-solid fa-search&#39;, event: &#39;window.open(`https://cn.bing.com/search?q=${__text__}`)&#39;, group: &#39;seletctText&#39;}
+      #- {id: &#39;googleSearch&#39;, name: &#39;谷歌搜索&#39;, icon: &#39;fa-solid fa-search&#39;, event: &#39;window.open(`https://www.google.com/search?q=${__text__}`)&#39;, group: &#39;seletctText&#39;}
+    # 链接判断组件
+    # 生效于链接处的右键行为，__link__ 为链接地址
+    elementCheck:
+      - {id: &#39;openTab&#39;, name: &#39;新标签页打开&#39;, icon: &#39;fa-solid fa-external-link-square-alt&#39;, event: &#39;window.open(__link__)&#39;, group: &#39;elementCheck&#39;}
+      - {id: &#39;copyLink&#39;, name: &#39;复制链接地址&#39;, icon: &#39;fa-solid fa-link&#39;, event: &#39;copyLink&#39;, group: &#39;elementCheck&#39;}
+    # 图片判断类组件
+    # 生效于图片类的右键行为，__link__ 为链接地址
+    elementImage:
+      - {id: &#39;copyImg&#39;, name: &#39;复制图片&#39;, icon: &#39;fa-solid fa-image&#39;, event: &#39;copyImg&#39;, group: &#39;elementImage&#39;}
+      - {id: &#39;googleImg&#39;, name: &#39;谷歌识图&#39;, icon: &#39;fa-solid fa-images&#39;, event: &#39;window.open(`https://www.google.com.hk/searchbyimage?image_url=${__link__}`)&#39;, group: &#39;elementImage&#39;}
+    # 文章页面组件
+    # 生效于 post.article 页面
+    articlePage:
+      - {id: &#39;printMode&#39;, name: &#39;打印页面&#39;, icon: &#39;fa-solid fa-print&#39;, event: &#39;printMode&#39;, group: &#39;articlePage&#39;}
+      - {id: &#39;readMode&#39;, name: &#39;阅读模式&#39;, icon: &#39;fa-solid fa-book-open&#39;, event: &#39;readMode&#39;, group: &#39;articlePage&#39;}
+  # 右键自定义菜单区域
+  menus:
+    link:
+      - {id: &#39;help&#39;, name: &#39;常见问题&#39;, icon: &#39;fa-solid fa-question&#39;, link: &#39;https://volantis.js.org/faqs/&#39;, group: &#39;link&#39;}
+      - {id: &#39;examples&#39;, name: &#39;示例博客&#39;, icon: &#39;fa-solid fa-rss&#39;, link: &#39;https://volantis.js.org/examples/&#39;, group: &#39;link&#39;}
+      - {id: &#39;contributors&#39;, name: &#39;加入社区&#39;, icon: &#39;fa-solid fa-fan&#39;, link: &#39;https://volantis.js.org/contributors/&#39;, group: &#39;link&#39;}
+      - hr
+      - {id: &#39;source_docs&#39;, name: &#39;本站源码&#39;, icon: &#39;fa-solid fa-code-branch&#39;, link: &#39;https://github.com/volantis-x/volantis-docs/&#39;, group: &#39;link&#39;}
+      - {id: &#39;source_theme&#39;, name: &#39;主题源码&#39;, icon: &#39;fa-solid fa-code-branch&#39;, link: &#39;https://github.com/volantis-x/hexo-theme-volantis/&#39;, group: &#39;link&#39;}
+    darkMode: 
+      - {id: &#39;darkMode&#39;, name: &#39;暗黑模式&#39;, icon: &#39;fa-solid fa-moon&#39;, event: &#39;volantis.dark.toggle()&#39;, group: &#39;darkMode&#39;}
+###
+</code></pre>
+<p>{% endfolding %}</p>
+<h5 id="高级玩法"><a href="#高级玩法" class="headerlink" title="高级玩法"></a>高级玩法</h5><p>可以利用 <em>Custom Files 自定义文件</em> 功能，实现自定义右键菜单脚本及菜单项控制。</p>
+<ul>
+<li>一个在右键菜单中添加 <strong>查看上一篇</strong>、<strong>查看下一篇</strong> 菜单项的范例：</li>
+</ul>
+<p>{% tabs rightmenus %}</p>
+<!-- tab blog/_config.volantis.yml -->
+<pre><code class="language-yml">rightmenus:
+  order:
+    - menus.prevNext
+  menus:
+    prevNext:
+      - {id: &#39;prev&#39;, name: &#39;查看上一篇&#39;, icon: &#39;fa-solid fa-angles-left&#39;, event: &quot;volantis.rightmenu.jump(&#39;prev&#39;)&quot;, group: &#39;prevNext&#39;}
+      - {id: &#39;next&#39;, name: &#39;查看下一篇&#39;, icon: &#39;fa-solid fa-angles-right&#39;, event: &quot;volantis.rightmenu.jump(&#39;next&#39;)&quot;, group: &#39;prevNext&#39;}
+</code></pre>
+<!-- endtab -->
+<!-- tab blog/source/_volantis/bodyEnd.ejs -->
+<pre><code class="language-js">&lt;script&gt; 
+  volantis.rightmenu.jump = (type) =&gt; { 
+    const selector = type === &#39;prev&#39; ? &#39;article .prev-next a.prev&#39; : &#39;article .prev-next a.next&#39;;
+    const item = document.querySelector(selector); 
+    if(!!item) { 
+      if(typeof pjax !== &#39;undefined&#39;) { 
+        pjax.loadUrl(item.href) 
+      } else { 
+        window.location.href = item.href; 
+      } 
+    } 
+  } 
+ 
+  volantis.rightmenu.handle(() =&gt; { 
+    const prev = document.querySelector(&#39;#prev&#39;).parentElement, 
+      next = document.querySelector(&#39;#next&#39;).parentElement, 
+      articlePrev = document.querySelector(&#39;article .prev-next a.prev p.title&#39;), 
+      articleNext = document.querySelector(&#39;article .prev-next a.next p.title&#39;); 
+ 
+    prev.style.display = articlePrev ? &#39;block&#39; : &#39;none&#39;; 
+    prev.title = articlePrev ? articlePrev.innerText : null; 
+    next.style.display = articleNext ? &#39;block&#39; : &#39;none&#39;; 
+    next.title = articleNext ? articleNext.innerText : null; 
+  }, &#39;prevNext&#39;, false) 
+&lt;/script&gt; 
+</code></pre>
+<!-- endtab -->
+<p>{% endtabs %}</p>
+<h2 id="设置网站导航栏"><a href="#设置网站导航栏" class="headerlink" title="设置网站导航栏"></a>设置网站导航栏</h2><h3 id="导航栏配置"><a href="#导航栏配置" class="headerlink" title="导航栏配置"></a>导航栏配置</h3><p>导航栏分为 logo、menu、search 三个区域设置，其中 logo 区域如果设置了图片，则不能显示图标和标题， menu 区域的设置可以写在一个单独的文件中。</p>
+<pre><code class="language-yaml">############################### Navigation Bar ############################### &gt; start
+# 注意事项：建议规范全站路径 URL 最后带一个 &quot;/&quot; 例如 &quot;about/&quot;
+navbar:
+  visiable: auto # always, auto
+  logo: # choose [img] or [icon + title]
+    img: volantis-static/media/org.volantis/blog/Logo-NavBar@3x.png # https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-NavBar@3x.png
+    icon:
+    title:
+  menu:
+    - name: 博客
+      icon: fa-solid fa-rss
+      url: /
+    - name: 分类
+      icon: fa-solid fa-folder-open
+      url: categories/
+    - name: 标签
+      icon: fa-solid fa-tags
+      url: tags/
+    - name: 归档
+      icon: fa-solid fa-archive
+      url: archives/
+    - name: 友链
+      icon: fa-solid fa-link
+      url: friends/
+    - name: 关于
+      icon: fa-solid fa-info-circle
+      url: about/
+  search: Search...   # Search bar placeholder
+############################### Navigation Bar ############################### &gt; end
+</code></pre>
+<h3 id="菜单嵌套"><a href="#菜单嵌套" class="headerlink" title="菜单嵌套"></a>菜单嵌套</h3><p>导航栏菜单支持嵌套，嵌套的属性名为 <code>rows</code> ，写法示例：</p>
+<pre><code class="language-yaml">...
+- name: 更多
+  icon: fa-solid fa-ellipsis-v
+  rows:
+    - name: 主题源码
+      url: https://github.com/volantis-x/hexo-theme-volantis/
+    - name: 更新日志
+      url: https://github.com/volantis-x/hexo-theme-volantis/releases/
+    - name: hr
+    - name: 有疑问？
+      rows:
+        - name: 看 FAQ
+          url: faqs/
+        - name: 看 本站源码
+          url: https://github.com/volantis-x/volantis-docs/
+        - name: 提 Issue
+          url: https://github.com/volantis-x/hexo-theme-volantis/issues/
+    - name: hr
+    - name: 公告和测试博文
+      url: archives/
+    - name: 示例博客
+      url: examples/
+    - name: 特别感谢
+      url: contributors/
+</code></pre>
+<h3 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h3><p>在子菜单中，新增一个只有 <code>name: hr</code> 的“菜单”就会被渲染成一个分割线。</p>
+<pre><code class="language-yaml">- name: hr
+</code></pre>
+<h3 id="小标题"><a href="#小标题" class="headerlink" title="小标题"></a>小标题</h3><p>在子菜单中，新增一个只有 <code>name: 小标题内容</code>（也可以有 <code>icon: 小标题的图标</code>）的“菜单”就会被渲染成一个小标题。</p>
+<pre><code class="language-yaml">...
+- name: 近期
+  icon: fa-solid fa-clock
+  url: /
+  rows:
+    - name: 热门文章
+      icon: fa-solid fa-fire
+    - name: ProHUD 开源库的设计思路
+      url: blog/2019-08-27-prohud/
+    - name: ValueX：实用的安全对象类型转换库
+      url: blog/2019-08-29-valuex/
+    - name: 心率管家 App 的设计与开发
+      url: blog/2019-07-23-heartmate/
+</code></pre>
+<h3 id="播放器"><a href="#播放器" class="headerlink" title="播放器"></a>播放器</h3><p>在子菜单中，新增一个 <code>icon: fa-solid fa-compact-disc</code> 的“菜单”就会被渲染成一个 APlayer 播放器。</p>
+<pre><code class="language-yaml">- name: 背景音乐
+  icon: fa-solid fa-compact-disc
+</code></pre>
+<h2 id="设置网站页脚"><a href="#设置网站页脚" class="headerlink" title="设置网站页脚"></a>设置网站页脚</h2><p>您通过 <code>layout</code> 可以自由布局网站页脚内容 <code>aplayer</code>, <code>social</code>, <code>license</code>, <code>info</code>, <code>copyright</code>。</p>
+<pre><code class="language-yaml">site_footer:
+  # layout of footer: [aplayer, social, license, info, copyright]
+  layout: [aplayer, social, license, info, copyright]
+  social:
+    - icon: fas fa-rss
+      url: atom.xml
+    - icon: fas fa-envelope
+      url: mailto:me@xaoxuu.com
+    - icon: fab fa-github
+      url: https://github.com/xaoxuu
+    - icon: fas fa-headphones-alt
+      url: https://music.163.com/#/user/home?id=63035382
+  copyright: &#39;[Copyright © 2017-2021 XXX](/)&#39;
+  # You can add your own property here. (Support markdown, for example: br: &#39;&lt;br&gt;&#39;)
+  br: &#39;&lt;br&gt;&#39;
+</code></pre>
+<p>其中，<code>aplayer</code> 需要在插件部分设置中启用。您可以新增文字属性，用于展示其它文字信息，例如：</p>
+<pre><code class="language-yaml">site_footer:
+  layout: [..., br, hello, ...]
+  ...
+  # You can add your own property here. (Support markdown, for example: br: &#39;&lt;br&gt;&#39;)
+  br: &#39;&lt;br&gt;&#39;
+  hello: &#39;[Hello World](/)&#39;
+</code></pre>
+<h2 id="网站与文章封面"><a href="#网站与文章封面" class="headerlink" title="网站与文章封面"></a>网站与文章封面</h2><h3 id="封面高度"><a href="#封面高度" class="headerlink" title="封面高度"></a>封面高度</h3><pre><code class="language-yaml">cover:
+  height_scheme: full # full, half
+  ...
+</code></pre>
+<p>目前主题提供两种首页封面高度方案，其它页面均为半屏幕高度。</p>
+<h3 id="封面布局方案"><a href="#封面布局方案" class="headerlink" title="封面布局方案"></a>封面布局方案</h3><pre><code class="language-yaml">cover:
+  ...
+  scheme: dock # search (搜索), dock (坞), featured (精选), focus (焦点)
+  ...
+</code></pre>
+<p>{% table %}</p>
+<table>
+<thead>
+<tr>
+<th align="left">布局方案</th>
+<th align="left">适合场景</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">search</td>
+<td align="left">注重搜索</td>
+</tr>
+<tr>
+<td align="left">dock</td>
+<td align="left">入口选项比较多</td>
+</tr>
+<tr>
+<td align="left">featured</td>
+<td align="left">选项在4个左右</td>
+</tr>
+<tr>
+<td align="left">focus</td>
+<td align="left">选项在4个左右</td>
+</tr>
+<tr>
+<td align="left">{% endtable %}</td>
+<td align="left"></td>
+</tr>
+</tbody></table>
+<h3 id="默认显示设置"><a href="#默认显示设置" class="headerlink" title="默认显示设置"></a>默认显示设置</h3><pre><code class="language-yaml">cover:
+  ...
+  display:
+    home: true
+    archive: false
+    others: false # can be written in front-matter &#39;cover: true&#39;
+</code></pre>
+<p>由于主页、归档是 hexo 自动生成的，您需要在主题配置文件中设置是否显示封面，而其它页面则可以在 <code>front-matter</code> 中通过设置 <code>cover: true/false</code> 来决定显示封面或者不显示封面。</p>
+<h2 id="文章布局配置"><a href="#文章布局配置" class="headerlink" title="文章布局配置"></a>文章布局配置</h2><p>{% folding 查看所有相关配置 %}</p>
+<pre><code class="language-yaml">############################### Article Layout ############################### &gt; start
+# 文章布局
+article:
+  # 文章列表页面的文章卡片布局方案
+  preview:
+    scheme: landscape # landscape
+    # pin icon for post
+    pin_icon: volantis-static/media/twemoji/assets/svg/1f4cc.svg # https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f4cc.svg
+    # auto generate title if not exist
+    auto_title: true # false, true
+    # auto generate excerpt if not exist
+    auto_excerpt: true # false, true
+    # hide excerpt
+    hide_excerpt: false
+    # show split line or not
+    line_style: solid # hidden, solid, dashed, dotted
+    # show author
+    author: false # true, false
+    # show readmore button
+    readmore: auto # auto, always
+  # 文章详情页面的文章卡片本体布局方案
+  body:
+    # 文章顶部信息
+    # 从 meta_library 中取
+    top_meta: [author, category, date, counter] #启用评论数量需在此添加
+    # 文章底部信息
+    # 从 meta_library 中取
+    bottom_meta: [updated, tags, share]
+    # ----------------
+    # 文章页脚组件
+    footer_widget:
+      # ----------------
+      # 参考资料、相关资料等 (for layout: post/docs)
+      references:
+        title: 参考资料
+        icon: fa-solid fa-quote-left
+        # 在 front-matter 中:
+        #   references:
+        #     - title: 某篇文章
+        #       url: https://
+        # 即可显示此组件。
+      # ----------------
+      # 相关文章，需要安装插件 (for layout: post)
+      # npm i hexo-related-popular-posts
+      related_posts:
+        enable: false
+        title: 相关文章
+        icon: fa-solid fa-bookmark
+        max_count: 5
+        # 设为空则不使用文章头图
+        placeholder_img: https://gcore.jsdelivr.net/gh/MHG-LAB/cron@gh-pages/bing/bing.jpg
+      # ----------------
+      # 版权声明组件 (for layout: post)
+      copyright:
+        enable: false
+        permalink: &#39;本文永久链接是：&#39;
+        content:
+          - &#39;博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议&#39;
+          - permalink
+         # 自定义版权组件：精细到文章的版权声明
+        custom: false # 开启后替代上方内容的版权显示
+        customData:
+          default: type1  # 默认授权声明
+          #############################
+          # 你可以在文章的 front-matter 覆盖默认版权声明
+          # 配置示例（均可选）： 
+          # copyright:
+          #   type: type3           # 当前文章版权声明类型
+          #   author: 张三          # 本文作者
+          #   ref:                  # 原文出处
+          #     title:              # 原文出处 - 标题
+          #     url:                # 原文出处 - 链接
+          #############################
+          rules:
+            type1: 
+              text: &lt;a href=&quot;https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh#&quot; target=&quot;_blank&quot;&gt;CC BY-NC-SA 4.0&lt;/a&gt;
+              desc: 署名-非商业性使用-相同方式共享 4.0 国际。
+            type2: 
+              text: 禁止转载引用
+              desc: 除非获得原作者的单独授权，任何第三方不得转载！
+            type3: 
+              text: 原作许可协议
+              desc: 本文转载自他站，转载或引用本文时，请遵守原作许可协议！
+            type4: 
+              text: 来自互联网
+              desc: 本文来自互联网，未知来源，侵权请联系删除。
+            type5:
+              text: 允许规范转载
+              desc: 转载请保留本文转载地址，著作权归作者所有！
+            type6:
+              text: 允许付费转载
+              desc: 您可以联系作者通过付费方式获得授权。
+            # 还能自行添加更多
+      # ----------------
+      # 打赏组件 (for layout: post)
+      donate:
+        enable: false
+        images:
+          - volantis-static/media/org.volantis/blog/qrcode/github@volantis.png # https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/qrcode/github@volantis.png
+          - volantis-static/media/org.volantis/blog/qrcode/github@volantis.png # https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/qrcode/github@volantis.png
+    # meta library
+    meta_library:
+      # 默认文章作者（可在 _data/author.yaml 中增加其他作者，并在 front-matter 中设置）
+      # https://volantis.js.org/advanced-settings/#多人协同
+      author:
+        avatar: volantis-static/media/org.volantis/blog/favicon/apple-touch-icon.png # https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/apple-touch-icon.png
+        name: 请设置文章作者
+        url: /
+      # 文章创建日期
+      date:
+        icon: fa-solid fa-calendar-alt
+        title: &#39;发布于：&#39;
+        format: &#39;ll&#39; # 日期格式 http://momentjs.com/docs/
+      # 文章更新日期
+      updated:
+        icon: fa-solid fa-edit
+        title: &#39;更新于：&#39;
+        format: &#39;ll&#39; # 日期格式 http://momentjs.com/docs/
+      # 文章分类
+      category:
+        icon: fa-solid fa-folder-open
+      # 文章浏览计数
+      counter:
+        icon: fa-solid fa-eye
+        unit: &#39;次浏览&#39;
+      # waline 文章评论数量
+      walinecount:
+        icon: fa-solid fa-comment-dots
+        desc: &#39;条评论&#39; # 条评论
+      # artalk 文章评论数量
+      artalkcount:
+        icon: fa-solid fa-comment-dots
+        desc: &#39;条评论&#39; # 条评论
+      # 文章字数和阅读时长
+      wordcount:
+        icon_wordcount: fa-solid fa-keyboard
+        icon_duration: fa-solid fa-hourglass-half
+      # 文章标签
+      tags:
+        icon: fa-solid fa-hashtag
+      # 分享
+      share:
+        - id: qq
+          img:  volantis-static/media/org.volantis/logo/128/qq.png #  https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png
+        - id: qzone
+          img: volantis-static/media/org.volantis/logo/128/qzone.png #  https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png
+        - id: weibo
+          img: volantis-static/media/org.volantis/logo/128/weibo.png #  https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png
+        - id: # qrcode # 当id为qrcode时需要安装插件  npm i hexo-helper-qrcode
+          img: # volantis-static/media/org.volantis/logo/128/wechat.png #  https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/wechat.png
+        - id: # telegram
+          img: # volantis-static/media/org.volantis/logo/128/telegram.png #  https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/telegram.png
+############################### Article Layout ############################### &gt; end
+</code></pre>
+<p>{% endfolding %}</p>
+<p>其中 <code>top_meta</code> 和 <code>bottom_meta</code> 部分的取值自 <code>meta_library</code> 库。</p>
+<h2 id="侧边栏配置"><a href="#侧边栏配置" class="headerlink" title="侧边栏配置"></a>侧边栏配置</h2><p>侧边栏小组件与 meta 库不同的是：除了现有的 widget ，您可以很轻易地创建自己的 widget ，然后放在需要的地方。此外，您还可以将 widget 写在单独的文件中。</p>
+<p>{% folding 查看所有相关配置 %}</p>
+<pre><code class="language-yaml">############################### Sidebar ############################### &gt; start
+sidebar:
+  position: right # left right
+  # 主页、分类、归档等独立页面
+  for_page: [blogger, category, tagcloud, donate]
+  # layout: docs/post 这类文章页面
+  for_post: [toc]
+  # 侧边栏组件库
+  widget_library:
+    # ---------------------------------------
+    # blogger info widget
+    blogger:
+      class: blogger
+      display: [desktop, mobile] # [desktop, mobile]
+      avatar: volantis-static/media/org.volantis/blog/Logo-NavBar@3x.png # https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-NavBar@3x.png
+      shape: rectangle # circle, rectangle
+      url: /about/
+      title:
+      subtitle:
+      jinrishici: true # Poetry Today. You can set a string, and it will be displayed when loading fails.
+      social:
+        - icon: fa-solid fa-rss
+          url: /atom.xml
+        - icon: fa-solid fa-envelope
+          url: mailto:me@xxx.com
+        - icon: fab fa-github
+          url: https://github.com/volantis-x/
+        - icon: fa-solid fa-headphones-alt
+          url: /
+    # ---------------------------------------
+    # toc widget (valid only in articles)
+    toc:
+      class: toc
+      display: [desktop, mobile] # [desktop, mobile]
+      sticky: true
+      header:
+        icon: fa-solid fa-list
+        title: 本文目录
+      list_number: false
+      min_depth: 2
+      max_depth: 5
+    # ---------------------------------------
+    # music
+    music:
+      class: music
+      display: [desktop, mobile] # [desktop, mobile]
+      pjaxReload: false
+    # ---------------------------------------
+    # category widget
+    category:
+      class: category
+      display: [desktop] # [desktop, mobile]
+      header:
+        icon: fa-solid fa-folder-open
+        title: 文章分类
+        url: /blog/categories/
+    # ---------------------------------------
+    # tagcloud widget
+    tagcloud:
+      class: tagcloud
+      display: [desktop, mobile] # [desktop, mobile]
+      header:
+        icon: fa-solid fa-tags
+        title: 热门标签
+        url: /blog/tags/
+      min_font: 14
+      max_font: 24
+      color: true
+      start_color: &#39;#999&#39;
+      end_color: &#39;#555&#39;
+    # ---------------------------------------
+    # qrcode widget
+    qrcode:
+      class: qrcode
+      display: [desktop, mobile] # [desktop, mobile]
+      height: 64px  # Automatic height if not set
+      images:
+        - volantis-static/media/org.volantis/blog/qrcode/github@volantis.png # https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/qrcode/github@volantis.png
+        - volantis-static/media/org.volantis/blog/qrcode/github@volantis.png # https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/qrcode/github@volantis.png
+    # ---------------------------------------
+    # webinfo widget
+    webinfo:
+      class: webinfo
+      display: [desktop]
+      header:
+        icon: fa-solid fa-award
+        title: 站点信息
+      type:
+        article:
+          enable: true
+          text: &#39;文章数目：&#39;
+          unit: &#39;篇&#39;
+        runtime:
+          enable: false
+          data: &#39;2020/01/01&#39;    # 填写建站日期
+          text: &#39;已运行时间：&#39;
+          unit: &#39;天&#39;
+        wordcount:
+          enable: false
+          text: &#39;本站总字数：&#39;   # 需要启用 wordcount
+          unit: &#39;字&#39;
+        visitcounter:
+          enable: true
+          siteuv:
+            text: &#39;本站访客数：&#39;
+            unit: &#39;人&#39;
+          sitepv:
+            text: &#39;本站总访问量：&#39;
+            unit: &#39;次&#39;
+        lastupd:
+          enable: true
+          friendlyShow: true    # 更友好的时间显示
+          text: &#39;最后活动时间：&#39;
+          unit: &#39;日&#39;
+    # ---------------------------------------
+    # lastupdate widget
+    lastupdate:
+      class: lastupdate
+      display: [desktop, mobile]
+      header:
+        icon: fa-solid fa-clock WISTERIA
+        title: 最近更新
+############################### Sidebar ############################### &gt; end
+</code></pre>
+<p>{% endfolding %}</p>
+<p>每一个小部件都有 <code>class</code> 和 <code>display</code>，前者代表这个小部件是什么，后者代表这个小部件在什么桌面和移动平台中是否显示，如果在移动平台显示，由于屏幕宽度有限，侧边栏的小部件则会被移动到正文区域下方，因此部分侧边栏小部件便失去意义，建议设置为仅桌面端显示。</p>
+<pre><code class="language-yaml">小部件名:
+  class: 小部件类别
+  display: [小部件在桌面端是否显示, 小部件在移动设备是否显示]
+  pjaxReload: true # 是否 pjax 重载 默认 true; 设置为 false 时 确保所有页面都含有该小部件
+  sticky: true # 是否开启粘性定位，默认 false；设置为 true 时固定在屏幕中
+</code></pre>
+<h3 id="博主信息部件"><a href="#博主信息部件" class="headerlink" title="博主信息部件"></a>博主信息部件</h3><pre><code class="language-yaml">blogger:
+  class: blogger
+  display: [desktop] # [desktop, mobile]
+  avatar: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/avatar/avatar.png
+  title:
+  subtitle:
+  jinrishici: true # Poetry Today. You can set a string, and it will be displayed when loading fails.
+  social: true
+</code></pre>
+<p>其中，今日诗词 <code>jinrishici</code> 如果设置为一个字符串，这个字符串会变成占位文字，加载失败时显示。如果不需要，就请设置为 <code>jinrishici: false</code>。<code>social</code> 的具体内容请在网站页脚部分设置。</p>
+<h3 id="文章目录部件"><a href="#文章目录部件" class="headerlink" title="文章目录部件"></a>文章目录部件</h3><pre><code class="language-yaml">toc:
+  class: toc
+  display: [desktop, mobile] # [desktop, mobile]
+  header:
+    icon: fas fa-list
+    title: 本文目录
+  list_number: false
+  min_depth: 2
+  max_depth: 5
+</code></pre>
+<p>这个部件只能放置在侧边栏，并且在文章中有效。在移动设备中预览时，手指向上滑动时，导航栏右边会出现 TOC 按钮，点击即可展开 TOC 部件。如果您需要显示章节序号，请设置 <code>list_number</code>。 <code>min_depth</code> 和 <code>max_depth</code> 代表 TOC 支持的标题层级，最大范围是2～6。</p>
+<h3 id="文章分类部件"><a href="#文章分类部件" class="headerlink" title="文章分类部件"></a>文章分类部件</h3><pre><code class="language-yaml">category:
+  class: category
+  display: [desktop] # [desktop, mobile]
+  header:
+    icon: fas fa-folder-open
+    title: 文章分类
+    url: /blog/categories/
+</code></pre>
+<p>这个部件可以直接显示所有文章分类，如果您希望有一个独立的页面来展示，需要自己创建一个文件，具体操作在「页面」部分文档中。</p>
+<h3 id="标签云部件"><a href="#标签云部件" class="headerlink" title="标签云部件"></a>标签云部件</h3><pre><code class="language-yaml">tagcloud:
+  class: tagcloud
+  display: [desktop] # [desktop, mobile]
+  header:
+    icon: fas fa-tags
+    title: 热门标签
+    url: /blog/tags/
+  min_font: 14
+  max_font: 24
+  color: true
+  start_color: &#39;#999&#39;
+  end_color: &#39;#555&#39;
+</code></pre>
+<p>这个部件可以直接显示所有文章的标签，如果您希望有一个独立的页面来展示，需要自己创建一个文件，具体操作在「页面」部分文档中。</p>
+<h3 id="二维码部件"><a href="#二维码部件" class="headerlink" title="二维码部件"></a>二维码部件</h3><pre><code class="language-yaml">donate:
+  class: qrcode
+  display: [desktop, mobile] # [desktop, mobile]
+  height: 64px  # Automatic height if not set
+  images:
+    - https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/qrcode/github@volantis.png
+    - https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/qrcode/github@volantis.png
+</code></pre>
+<p>您可以放置在文章页脚用于展示打赏图片，也可以放置在侧边栏。</p>
+<h3 id="通用文本部件"><a href="#通用文本部件" class="headerlink" title="通用文本部件"></a>通用文本部件</h3><pre><code class="language-yaml">repos:
+  class: text
+  display: [desktop] # [desktop, mobile]
+  header:
+    icon: fab fa-github
+    title: 点个赞吧
+    url: https://github.com/xaoxuu/
+  content:
+    - &#39;您的赞对我来说很重要，如果您喜欢本主题，希望能够给下面的项目点个赞来支持一下。&#39;
+    - &#39;[&lt;img src=&quot;https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/proj/prohud/logo.png&quot; height=&quot;50px&quot;&gt;](https://github.com/xaoxuu/ProHUD)&#39;
+    - &#39;[&lt;img src=&quot;https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/proj/valuex/logo.png&quot; height=&quot;50px&quot;&gt;](https://github.com/xaoxuu/ValueX)&#39;
+    - &#39;[&lt;img src=&quot;https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/proj/inspire/logo.png&quot; height=&quot;50px&quot;&gt;](https://github.com/xaoxuu/Inspire)&#39;
+</code></pre>
+<p>您可以创建用于展示任何文本内容的文本部件。</p>
+<h3 id="通用列表部件"><a href="#通用列表部件" class="headerlink" title="通用列表部件"></a>通用列表部件</h3><pre><code class="language-yaml">wiki-hexo-theme:
+  class: list
+  display: [desktop, mobile] # [desktop, mobile]
+  header:
+    icon: fas fa-chevron-left
+    title: Hexo Themes
+    url: /wiki/
+  rows:
+    - name: Volantis for Hexo
+      url: /wiki/volantis/
+    - name: Resume for Hexo
+      url: /wiki/resume/
+</code></pre>
+<p>您可以创建用于展示任何链接列表的列表部件。列表的 <code>rows</code> 中的每一项支持的属性有： <code>name</code>、<code>url</code>、<code>icon</code>、<code>img</code>、<code>avatar</code>，其中 <code>img</code> 是方形图片的链接，<code>avatar</code> 是圆形图片的链接。</p>
+<h4 id="组索引"><a href="#组索引" class="headerlink" title="组索引"></a>组索引</h4><p>这个部件的布局继承自 list 部件，用于展示文章所属的分组的文章列表。请将您的 Volantis 升级至 <u>2.5</u> 版本以上使用。</p>
+<pre><code class="language-yaml">group-1:
+  class: group
+  display: [desktop, mobile] # [desktop, mobile]
+  header:
+    icon: fab fa-github
+    title: Git
+    url: /wiki/git/
+</code></pre>
+<p>在文章的 front-matter 中设置：</p>
+<pre><code class="language-yaml">group: group-1
+order: 16
+sidebar: [group-1, toc]
+</code></pre>
+<p>「group-1」卡片将会以列表的形式显示所有设置了 <code>group: group-1</code> 的文章，顺序按照 <code>order</code> 从小到大排列。</p>
+<h3 id="通用网格部件"><a href="#通用网格部件" class="headerlink" title="通用网格部件"></a>通用网格部件</h3><pre><code class="language-yaml">feedback:
+  class: grid
+  display: [desktop, mobile]
+  header:
+    icon: fas fa-headset
+    title: 联系开发者
+    url: https://github.com/volantis-x/hexo-theme-volantis
+  fixed: true # 固定宽度
+  rows:
+    - name: 反馈BUG
+      icon: fas fa-bug
+      url: https://github.com/volantis-x/hexo-theme-volantis/issues/
+    - name: 疑问求助
+      icon: fas fa-question-circle
+      url: https://github.com/volantis-x/hexo-theme-volantis/issues/
+    - name: 提个建议
+      icon: fas fa-lightbulb
+      url: https://github.com/volantis-x/hexo-theme-volantis/issues/
+</code></pre>
+<p>您可以创建用于展示任何链接列表的网格部件。网格默认根据文字长度自动确定每一个格子的宽度，如果文字长短不一，建议通过设置 <code>fixed: true</code> 来固定宽度，此时文字过长的格子中的文字会换行显示。</p>
+<h3 id="通用页面部件"><a href="#通用页面部件" class="headerlink" title="通用页面部件"></a>通用页面部件</h3><pre><code class="language-yaml">test:
+  class: page
+  display: [desktop, mobile]
+  pid: haha
+  content: excerpt # excerpt, more, content
+</code></pre>
+<p>您可以把整个页面的md内容作为一个小部件渲染显示出来。只需要设置小部件里的 <code>pid</code> 属性和文章的 <code>front-matter</code> 中设置一样的 <code>pid</code> 即可。 <code>content</code> 代表这个部件显示的内容，可选 <code>excerpt</code>，<code>more</code>，<code>content</code> 分别对应文章的摘要、摘要后面的内容、全文。</p>
+<h3 id="音乐部件"><a href="#音乐部件" class="headerlink" title="音乐部件"></a>音乐部件</h3><pre><code class="language-yaml">music:
+  class: music
+  display: [desktop, mobile] # [desktop, mobile]
+  pjaxReload: false
+</code></pre>
+<h2 id="选择评论系统"><a href="#选择评论系统" class="headerlink" title="选择评论系统"></a>选择评论系统</h2><p>目前共支持 14 款评论系统：</p>
+<p>artalk, giscus, beaudar, utterances, twikoo, waline, discuss, disqus, disqusjs, gitalk, vssue, livere, isso, hashover</p>
+<pre><code class="language-yaml">comments:
+  title: &lt;i class=&#39;fas fa-comments&#39;&gt;&lt;/i&gt; 评论
+  subtitle:
+  service: giscus
+</code></pre>
+<hr>
+<p>{% folding cyan :: GitHub Discussions 系列 %}</p>
+<p>{% tabs comments-github-discussions , 1 %}</p>
+<!-- tab giscus -->
+
+<p><i class='fas fa-comment-dots fa-fw'></i> A comments system powered by GitHub Discussions.<br><i class='fas fa-globe fa-fw'></i> <a href="https://giscus.app/">https://giscus.app/</a></p>
+<pre><code class="language-yaml">comments:
+  ...
+  service: giscus
+  ...
+  # giscus
+  # https://giscus.app
+  # https://github.com/laymonage/giscus
+  giscus:
+    # 以下配置按照 yml 格式增删填写即可
+    # repo: xxx/xxx
+    # repo-id: xxx
+    # category: xxx
+    # category-id: xxx
+    # mapping: &quot;pathname&quot;
+    # reactions-enabled: &quot;1&quot;
+    # emit-metadata: &quot;0&quot;
+    # lang: &quot;zh-CN&quot;
+    # 以上配置按照 yml 格式增删填写即可
+    theme:
+      light: &quot;light&quot; # https://cdn.jsdelivr.net/gh/volantis-x/cdn-volantis@master/css/giscus/light.css
+      dark: &quot;dark&quot; # https://cdn.jsdelivr.net/gh/volantis-x/cdn-volantis@master/css/giscus/dark.css
+</code></pre>
+<!-- endtab -->
+
+<p>{% endtabs %}</p>
+<p>{% endfolding %}</p>
+<p>{% folding green:: GitHub Issues 系列 %}</p>
+<p>{% tabs comments-github-issues , 1 %}</p>
+<!-- tab beaudar -->
+
+<p><i class='fas fa-comment-dots fa-fw'></i> Beaudar 名称源于粤语“表达”的发音，是 Utterances 的中文版本。<br><i class='fas fa-globe fa-fw'></i> <a href="https://beaudar.lipk.org/">https://beaudar.lipk.org/</a></p>
+<pre><code class="language-yaml">comments:
+  ...
+  service: beaudar
+  ...
+  # beaudar
+  # https://beaudar.lipk.org/
+  beaudar:
+    repo: xxx/xxx
+    issue-term: pathname
+    issue-number:
+    branch: main
+    position: top
+    order: desc
+    theme:
+      light: github-light
+      dark: github-dark
+    label: ✨💬✨
+</code></pre>
+<!-- endtab -->
+
+<!-- tab utterances -->
+
+<p><i class='fas fa-comment-dots fa-fw'></i> A lightweight comments widget built on GitHub issues.<br><i class='fas fa-globe fa-fw'></i> <a href="https://utteranc.es/">https://utteranc.es/</a></p>
+<pre><code class="language-yaml">comments:
+  ...
+  service: utterances
+  ...
+  # utterances
+  # https://utteranc.es/
+  utterances:
+    repo: xxx/xxx
+    issue-term: pathname
+    issue-number:
+    theme:
+      light: github-light
+      dark: github-dark
+    label: ✨💬✨
+</code></pre>
+<!-- endtab -->
+
+<!-- tab Vssue -->
+
+<p><i class='fas fa-comment-dots fa-fw'></i> Vue 驱动的、基于 Issue 的评论插件<br><i class='fas fa-globe fa-fw'></i> <a href="https://vssue.js.org/zh/">https://vssue.js.org/zh/</a></p>
+<pre><code class="language-yaml">comments:
+  ...
+  service: vssue
+  ...
+  vssue:
+    owner:
+    repo:
+    clientId:
+    clientSecret:
+</code></pre>
+<!-- endtab -->
+
+<!-- tab Gitalk -->
+
+<p><i class='fas fa-comment-dots fa-fw'></i> A modern comment component based on Github Issue and Preact.<br><i class='fas fa-globe fa-fw'></i> <a href="https://gitalk.github.io/">https://gitalk.github.io/</a></p>
+<pre><code class="language-yaml">comments:
+  ...
+  service: gitalk
+  ...
+  gitalk:
+    clientID:
+    clientSecret:
+    repo:
+    owner:
+    admin: # []
+</code></pre>
+<p>clientID 和 clientSecret 的获取方法可自行搜索教程，这里仅简单描述一下步骤：</p>
+<ol>
+<li>点击 GitHub -&gt; Settings <code>https://github.com/settings/profile</code></li>
+<li>点击 Developer settings <code>https://github.com/settings/developers</code></li>
+<li>点击 New OAuth App <code>https://github.com/settings/applications/new</code></li>
+<li>填写信息：<br><strong>Application name</strong> 随便填，我的是：<code>xaoxuu.com</code><br><strong>Homepage URL</strong> 和 <strong>Authorization callback URL</strong> 都写你的网址，我的是：<code>https://xaoxuu.com</code></li>
+</ol>
+<p><strong>可以通过设置 gitalk.id 实现多个页面共用一个评论框。</strong></p>
+<pre><code class="language-yaml">---
+gitalk:
+  id: /wiki/volantis/
+---
+</code></pre>
+<!-- endtab -->
+
+<p>{% endtabs %}</p>
+<p>{% endfolding %}</p>
+<p>{% folding yellow:: Disqus 系列 %}</p>
+<p>{% tabs comments-disqus , 1 %}</p>
+<!-- tab Disqus -->
+
+<p><i class='fas fa-comment-dots fa-fw'></i> Disqus - The #1 way to build an audience on your website.<br><i class='fas fa-globe fa-fw'></i> <a href="https://disqus.com/">https://disqus.com/</a></p>
+<pre><code class="language-yaml">comments:
+  ...
+  service: disqus
+  ...
+  disqus:
+    shortname:
+</code></pre>
+<p><strong>可以通过设置 disqus.path 实现多个页面共用一个评论框。</strong></p>
+<pre><code class="language-yaml">---
+disqus:
+  path: /wiki/volantis/
+---
+</code></pre>
+<!-- endtab -->
+
+<!-- tab DisqusJS -->
+
+<p><i class='fas fa-comment-dots fa-fw'></i> Render Disqus comments in Mainland China using Disqus API<br><i class='fas fa-globe fa-fw'></i> <a href="https://github.com/SukkaW/DisqusJS">https://github.com/SukkaW/DisqusJS</a></p>
+<pre><code class="language-yaml">comments:
+  ...
+  service: disqusjs
+  ...
+  # DisqusJS
+  # https://github.com/SukkaW/DisqusJS
+  disqusjs:
+    path: # 全局评论地址
+    # 配置项按照yml格式继续填写即可 除了 [siteName url identifier] 选项
+    #shortname:
+    #api:
+    #apikey:
+    #admin:
+    #nesting:
+</code></pre>
+<!-- endtab -->
+
+
+<!-- tab Isso -->
+
+<p><i class='fas fa-comment-dots fa-fw'></i> A commenting server similar to Disqus.<br><i class='fas fa-globe fa-fw'></i> <a href="https://posativ.org/isso/">https://posativ.org/isso/</a></p>
+<pre><code class="language-yaml">comments:
+  ...
+  service: isso
+  ...
+  isso:
+    url: https://example.com/(path/)
+    src: https://example.com/(path/)js/embed.min.js
+</code></pre>
+<!-- endtab -->
+
+
+<p>{% endtabs %}</p>
+<p>{% endfolding %}</p>
+<p>{% folding blue:: Valine 衍生系列 %}</p>
+<p>{% note error :: Valine 在 5.0 版本被移除,具体原因可参考<a href="https://github.com/next-theme/hexo-theme-next/issues/188#issuecomment-766578906">hexo-theme-next#188#issuecomment-766578906</a> %}</p>
+<p>以下是在解决 valine 遗留问题同一时期产生的评论系统故归为一类, 然在其社区issue中也报告了类似的攻击事件(eg: <a href="https://github.com/imaegoo/twikoo/issues/157">twikoo#157</a> <a href="https://github.com/walinejs/waline/issues/424">waline#424</a> <a href="https://github.com/walinejs/waline/issues/430">waline#430</a>),故请谨慎选择.</p>
+<p>{% tabs comments-valine , 1 %}</p>
+<!-- tab discuss -->
+
+<p><i class='fas fa-comment-dots fa-fw'></i> 一款简单，安全，免费的评论系统 | A simple, safe, free comment system<br><i class='fas fa-globe fa-fw'></i> <a href="https://discuss.js.org/">https://discuss.js.org</a></p>
+<pre><code class="language-yaml">comments:
+  ...
+  service: discuss
+  ...
+  # Discuss
+  # https://discuss.js.org
+  discuss:
+    serverURLs: # Discuss server address url
+    # https://discuss.js.org/Quick-Start.html#path
+</code></pre>
+<p>其中，<code>placeholder</code> 支持在 front-matter 中设置。</p>
+<pre><code class="language-yaml">---
+discuss:
+  placeholder: 你觉得xxx怎么样呢？
+---
+</code></pre>
+<p>也可以通过设置 <code>discuss.path</code> 实现多个页面共用一个评论框。</p>
+<pre><code class="language-yaml">---
+discuss:
+  path: /
+---
+</code></pre>
+<!-- endtab -->
+
+<!-- tab twikoo -->
+
+<p><i class='fas fa-comment-dots fa-fw'></i> 一个简洁、安全、免费的静态网站评论系统 | A simple, safe, free comment system.<br><i class='fas fa-globe fa-fw'></i> <a href="https://twikoo.js.org/">https://twikoo.js.org/</a></p>
+<pre><code class="language-yaml">comments:
+  ...
+  service: twikoo
+  ...
+  twikoo:
+    path: # 全局评论地址
+    # 其他配置项按照yml格式继续填写即可 除了 [el path] 选项
+    envId: xxxxxxxxxxxxxxx # 腾讯云环境id
+</code></pre>
+<p>其中，<code>placeholder</code> 支持在 front-matter 中设置。</p>
+<pre><code class="language-yaml">---
+twikoo:
+  placeholder: 你觉得xxx怎么样呢？
+---
+</code></pre>
+<p>也可以通过设置 <code>twikoo.path</code> 实现多个页面共用一个评论框。</p>
+<pre><code class="language-yaml">---
+twikoo:
+  path: /
+---
+</code></pre>
+<!-- endtab -->
+
+<!-- tab Waline -->
+
+<p><i class='fas fa-comment-dots fa-fw'></i> 一个简洁、安全、免费的静态网站评论系统 | A simple, safe, free comment system.<br><i class='fas fa-globe fa-fw'></i> <a href="https://waline.js.org/">https://waline.js.org/</a></p>
+<pre><code class="language-yaml">comments:
+  ...
+  service: waline
+  ...
+  # Waline
+  # https://waline.js.org/
+  waline:
+    path: # 全局评论地址 目前设置全局评论地址后visitor失效,这是waline的问题
+    placeholder: 快来评论吧~  # 评论占位提示
+    imageHosting: https://7bu.top/api/upload # 图床api（默认使用去不图床）
+    # 其他配置项按照yml格式继续填写即可 除了 [el path placeholder uploadImage] 选项
+    serverURL: xxxxxxxxxxxxxxx # Waline 的服务端地址（必填） 测试用地址: https://waline-ruddy.vercel.app
+    ... 可选配置项详见源码
+</code></pre>
+<p>其中，<code>placeholder</code> 支持在 front-matter 中设置。</p>
+<pre><code class="language-yaml">---
+waline:
+  placeholder: 你觉得xxx怎么样呢？
+---
+</code></pre>
+<p>也可以通过设置 <code>waline.path</code> 实现多个页面共用一个评论框。</p>
+<pre><code class="language-yaml">---
+waline:
+  path: /
+---
+</code></pre>
+<!-- endtab -->
+
+<p>{% endtabs %}</p>
+<p>{% endfolding %}</p>
+<p>{% folding red:: Others 其他系列 %}</p>
+<p>{% tabs comments-others , 1 %}</p>
+<!-- tab Artalk -->
+
+<p><i class='fas fa-comment-dots fa-fw'></i> 一款简洁的自托管评论系统 | A Selfhosted Comment System.<br><i class='fas fa-globe fa-fw'></i> <a href="https://artalk.js.org/">https://artalk.js.org/</a></p>
+<pre><code class="language-yaml">comments:
+  ...
+  service: artalk
+  ...
+  artalk:
+    server: http://127.0.0.1:8080/api    # 修改为自建的后端服务地址
+</code></pre>
+<p>其中，<code>placeholder</code> 支持在 front-matter 中设置。</p>
+<pre><code class="language-yaml">---
+artalk:
+  placeholder: 你觉得xxx怎么样呢？
+---
+</code></pre>
+<p>也可以通过设置 <code>artalk.path</code> 实现多个页面共用一个评论框。</p>
+<pre><code class="language-yaml">---
+artalk:
+  path: /
+---
+</code></pre>
+<!-- endtab -->
+
+
+<!-- tab Livere -->
+
+<p><i class='fas fa-comment-dots fa-fw'></i> Communication makes better world.<br><i class='fas fa-globe fa-fw'></i> <a href="https://www.livere.com/">https://www.livere.com/</a></p>
+<pre><code class="language-yaml">comments:
+  ...
+  service: livere
+  ...
+  livere:
+    uid: #你的livere的uid
+</code></pre>
+<p>在这里查看你的 uid：<code>https://livere.com/insight/myCode</code>，在【代码管理 -&gt; 一般网站】中找到如下这段代码，其中 <code>data-uid</code> 中的内容就是你的 <code>livere_uid</code>。</p>
+<pre><code class="language-html">&lt;!-- 来必力City版安装代码 --&gt;
+&lt;div id=&quot;lv-container&quot; data-id=&quot;city&quot; data-uid=&quot;你的livere的uid&quot;&gt;
+...
+</code></pre>
+<!-- endtab -->
+
+<!-- tab Hashover -->
+
+
+<p><i class='fas fa-comment-dots fa-fw'></i> A free and open source PHP comment system designed to allow completely anonymous comments and easy theming.<br><i class='fas fa-globe fa-fw'></i> <a href="https://www.barkdull.org/software/hashover">https://www.barkdull.org/software/hashover</a></p>
+<pre><code class="language-yaml">comments:
+  ...
+  service: hashover
+  ...
+  hashover:
+    src: https://example.com/(path/)comments.php
+</code></pre>
+<!-- endtab -->
+
+<!-- tab More... -->
+
+
+<pre><code class="language-plain">这里写布局代码
+</code></pre>
+<pre><code class="language-plain">这里要写加载 js 的代码
+</code></pre>
+<p>{% btn large center, 收录更多评论系统, <a href="https://github.com/volantis-x/">https://github.com/volantis-x/</a> , fas fa-plus %}</p>
+<!-- endtab -->
+
+<p>{% endtabs %}</p>
+<p>{% endfolding %}</p>
+<hr>
+<p><strong>可以通过在 front-matter 设置 config 实现在特定页面修改评论系统的相关配置。</strong></p>
+<p><strong>支持的有(按字母顺序): discuss, giscus, gitalk, twikoo, waline</strong></p>
+<pre><code class="language-yaml">---
+gitalk:
+  config:
+    id: /233/
+---
+</code></pre>
+<h2 id="站内搜索"><a href="#站内搜索" class="headerlink" title="站内搜索"></a>站内搜索</h2><p>{% folding 配置代码 %}</p>
+<pre><code class="language-yaml"># To use hexo search, you need to install the following plugins:
+# npm i hexo-generator-json-content
+search:
+  enable: true
+  service: hexo  # hexo, algolia, meilisearch
+  algolia:
+    searchAsYouType: true # If false, triggers the search only on submit.
+    hitsPerPage: 5 # Set the number of hits per page.
+    placeholder: &#39;Search...&#39; # The placeholder text of the input.
+  meilisearch:
+    placeholder: &#39;Search...&#39;
+    searchKey: &#39;&#39;
+    indexName: &#39;&#39;
+    hostUrl: &#39;&#39;
+</code></pre>
+<p>{% endfolding %}</p>
+<p>{% tabs localsearch %}</p>
+<!-- tab Hexo 搜索 -->
+
+<ol>
+<li>你需要安装 <a href="https://github.com/alexbruno/hexo-generator-json-content">hexo-generator-json-content</a>，并根据它的文档去做相应配置。</li>
+<li>修改 <strong>主题配置文件</strong>。</li>
+</ol>
+<pre><code class="language-yaml">search:
+  enable: true
+  service: hexo
+</code></pre>
+<!-- endtab -->
+
+<!-- tab Algolia 搜索 -->
+
+<ol>
+<li>你需要安装 <a href="https://github.com/LouisBarranqueiro/hexo-algoliasearch">hexo-algoliasearch</a> 或 <a href="https://github.com/thom4parisot/hexo-algolia">hexo-algolia</a>，根据它们的说明文档去做相应的配置。</li>
+<li>修改 <strong>主题配置文件</strong>。</li>
+</ol>
+<pre><code class="language-yaml">search:
+  enable: true
+  service: algolia
+</code></pre>
+<blockquote>
+<p>如果你使用 <a href="https://github.com/LouisBarranqueiro/hexo-algoliasearch">hexo-algoliasearch</a>，请记得配置 fields 参数的 title, permalink 和 content:strip</p>
+</blockquote>
+<!-- endtab -->
+
+<!-- tab MeiliSearch 搜搜 -->
+
+<ol>
+<li>MeiliSearch 为自托管搜索引擎，需要服务器支撑，部署文档详见：<a href="https://docs.meilisearch.com/learn/getting_started/quick_start.html">Meilisearch Doc</a>。</li>
+<li>数据集需要自行上传，可使用 <a href="https://github.com/alexbruno/hexo-generator-json-content">hexo-generator-json-content</a> 生成索引，同时配置修改如下：</li>
+</ol>
+<pre><code class="language-yaml">jsonContent: 
+  meta: false 
+  pages: false 
+  posts: 
+    title: true 
+    path: true 
+    text: true 
+    uuid: true # &lt;--- 做主键
+</code></pre>
+<ol start="3">
+<li>你需要为文章分配一个唯一 ID 作为主键，此处推荐使用 <a href="https://github.com/chekun/hexo-uuid">hexo-uuid</a> 生成。</li>
+<li>修改 <strong>主题配置文件</strong>。</li>
+</ol>
+<pre><code class="language-yaml">search:
+  enable: true
+  service: meilisearch
+</code></pre>
+<!-- endtab -->
+
+<p>{% endtabs %}</p>
+<p>{% note error :: 原 google, azure,  baidu 站内搜索 系祖传代码, 且文档丢失, 不便后续维护 在 5.0 版本移除 %}</p>
+<h2 id="插件库"><a href="#插件库" class="headerlink" title="插件库"></a>插件库</h2><h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p>Volantis 为丰富的插件提供了兼容性优化。大部分插件您只需开启和关闭，无需进行设置。</p>
+<h3 id="幻灯片背景-视差滚动效果"><a href="#幻灯片背景-视差滚动效果" class="headerlink" title="幻灯片背景(视差滚动效果)"></a>幻灯片背景(视差滚动效果)</h3><p>{% note error :: jquery.backstretch 在 5.0 版本 移除, 被 parallax 替代 %}</p>
+<pre><code class="language-yaml">plugins:
+  ...
+  parallax:
+    enable: true
+    position: cover       # cover: sticky on the cover.   fixed: Fixed as background for the site.
+    shuffle: true         # shuffle playlist
+    duration: 10000       # Duration (ms)
+    fade: 1500            # fade duration (ms) (Not more than 1500)
+    images:               # For personal use only. At your own risk if used for commercial purposes !!!
+      - https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper/abstract/41F215B9-261F-48B4-80B5-4E86E165259E.jpeg
+      ...
+</code></pre>
+<p>幻灯片背景图片显示的位置可以选择粘贴在封面上，跟随封面一起滑动，也可以选择固定作为网页背景图片。</p>
+<h3 id="语法高亮"><a href="#语法高亮" class="headerlink" title="语法高亮"></a>语法高亮</h3><pre><code class="language-yaml">plugins:
+  ...
+  # 代码高亮
+  code_highlight: highlightjs # highlightjs or prismjs
+  # highlight.js
+  highlightjs:
+    copy_code: true
+    # 如果开启以下配置, hexo.config.highlight.enable 需要设置为 false ; hexo.config.highlight.enable 设置为 true, 则以下配置无效
+    # # 不再支持 v11.1.0 以下版本
+    # js: https://unpkg.com/@highlightjs/cdn-assets@11.5.1/highlight.min.js # Please set hexo.config.highlight.enable = false !!!
+    # css: https://unpkg.com/@highlightjs/cdn-assets@11.5.1/styles/default.min.css
+    # # # more: https://www.jsdelivr.com/package/npm/@highlightjs/cdn-assets?path=styles
+
+  # prismjs
+  # https://prismjs.com/
+  # https://hexo.io/zh-cn/docs/syntax-highlight#PrismJS
+  prismjs:
+    copy_code: true
+    # Please set hexo.config.highlight.enable = false !!! set hexo.config.prismjs.enable = true !!!
+    js:
+      - https://unpkg.com/prismjs/components/prism-core.min.js
+      - https://unpkg.com/prismjs/plugins/autoloader/prism-autoloader.min.js
+      - https://unpkg.com/prismjs/plugins/line-numbers/prism-line-numbers.min.js
+    css:
+      - https://unpkg.com/prismjs/themes/prism-dark.css
+      - https://unpkg.com/prismjs/plugins/line-numbers/prism-line-numbers.css
+</code></pre>
+<p>如果需要使用 highlight.js 进行语法高亮，请将站点配置文件中的 <code>highlight.enable</code> 设置为 <code>false</code> 否则不会加载插件。您可以在 <u>94</u> 种 <a href="https://www.jsdelivr.com/package/npm/@highlightjs/cdn-assets?path=styles">语法高亮主题</a> 中挑选喜爱的主题，然后替换上面的 css 链接。</p>
+<p>{% note warning, 如果您使用 highlight.js 请确保没有使用 hexo 官方的 codeblock 标签，否则会报错。 %}<br>{% note bug red, 经测试，使用 highlight.js 的情况下，部分容器内的代码可能仍然会被渲染甚至报错。 %}</p>
+<h3 id="APlayer-音乐播放器"><a href="#APlayer-音乐播放器" class="headerlink" title="APlayer 音乐播放器"></a>APlayer 音乐播放器</h3><pre><code class="language-yaml">plugins:
+  ...
+  # APlayer is only available in mainland China.
+  # APlayer config: https://github.com/metowolf/MetingJS
+  aplayer:
+    enable: true
+    # Required
+    server: netease   # netease, tencent, kugou, xiami, baidu
+    type: playlist    # song, playlist, album, search, artist
+    id: 3175833810    # song id / playlist id / album id / search keyword
+    # Optional
+    fixed: false      # enable fixed mode
+    theme: &#39;#1BCDFC&#39;  # main color
+    autoplay: false   # audio autoplay
+    order: list       # player play order, values: &#39;list&#39;, &#39;random&#39;
+    loop: all         # player loop play, values: &#39;all&#39;, &#39;one&#39;, &#39;none&#39;
+    volume: 0.7       # default volume, notice that player will remember user setting, default volume will not work after user set volume themselves
+    list_max_height: 320px # list max height
+    list_folded: true
+    autoHide: true    # hide automaticaly
+</code></pre>
+<p>{% note warning, APlayer播放器只可以在中国大陆地区使用。相关文档： <a href="https://aplayer.js.org/">APlayer</a> | <a href="https://github.com/metowolf/MetingJS">MetingJS</a> %}</p>
+<h3 id="暗黑模式"><a href="#暗黑模式" class="headerlink" title="暗黑模式"></a>暗黑模式</h3><pre><code class="language-yaml">plugins:
+  ...
+  # 暗黑模式 darkmode
+  # 开关按钮：在 navbar.menu 中添加：
+  # - name: 暗黑模式 # 可自定义
+  #   icon: fas fa-moon # 可自定义
+  #   toggle: darkmode
+  darkmode:
+    enable: true
+</code></pre>
+<h3 id="结束支持"><a href="#结束支持" class="headerlink" title="结束支持"></a>结束支持</h3><pre><code class="language-yaml">plugins:
+  ...
+  # 旧版 Internet Explorer 淘汰行动
+  # https://www.microsoft.com/zh-cn/WindowsForBusiness/End-of-IE-support
+  # 本主题不支持Internet Explorer的任何版本!!!
+  killOldVersionsOfIE:
+    enable: true
+
+  # 禁用JavaScript提示
+  # 本页面需要浏览器支持（启用）JavaScript
+  # 主题中的某些插件必须启用JavaScript才能正常工作，例如开启scrollreveal如果禁用JavaScript会导致卡片消失
+  killNoScript:
+    enable: true
+</code></pre>
+<h3 id="Artitalk"><a href="#Artitalk" class="headerlink" title="Artitalk"></a>Artitalk</h3><pre><code class="language-yaml">plugins:
+  ...
+  # Artitalk https://artitalk.js.org
+  # 配置过程请参考：https://artitalk.js.org/doc.html
+  # 使用过旧版本的请修改Leancloud shuoshuo class部分列名：https://artitalk.js.org/release.html
+  # 除appID和appKEY外均为选填项
+  artitalk:
+    # Set `plugins: [&quot;artitalk&quot;]` to enable in front-matter
+    # 不支持 Pjax
+    # 配置项按照yml格式继续填写即可
+    appId: ogP8qj3veMh0LFpFWMPOyF0X-MdYXbMMI # your appID
+    appKey: nHXLd3N3Jgh460t2iRQKWAtr # your appKEY
+    # serverURL:  #leancloud绑定的api访问域名，使用国际版的话不需要填写
+    # lang: # 语言设置，zh为汉语，en为英语，es为西班牙语。默认为汉语
+    # pageSize: #每页说说的显示数量
+    # shuoPla: #在编辑说说的输入框中的占位符
+    # avatarPla: #自定义头像url的输入框的占位符
+    # motion: #加载动画的开关，1为开，0为关，默认为开
+    # bgImg: #说说输入框背景图片url
+    # color1: #说说背景颜色1&amp;按钮颜色1
+    # color2: #说说背景颜色2&amp;按钮颜色2
+    # color3: #说说字体颜色
+    # cssUrl: #自定义css接口
+</code></pre>
+<h3 id="BBtalk"><a href="#BBtalk" class="headerlink" title="BBtalk"></a>BBtalk</h3><pre><code class="language-yaml">plugins:
+  ...
+  # BBtalk https://bb.js.org
+  bbtalk:
+    # Set `plugins: [&quot;bbtalk&quot;]` to enable in front-matter
+    # 支持 Pjax
+    js: https://cdn.jsdelivr.net/npm/bbtalk@0.1.5/dist/bbtalk.min.js # BBtalk.js
+    appId: 0KzOX4vC7Jsk6vzUGNeEiUaI-gzGzoHsz # your appID
+    appKey: HwCiWuxfpvKiLm4teCUgTIba # your appKEY
+    serverURLs: https://bbapi.heson10.com # Request Api 域名
+</code></pre>
+<h3 id="Tidio"><a href="#Tidio" class="headerlink" title="Tidio"></a>Tidio</h3><pre><code class="language-yaml">plugins:
+  ...
+  # 聊天功能
+  chat_service: tidio # tidio or gitter
+
+  # Tidio
+  # https://www.tidio.com/
+  tidio:
+    id: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+</code></pre>
+<h3 id="友链朋友圈"><a href="#友链朋友圈" class="headerlink" title="友链朋友圈"></a>友链朋友圈</h3><pre><code class="language-yaml">plugins:
+  ...
+  # 友链朋友圈 hexo-circle-of-friends
+  # https://github.com/Rock-Candy-Tea/hexo-circle-of-friends
+  # https://fcircle-doc.js.cool/
+  fcircle:
+    # Set `plugins: [&quot;fcircle&quot;]` to enable in front-matter
+    # 支持 Pjax
+    private_api_url: https://fcircle-api.example.com/ # api 地址
+    page_turning_number: 10  # 点击加载更多时，一次最多加载几篇文章，默认10
+    error_img: https://sdn.geekzu.org/avatar/57d8260dfb55501c37dde588e7c3852c # 头像加载失败时，默认头像地址
+    sort_rule: updated # 进入页面时第一次的排序规则,可选值：created/updated
+    app: https://unpkg.com/imgscdn@1.1.33/fcircle/app.min.js # app.min.js的url
+    bundle: https://unpkg.com/imgscdn@1.1.33/fcircle/bundle.js # bundle.js的url
+</code></pre>
+<h3 id="消息提示"><a href="#消息提示" class="headerlink" title="消息提示"></a>消息提示</h3><pre><code class="language-yaml">plugins:
+  ...
+  # 消息提示 
+  # izitoast
+  message:
+    enable: true
+    icon:     # 默认图标，支持对图标添加颜色，可选值：see：/source/css/_style/_plugins/fontcolor.styl
+      default: fa-solid fa-info-circle light-blue
+      quection: fa-solid fa-question-circle light-blue
+    time:     # 默认持续时间
+      default: 5000
+      quection: 20000
+    position: &#39;topRight&#39;                 # 弹出位置 可选值：topRight, bottomRight, bottomLeft, topLeft, topCenter, bottomCenter, center
+    transitionIn: &#39;bounceInLeft&#39;         # 弹窗打开动画 可选值：bounceInLeft, bounceInRight, bounceInUp, bounceInDown, fadeIn, fadeInDown, fadeInUp, fadeInLeft, fadeInRight, flipInX
+    transitionOut: &#39;fadeOutRight&#39;        # 弹窗关闭动画 可选值：fadeOut, fadeOutUp, fadeOutDown, fadeOutLeft, fadeOutRight, flipOutX
+    titleColor: &#39;var(--color-text)&#39;      # 标题颜色
+    messageColor: &#39;var(--color-text)&#39;    # 消息颜色
+    backgroundColor: &#39;var(--color-card)&#39; # 默认背景色
+    zindex: 2147483647                   # 层级
+    copyright:                           # 是否在复制时弹出版权提示，影响范围：ctrl+c、代码块复制按钮、右键复制选项
+      enable: true
+      title: &#39;知识共享许可协议&#39;
+      message: &#39;请遵守 CC BY-NC-SA 4.0 协议。&#39;
+      icon: &#39;far fa-copyright light-blue&#39;
+    aplayer:                              # 是否开启音乐通知；播放、暂停、失败 时的图标
+      enable: true
+      play: fa-solid fa-play
+      pause: fa-solid fa-pause
+    rightmenu:
+      enable: true                        # 是否开启右键模块的消息通知
+      notice: true                        # 唤醒原右键菜单的通知
+</code></pre>
+<h3 id="轮播标签"><a href="#轮播标签" class="headerlink" title="轮播标签"></a>轮播标签</h3><p>使用方法参见：<a href="/v6/tag-plugins/#swiper">swiper</a></p>
+<pre><code class="language-yaml">  # swiper
+  # https://www.swiper.com.cn/
+  swiper:
+    enable: true
+</code></pre>

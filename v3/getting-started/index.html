@@ -1,0 +1,87 @@
+<hr>
+<h2 id="robots-noindex-nofollowsitemap-falselayout-pagegroup-docs-v3order-100title-安装与版本更新short-title-1-1-安装与版本更新cover-truemeta-header-sidebar-docs-v3-toc-repos-plugins-snackbar-oldversion"><a href="#robots-noindex-nofollowsitemap-falselayout-pagegroup-docs-v3order-100title-安装与版本更新short-title-1-1-安装与版本更新cover-truemeta-header-sidebar-docs-v3-toc-repos-plugins-snackbar-oldversion" class="headerlink" title="robots: noindex,nofollowsitemap: falselayout: pagegroup: docs-v3order: 100title: 安装与版本更新short_title: 1-1 安装与版本更新cover: truemeta:  header: []sidebar: [docs-v3, toc, repos]plugins:  - snackbar: oldversion"></a>robots: noindex,nofollow<br>sitemap: false<br>layout: page<br>group: docs-v3<br>order: 100<br>title: 安装与版本更新<br>short_title: 1-1 安装与版本更新<br>cover: true<br>meta:<br>  header: []<br>sidebar: [docs-v3, toc, repos]<br>plugins:<br>  - snackbar: oldversion</h2><p>
+{% span logo center large, <sup>&ensp;</sup>Volantis<sup>3</sup> %}
+{% span center small, A Wonderful Theme for Hexo 5 %}
+</p>
+<br>
+
+<p>Volantis，一个高度模块化和可定制化、功能相对完善的 Hexo 博客主题，既可以用作个人博客，也适合用来搭建文档。</p>
+<p>这些是使用了本主题的博客： {% btn 示例博客, &#x2F;examples&#x2F;, fas fa-play-circle %}</p>
+<h2 id="能力要求-span-red"><a href="#能力要求-span-red" class="headerlink" title="能力要求 {% span red, !!! %}"></a>能力要求 {% span red, !!! %}</h2><p>自建博客需要一定的相关知识，在开始前，请{% emp 务必 %}确保：</p>
+<p>{% checkbox checked, 已掌握 markdown 语法 %}<br>{% checkbox checked, 已阅读 Hexo 官方文档 %}<br>{% checkbox checked, 会使用终端（命令行），会使用 git  %}<br>{% checkbox red checked, 会阅读文档、搜索文档 %}</p>
+<br>
+
+<p>为了更好地使用，还建议掌握以下知识：</p>
+<p>{% checkbox checked, 会阅读源码，知道本站源码在哪里，会参照源码仿写、对比差异 %}<br>{% checkbox checked, 规范地使用 GitHub Issues（解决文档中没有的问题） %}<br>{% checkbox checked, GitHub Fork、Pull Request 操作（使主题保持最新） %}</p>
+<h2 id="环境要求"><a href="#环境要求" class="headerlink" title="环境要求"></a>环境要求</h2><p>如果您从旧版本更新或着其它主题迁移，请确保环境版本不要太低，否则会产生兼容性问题。</p>
+<pre><code class="language-yaml">Hexo: 4.2 ~ 5.x
+hexo-cli: 3.1 ~ 4.x
+node.js: 12.16 ~ latest # 推荐使用 LTS 版
+npm: 6.13 ~ latest
+</code></pre>
+<h2 id="下载与安装"><a href="#下载与安装" class="headerlink" title="下载与安装"></a>下载与安装</h2><p>{% tabs install, 1 %}</p>
+<!-- tab 全新博客安装 -->
+
+<p>{% timenode 第 1&#x2F;2 步：修改站点配置文件 %}</p>
+<p>在 <code>blog/_config.yml</code> 文件中找到并修改：</p>
+<pre><code>theme: volantis
+</code></pre>
+<p>{% endtimenode %}</p>
+<p>{% timenode 第 2&#x2F;2 步：下载主题 %}</p>
+<p>在终端中输入：</p>
+<pre><code>npm i hexo-theme-volantis
+</code></pre>
+<p>{% endtimenode %}</p>
+<p>{% folding, 如果您是 Mac 用户，可以使用脚本完成全部流程 %}</p>
+<p>在博客路径打开终端，下载安装并应用主题：</p>
+<pre><code>curl -s https://volantis.js.org/start | bash
+</code></pre>
+<p>这行命令将会自动检测并安装所需环境，初始化博客，然后下载安装并应用主题。<br>脚本详细使用方法：<a href="https://xaoxuu.com/wiki/hexo.sh/">#hexo.sh</a></p>
+<p>{% endfolding %}</p>
+<!-- endtab -->
+
+<!-- tab 从其它主题迁移 -->
+
+<p>{% timenode 第 1&#x2F;3 步：修改站点配置文件 %}</p>
+<p>在 <code>blog/_config.yml</code> 文件中找到并修改：</p>
+<pre><code>theme: volantis
+</code></pre>
+<p>{% endtimenode %}</p>
+<p>{% timenode 第 2&#x2F;3 步：下载主题 %}</p>
+<p>如果您已经升级到 <code>Hexo 5.0.2</code> 及以上，可以直接使用 <code>npm</code> 命令安装：</p>
+<pre><code>npm i hexo-theme-volantis
+</code></pre>
+<p>对于旧版本，需要下载主题源码到 <code>themes/</code> 文件夹：</p>
+<pre><code>git clone https://github.com/volantis-x/hexo-theme-volantis themes/volantis
+</code></pre>
+<p>如果您无法访问 GitHub 可以使用国内镜像源：</p>
+<pre><code>git clone https://e.coding.net/volantis/volantis/volantis.git themes/volantis
+</code></pre>
+<p>{% endtimenode %}</p>
+<p>{% timenode 第 3&#x2F;3 步：检查并安装依赖 %}</p>
+<p>安装 Hexo 搜索的依赖包：</p>
+<pre><code>npm i hexo-generator-search hexo-generator-json-content
+</code></pre>
+<p>安装 Stylus 渲染器：</p>
+<pre><code>npm i hexo-renderer-stylus
+</code></pre>
+<p>{% endtimenode %}</p>
+<!-- endtab -->
+
+<p>{% endtabs %}</p>
+<h2 id="版本更新"><a href="#版本更新" class="headerlink" title="版本更新"></a>版本更新</h2><p>请对照 {% btn, 更新日志, <a href="https://github.com/volantis-x/hexo-theme-volantis/releases">https://github.com/volantis-x/hexo-theme-volantis/releases</a> %} 进行更新，下面是更新之后需要注意的事项：</p>
+<p>{% timeline %}</p>
+<p>{% timenode 2020-08-09 <a href="https://github.com/volantis-x/hexo-theme-volantis/releases/tag/3.0.0">2.6.6 -&gt; 3.0.0</a> %}</p>
+<ol>
+<li>如果有 <code>hexo-lazyload-image</code> 插件，需要重新安装最新版本并增加设置 <code>lazyload.isSPA: true</code> 。</li>
+<li>2.x 版本的 css 和 js 不适用于 3.x 版本，如果使用了 <code>use_cdn: true</code> 则需要删除。</li>
+<li>2.x 版本的 <code>fancybox</code> 标签在 3.x 版本中被重命名为 <code>gallery</code> 。</li>
+<li>2.x 版本的置顶 <code>top: true</code> 改为了 <code>pin: true</code> 并且同样适用于 <code>layout: page</code> 的页面。</li>
+<li>如果使用了 <code>hexo-offline</code> 插件，建议卸载，3.0 版本使用了 pjax 服务。</li>
+<li>欢迎补充</li>
+</ol>
+<p>{% endtimenode %}</p>
+<p>{% endtimeline %}</p>
+<h2 id="许可协议"><a href="#许可协议" class="headerlink" title="许可协议"></a>许可协议</h2><p>本主题采用 <a href="https://cdn.jsdelivr.net/gh/theme-volantis/hexo-theme-volantis/LICENSE">MIT开源许可协议</a> ，永久无限制免费使用。</p>
+<p>{% noteblock quote theme %}<br><strong>MIT开源许可协议</strong></p>
+<p>被授权人有权利使用、复制、修改、合并、出版发行、散布、再授权及贩售软件及软件的副本。<br>被授权人可根据程式的需要修改授权条款为适当的内容。<br>在软件和软件的所有副本中都必须包含版权声明和许可声明。<br>{% endnoteblock %}</p>
